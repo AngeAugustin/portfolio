@@ -1,0 +1,501 @@
+{
+  "meta": {
+    "title": "Augustin FACHEHOUN — Développeur FullStack & IA",
+    "description": "Développeur FullStack & IA béninois créant des applications web évolutives et des systèmes intelligents. En transition vers le Data Engineering."
+  },
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "projects": "Projets",
+    "skills": "Compétences",
+    "experience": "Expérience",
+    "services": "Services",
+    "journey": "IA & Data",
+    "blog": "Blog",
+    "contact": "Contact",
+    "resume": "CV",
+    "menu": "Menu",
+    "close": "Fermer"
+  },
+  "hero": {
+    "badge": "Bénin · FullStack · IA · Data",
+    "title": "Concevoir des expériences",
+    "titleAccent": "digitales intelligentes",
+    "subtitle": "Je conçois et développe des applications web évolutives, des systèmes IA et des infrastructures data — avec plus de 3 ans d'expérience au service de produits d'Afrique de l'Ouest vers le monde.",
+    "ctaPrimary": "Voir les projets",
+    "ctaSecondary": "Me contacter",
+    "scroll": "Faire défiler",
+    "visual": {
+      "label": "Espace de travail",
+      "status": "Disponible",
+      "terminal": {
+        "line1": "build() → apps web scalables",
+        "line2": "deploy() → systèmes IA en production",
+        "line3": "pipeline() → infrastructures data robustes"
+      },
+      "stats": {
+        "years": { "value": "3+", "label": "Années" },
+        "projects": { "value": "40+", "label": "Projets" },
+        "stack": { "value": "12", "label": "Technos" },
+        "focus": { "value": "IA", "label": "Focus" }
+      },
+      "tags": ["FullStack", "Ingénierie IA", "Data Engineering"]
+    }
+  },
+  "techStack": {
+    "label": "Stack Technique",
+    "title": "Outils que j'utilise"
+  },
+  "featured": {
+    "label": "Travaux Sélectionnés",
+    "title": "Projets phares",
+    "subtitle": "Des agents IA aux pipelines data — des produits conçus pour l'impact, l'échelle et la clarté.",
+    "viewAll": "Voir tous les projets",
+    "viewProject": "Voir l'étude de cas"
+  },
+  "about": {
+    "label": "À propos",
+    "title": "À l'intersection du code, de l'IA et de la data",
+    "hero": {
+      "titleLine1": "À l'intersection du",
+      "titleLine2": "code, de l'IA et de la data",
+      "subtitle": "Développeur FullStack & Ingénieur IA béninois — je conçois des produits intelligents et j'évolue vers le Data Engineering.",
+      "tags": {
+        "fullstack": "FullStack",
+        "ai": "Ingénierie IA",
+        "data": "Data Engineering"
+      },
+      "terminal": {
+        "line1": "apps web scalables",
+        "line2": "systèmes IA en production",
+        "line3": "pipelines data robustes"
+      }
+    },
+    "p1": "Je suis Développeur FullStack et Ingénieur IA béninois avec plus de 3 ans d'expérience dans la livraison d'applications de qualité production pour startups et entreprises.",
+    "p2": "Mon travail couvre l'automatisation intelligente, les plateformes API, les produits SaaS et les tableaux de bord analytiques — toujours avec un focus sur la performance, l'accessibilité et une UX élégante.",
+    "p3": "Je suis en transition active vers le Data Engineering, approfondissant mon expertise en pipelines, entrepôts de données et infrastructure ML.",
+    "cta": "En savoir plus",
+    "resume": {
+      "label": "CV",
+      "title": "Télécharger mon CV",
+      "subtitle": "Parcours, compétences et réalisations — prêt à partager avec votre équipe.",
+      "hint": "Document PDF optimisé pour le recrutement et les opportunités professionnelles.",
+      "download": "Télécharger le PDF"
+    }
+  },
+  "education": {
+    "label": "Formation",
+    "title": "Parcours académique",
+    "subtitle": "Un socle scientifique et professionnel au service de l'ingénierie logicielle et de la data.",
+    "upcoming": "En cours"
+  },
+  "experience": {
+    "label": "Expérience",
+    "title": "Parcours professionnel",
+    "subtitle": "Une chronologie de rôles, d'impact et de croissance continue en full-stack, IA et data.",
+    "present": "Aujourd'hui",
+    "hero": {
+      "titleLine1": "Un parcours",
+      "titleLine2": "orienté impact",
+      "subtitle": "Une chronologie de rôles, d'impact et de croissance continue en full-stack, IA et data.",
+      "tags": {
+        "lead": "Lead technique",
+        "fullstack": "FullStack",
+        "ai": "Ingénierie IA"
+      },
+      "roleLabel": "Évolution des rôles",
+      "roleCaption": "Du développement produit à l'ingénierie IA et au leadership technique.",
+      "roles": [
+        "Développeur FullStack",
+        "Ingénieur IA",
+        "Lead technique",
+        "Architecte produit"
+      ]
+    }
+  },
+  "skills": {
+    "label": "Compétences",
+    "title": "Expertise technique",
+    "subtitle": "Une boîte à outils multidisciplinaire pour construire des produits digitaux modernes."
+  },
+  "journey": {
+    "label": "IA & Data Engineering",
+    "title": "Des modèles aux pipelines",
+    "subtitle": "Relier les applications intelligentes à une infrastructure data robuste.",
+    "cta": "Explorer mon parcours"
+  },
+  "services": {
+    "label": "Services",
+    "title": "Comment je peux aider",
+    "subtitle": "Accompagner les équipes pour livrer des produits digitaux premium.",
+    "cardsIntro": "Quatre domaines d'intervention pour concevoir, automatiser et faire évoluer vos produits digitaux.",
+    "learnMore": "En savoir plus",
+    "detail": {
+      "back": "Retour aux services",
+      "serviceLabel": "Service",
+      "deliverables": "Ce que je livre",
+      "approach": "Mon approche",
+      "stack": "Technologies & outils",
+      "idealFor": "Idéal pour",
+      "ctaTitle": "Un projet en tête ?",
+      "ctaSubtitle": "Discutons de vos objectifs et construisons ensemble une solution adaptée à votre contexte.",
+      "ctaButton": "Démarrer une conversation"
+    },
+    "hero": {
+      "titleLine1": "Comment je",
+      "titleLine2": "peux aider",
+      "subtitle": "Accompagner les équipes pour livrer des produits digitaux premium, de la vision au déploiement.",
+      "tags": {
+        "product": "Produit",
+        "ai": "IA & automatisation",
+        "data": "Data & analytics"
+      },
+      "processLabel": "Méthode de livraison",
+      "steps": {
+        "discover": {
+          "title": "Découverte",
+          "description": "Besoins, vision & cadrage"
+        },
+        "design": {
+          "title": "Design",
+          "description": "UX, architecture & specs"
+        },
+        "build": {
+          "title": "Développement",
+          "description": "Code, IA & intégrations"
+        },
+        "launch": {
+          "title": "Lancement",
+          "description": "Déploiement & itérations"
+        }
+      }
+    }
+  },
+  "testimonials": {
+    "label": "Témoignages",
+    "title": "La confiance des équipes",
+    "subtitle": "Ce que disent les collaborateurs de notre travail ensemble."
+  },
+  "cta": {
+    "title": "Prêt à construire quelque chose d'exceptionnel ?",
+    "subtitle": "Qu'il s'agisse d'un produit IA, d'une plateforme SaaS ou d'un pipeline data — créons de l'impact ensemble.",
+    "button": "Démarrer une conversation"
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Discutons",
+    "subtitle": "Un projet en tête ? J'aimerais en savoir plus.",
+    "hero": {
+      "titleLine1": "Construisons",
+      "titleLine2": "ensemble",
+      "subtitle": "Un projet, une idée ou une collaboration — je suis disponible pour échanger et voir comment avancer concrètement.",
+      "tags": {
+        "remote": "Remote-friendly",
+        "collaboration": "Collaboration",
+        "worldwide": "Disponible mondialement"
+      },
+      "visualLabel": "Coordonnées",
+      "status": "Disponible",
+      "emailLabel": "E-mail",
+      "locationLabel": "Localisation",
+      "responseLabel": "Réponse",
+      "responseTime": "Sous 24–48 h",
+      "hint": "Partagez votre contexte, vos objectifs et votre calendrier — je reviens vers vous avec une réponse claire."
+    },
+    "form": {
+      "label": "Formulaire",
+      "title": "Envoyez un message",
+      "subtitle": "Décrivez votre projet, votre besoin ou votre idée — je vous réponds rapidement."
+    },
+    "name": "Nom complet",
+    "email": "Adresse e-mail",
+    "message": "Votre message",
+    "send": "Envoyer",
+    "sending": "Envoi...",
+    "success": "Message envoyé avec succès !",
+    "location": "Basé à Cotonou, Bénin — disponible mondialement"
+  },
+  "footer": {
+    "tagline": "Créer des produits intelligents du Bénin vers le monde.",
+    "rights": "Tous droits réservés.",
+    "portfolio": "Portfolio",
+    "expertise": "Expertise",
+    "connect": "Contact"
+  },
+  "common": {
+    "readMore": "Lire la suite",
+    "back": "Retour",
+    "loading": "Chargement...",
+    "notFound": "Page introuvable",
+    "notFoundDesc": "La page que vous recherchez n'existe pas ou a été déplacée.",
+    "goHome": "Retour à l'accueil"
+  },
+  "projects": {
+    "title": "Projets",
+    "subtitle": "Une collection d'applications web, systèmes IA, APIs et produits data.",
+    "caseStudy": "Étude de cas",
+    "hero": {
+      "titleLine1": "Des produits",
+      "titleLine2": "qui créent de l'impact",
+      "subtitle": "Une collection d'applications web, systèmes IA, APIs et produits data — conçus pour l'échelle et la clarté.",
+      "tags": {
+        "web": "Web & SaaS",
+        "ai": "IA & agents",
+        "data": "Data & APIs"
+      },
+      "spectrumLabel": "Spectre des projets",
+      "count": "{count} projets",
+      "spectrumHint": "{count, plural, one {# projet dans cette catégorie} other {# projets dans cette catégorie}}",
+      "exploreCategory": "Explorer →"
+    },
+    "filterAll": "Tous",
+    "categories": {
+      "web": "Web Apps",
+      "ai": "IA",
+      "api": "APIs",
+      "dashboard": "Dashboards",
+      "saas": "SaaS",
+      "automation": "Automatisation"
+    }
+  },
+  "projectItems": {
+    "neural-commerce": {
+      "title": "Neural Commerce",
+      "description": "Moteur de recommandation e-commerce IA avec personnalisation temps réel et recherche sémantique."
+    },
+    "dataflow-pipeline": {
+      "title": "DataFlow Pipeline",
+      "description": "Pipeline analytique de bout en bout avec orchestration Airflow, transformations dbt et dashboards exécutifs."
+    },
+    "benin-pay-api": {
+      "title": "BeninPay API",
+      "description": "API de paiement sécurisée pour la fintech ouest-africaine avec transactions idempotentes et webhooks."
+    },
+    "insight-saas": {
+      "title": "Insight SaaS",
+      "description": "Plateforme analytique multi-tenant avec facturation, accès par rôles et rapports personnalisés."
+    },
+    "agent-orchestrator": {
+      "title": "Agent Orchestrator",
+      "description": "Système d'automatisation multi-agents coordonnant des workflows LLM avec observabilité et validation humaine."
+    },
+    "agri-dashboard": {
+      "title": "Agri Dashboard",
+      "description": "Tableau de bord agricole géospatial avec analytics cultures et outils de gestion coopérative."
+    }
+  },
+  "educationItems": [
+    {
+      "degree": "Master Professionnel en Business Intelligence",
+      "school": "ENEAM — Université d'Abomey-Calavi",
+      "period": "Fin 2026",
+      "description": "Formation en cours — obtention prévue fin 2026, avec un focus sur l'analytics, la data et l'aide à la décision.",
+      "status": "ongoing"
+    },
+    {
+      "degree": "Licence Professionnelle en Informatique de Gestion",
+      "school": "IUT — Université de Parakou",
+      "period": "2023",
+      "description": "Formation professionnalisante en informatique de gestion, avec un solide ancrage technique et métier.",
+      "status": "completed",
+      "highlight": "Mention Très Bien"
+    },
+    {
+      "degree": "Baccalauréat Scientifique — Série D",
+      "school": "Collège Brice SINSIN",
+      "period": "2020",
+      "description": "Baccalauréat scientifique série D, première étape d'un parcours orienté sciences et technologies.",
+      "status": "completed"
+    }
+  ],
+  "experienceItems": [
+    {
+      "role": "Développeur FullStack Senior",
+      "company": "TechVenture Africa",
+      "period": "2024 — Aujourd'hui",
+      "description": "Direction du développement de produits SaaS intégrant l'IA et mentorat des ingénieurs juniors sur les architectures React modernes."
+    },
+    {
+      "role": "Ingénieur IA",
+      "company": "InnovateLab",
+      "period": "2023 — 2024",
+      "description": "Création de systèmes d'automatisation LLM, pipelines RAG et outils IA internes pour clients entreprise."
+    },
+    {
+      "role": "Développeur FullStack",
+      "company": "Digital Bridge BJ",
+      "period": "2022 — 2023",
+      "description": "Livraison d'applications web, APIs REST et intégrations paiement pour startups et ONG béninoises."
+    }
+  ],
+  "skillGroups": [
+    {
+      "name": "Frontend",
+      "skills": ["JavaScript", "React", "React Js", "React Native", "Next.js", "Vite", "TypeScript", "Tailwind CSS", "Framer Motion"]
+    },
+    {
+      "name": "Backend",
+      "skills": ["Node.js", "Nest Js", "JavaScript", "Python", "Java", "Django", "FastAPI", "Symfony", "Spring Boot", "PostgreSQL", "MySQL", "MongoDB", "Redis", "Postman"]
+    },
+    {
+      "name": "IA & ML",
+      "skills": ["OpenAI API", "OpenRouter", "Ollama", "LangChain", "RAG", "TensorFlow", "Vector DBs"]
+    },
+    {
+      "name": "Data Engineering",
+      "skills": ["Apache Airflow", "dbt", "BigQuery", "Talend EBS DI", "SQL Server", "ETL/ELT", "Modélisation"]
+    },
+    {
+      "name": "DevOps",
+      "skills": ["Docker", "CI/CD", "Vercel", "Monitoring"]
+    },
+    {
+      "name": "Outils et Autres",
+      "skills": ["Git / GitHub", "Trello", "Render", "Hostinger", "Contabo"]
+    }
+  ],
+  "serviceDetails": {
+    "fullstack": {
+      "title": "Développement FullStack",
+      "summary": "Applications web de bout en bout avec UX premium, architecture évolutive et code production-ready.",
+      "tagline": "Du prototype au produit scalable, avec une expérience soignée à chaque étape.",
+      "overview": "Je conçois et développe des applications web complètes — interfaces modernes, logique métier robuste et déploiements fiables. Mon approche allie rigueur technique et sens du détail produit pour livrer des expériences digitales premium, pensées pour évoluer avec votre activité.",
+      "tags": ["React", "Next.js", "UX premium", "Production-ready"],
+      "deliverables": [
+        "Interfaces responsives, accessibles et animées avec soin",
+        "Architecture modulaire, maintenable et prête à scaler",
+        "Intégration API, authentification et gestion des données",
+        "Optimisation performance, SEO et bonnes pratiques de déploiement",
+        "Documentation technique et passation claire à votre équipe"
+      ],
+      "approach": [
+        "Comprendre vos utilisateurs, vos contraintes métier et vos objectifs produit",
+        "Définir une architecture claire et un design system cohérent",
+        "Développer par itérations courtes avec des livrables testables",
+        "Tester, optimiser et déployer en conditions proches de la production"
+      ],
+      "stack": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL", "Vercel"],
+      "idealFor": [
+        "Startups qui veulent lancer un MVP premium rapidement",
+        "Entreprises qui modernisent une application existante",
+        "Équipes qui cherchent un renfort full-stack fiable",
+        "Produits SaaS en phase de croissance"
+      ]
+    },
+    "ai-integration": {
+      "title": "Intégration IA",
+      "summary": "Fonctionnalités LLM, systèmes d'agents, pipelines RAG et automatisation intelligente pour votre produit.",
+      "tagline": "Des fonctionnalités IA utiles, fiables et intégrées naturellement à votre produit.",
+      "overview": "J'intègre l'intelligence artificielle là où elle crée une vraie valeur — pas pour le buzz, mais pour automatiser, accélérer et enrichir l'expérience utilisateur. De l'assistant conversationnel au pipeline RAG, je conçois des systèmes IA pragmatiques, observables et adaptés à votre contexte métier.",
+      "tags": ["LLM", "RAG", "Agents IA", "Automatisation"],
+      "deliverables": [
+        "Intégrations OpenAI, OpenRouter ou modèles locaux via Ollama",
+        "Pipelines RAG avec recherche sémantique et bases vectorielles",
+        "Agents et workflows d'automatisation intelligente",
+        "Interfaces utilisateur pour interagir avec les capacités IA",
+        "Monitoring, garde-fous et gestion des coûts API"
+      ],
+      "approach": [
+        "Identifier les cas d'usage IA à fort impact pour votre produit",
+        "Prototyper rapidement pour valider la pertinence et la qualité des réponses",
+        "Construire une architecture modulaire, testable et évolutive",
+        "Itérer avec des retours réels avant un déploiement en production"
+      ],
+      "stack": ["Python", "LangChain", "OpenAI API", "OpenRouter", "Ollama", "FastAPI", "Vector DBs"],
+      "idealFor": [
+        "Produits qui veulent ajouter un copilote ou un assistant intelligent",
+        "Équipes qui automatisent des tâches répétitives avec l'IA",
+        "Plateformes qui exploitent leurs données via la recherche sémantique",
+        "Startups qui expérimentent l'IA sans sur-ingénierie"
+      ]
+    },
+    "api-backend": {
+      "title": "API & Backend",
+      "summary": "APIs REST/GraphQL robustes, microservices, authentification et intégrations tierces.",
+      "tagline": "Des fondations backend solides pour des produits fiables et bien structurés.",
+      "overview": "Je construis des backends pensés pour la durabilité — APIs claires, sécurisées et performantes. Que ce soit pour un nouveau produit ou une refonte, je mets en place des architectures backend qui facilitent l'intégration, la maintenance et la montée en charge.",
+      "tags": ["REST", "GraphQL", "Microservices", "Sécurité"],
+      "deliverables": [
+        "Conception et développement d'APIs REST ou GraphQL documentées",
+        "Authentification, autorisation et gestion des sessions",
+        "Modélisation de bases de données et migrations",
+        "Intégrations paiement, webhooks et services tiers",
+        "Tests, logging et stratégie de déploiement"
+      ],
+      "approach": [
+        "Analyser les flux de données et les contraintes de sécurité",
+        "Modéliser le domaine et définir des contrats d'API explicites",
+        "Implémenter avec des patterns éprouvés et une couverture de tests",
+        "Documenter, déployer et accompagner l'intégration côté frontend"
+      ],
+      "stack": ["Node.js", "Nest Js", "Python", "Django", "FastAPI", "PostgreSQL", "Redis", "Docker"],
+      "idealFor": [
+        "Applications qui ont besoin d'une API fiable et bien documentée",
+        "Projets fintech ou SaaS avec des exigences de sécurité",
+        "Équipes frontend qui cherchent un backend robuste",
+        "Refonte ou migration de systèmes legacy"
+      ]
+    },
+    "data-engineering": {
+      "title": "Data Engineering",
+      "summary": "Pipelines ETL, entrepôts de données, infrastructure analytique et développement de dashboards.",
+      "tagline": "Transformer vos données brutes en insights actionnables et fiables.",
+      "overview": "Je conçois des pipelines data fiables qui connectent vos sources de données à des décisions éclairées. De l'extraction à la visualisation, je m'appuie sur des outils modernes et des pratiques éprouvées pour structurer, nettoyer et rendre vos données exploitables.",
+      "tags": ["ETL/ELT", "Pipelines", "Analytics", "Dashboards"],
+      "deliverables": [
+        "Pipelines ETL/ELT automatisés et monitorés",
+        "Modélisation et structuration d'entrepôts de données",
+        "Intégrations Talend, Airflow, dbt et SQL Server",
+        "Dashboards analytiques et reporting exécutif",
+        "Documentation des flux et gouvernance des données"
+      ],
+      "approach": [
+        "Cartographier vos sources de données et vos besoins analytiques",
+        "Concevoir une architecture data adaptée à votre volume et vos contraintes",
+        "Implémenter les pipelines avec validation et reprise sur erreur",
+        "Livrer des dashboards clairs et former les équipes à les utiliser"
+      ],
+      "stack": ["Talend EBS DI", "Apache Airflow", "dbt", "SQL Server", "PostgreSQL", "BigQuery", "Python"],
+      "idealFor": [
+        "Entreprises qui centralisent des données dispersées",
+        "Équipes produit qui ont besoin de métriques fiables",
+        "Organisations en transition vers une culture data-driven",
+        "Projets de migration ou modernisation de pipelines existants"
+      ]
+    }
+  },
+  "testimonialsItems": [
+    {
+      "quote": "Augustin FACHEHOUN a livré un produit IA qui a dépassé nos attentes — rapide, élégant et prêt pour la production dès le premier jour.",
+      "author": "Sarah M.",
+      "role": "CTO, TechVenture Africa"
+    },
+    {
+      "quote": "Sa capacité à allier polish frontend et rigueur backend est rare. Un vrai artisan full-stack.",
+      "author": "Jean-Pierre A.",
+      "role": "Fondateur, InnovateLab"
+    },
+    {
+      "quote": "Du concept au déploiement en quelques semaines. Le pipeline data qu'il a construit a transformé nos décisions.",
+      "author": "Amina K.",
+      "role": "Head of Product, DataFlow"
+    }
+  ],
+  "journeyItems": [
+    {
+      "phase": "01",
+      "title": "Fondation FullStack",
+      "description": "3+ ans à construire des web apps, APIs et plateformes SaaS avec les écosystèmes JavaScript modernes."
+    },
+    {
+      "phase": "02",
+      "title": "Ingénierie IA",
+      "description": "Conception de systèmes intelligents — intégrations LLM, orchestration d'agents et fonctionnalités ML."
+    },
+    {
+      "phase": "03",
+      "title": "Data Engineering",
+      "description": "Construction de pipelines data robustes, entrepôts et infrastructure analytique pour produits data-driven."
+    }
+  ]
+}

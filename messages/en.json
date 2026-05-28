@@ -1,0 +1,501 @@
+{
+  "meta": {
+    "title": "Augustin FACHEHOUN — FullStack & AI Developer",
+    "description": "Beninese FullStack & AI Developer building scalable web apps and intelligent systems. Transitioning into Data Engineering."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "experience": "Experience",
+    "services": "Services",
+    "journey": "AI & Data",
+    "blog": "Blog",
+    "contact": "Contact",
+    "resume": "Resume",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "hero": {
+    "badge": "Benin · FullStack · AI · Data",
+    "title": "Engineering intelligent",
+    "titleAccent": "digital experiences",
+    "subtitle": "I design and build scalable web applications, AI-powered systems, and data infrastructures — with 3+ years crafting products from West Africa to the world.",
+    "ctaPrimary": "View Projects",
+    "ctaSecondary": "Let's Connect",
+    "scroll": "Scroll to explore",
+    "visual": {
+      "label": "Live workspace",
+      "status": "Available",
+      "terminal": {
+        "line1": "build() → scalable web apps",
+        "line2": "deploy() → production AI systems",
+        "line3": "pipeline() → robust data infrastructure"
+      },
+      "stats": {
+        "years": { "value": "3+", "label": "Years" },
+        "projects": { "value": "40+", "label": "Projects" },
+        "stack": { "value": "12", "label": "Stack" },
+        "focus": { "value": "AI", "label": "Focus" }
+      },
+      "tags": ["FullStack", "AI Engineering", "Data Engineering"]
+    }
+  },
+  "techStack": {
+    "label": "Tech Stack",
+    "title": "Tools I use"
+  },
+  "featured": {
+    "label": "Selected Work",
+    "title": "Featured projects",
+    "subtitle": "From AI agents to data pipelines — products built for impact, scale, and clarity.",
+    "viewAll": "View all projects",
+    "viewProject": "View case study"
+  },
+  "about": {
+    "label": "About",
+    "title": "Building at the intersection of code, AI & data",
+    "hero": {
+      "titleLine1": "Building at the",
+      "titleLine2": "intersection of code, AI & data",
+      "subtitle": "Beninese FullStack Developer & AI Engineer — crafting intelligent products while growing into Data Engineering.",
+      "tags": {
+        "fullstack": "FullStack",
+        "ai": "AI Engineering",
+        "data": "Data Engineering"
+      },
+      "terminal": {
+        "line1": "scalable web apps",
+        "line2": "production AI systems",
+        "line3": "robust data pipelines"
+      }
+    },
+    "p1": "I'm a Beninese FullStack Developer and AI Engineer with 3+ years of experience shipping production-grade applications for startups and enterprises.",
+    "p2": "My work spans intelligent automation, API platforms, SaaS products, and analytics dashboards — always with a focus on performance, accessibility, and elegant UX.",
+    "p3": "I'm actively transitioning into Data Engineering, deepening my expertise in pipelines, warehousing, and ML infrastructure.",
+    "cta": "Learn more about me",
+    "resume": {
+      "label": "Resume",
+      "title": "Download my resume",
+      "subtitle": "Experience, skills, and highlights — ready to share with your team.",
+      "hint": "PDF document tailored for hiring and professional opportunities.",
+      "download": "Download PDF"
+    }
+  },
+  "education": {
+    "label": "Education",
+    "title": "Academic journey",
+    "subtitle": "A scientific and professional foundation supporting software engineering and data work.",
+    "upcoming": "In progress"
+  },
+  "experience": {
+    "label": "Experience",
+    "title": "Professional journey",
+    "subtitle": "A timeline of roles, impact, and continuous growth across full-stack, AI, and data.",
+    "present": "Present",
+    "hero": {
+      "titleLine1": "A journey",
+      "titleLine2": "built on impact",
+      "subtitle": "A timeline of roles, impact, and continuous growth across full-stack, AI, and data.",
+      "tags": {
+        "lead": "Tech lead",
+        "fullstack": "FullStack",
+        "ai": "AI Engineering"
+      },
+      "roleLabel": "Role evolution",
+      "roleCaption": "From product development to AI engineering and technical leadership.",
+      "roles": [
+        "FullStack Developer",
+        "AI Engineer",
+        "Tech Lead",
+        "Product Architect"
+      ]
+    }
+  },
+  "skills": {
+    "label": "Skills",
+    "title": "Technical expertise",
+    "subtitle": "A multidisciplinary toolkit for building modern digital products."
+  },
+  "journey": {
+    "label": "AI & Data Engineering",
+    "title": "From models to pipelines",
+    "subtitle": "Bridging intelligent applications with robust data infrastructure.",
+    "cta": "Explore my journey"
+  },
+  "services": {
+    "label": "Services",
+    "title": "How I can help",
+    "subtitle": "Partnering with teams to ship premium digital products.",
+    "cardsIntro": "Four areas of expertise to design, automate, and scale your digital products.",
+    "learnMore": "Learn more",
+    "detail": {
+      "back": "Back to services",
+      "serviceLabel": "Service",
+      "deliverables": "What I deliver",
+      "approach": "My approach",
+      "stack": "Technologies & tools",
+      "idealFor": "Ideal for",
+      "ctaTitle": "Have a project in mind?",
+      "ctaSubtitle": "Let's discuss your goals and build a solution tailored to your context.",
+      "ctaButton": "Start a conversation"
+    },
+    "hero": {
+      "titleLine1": "How I",
+      "titleLine2": "can help",
+      "subtitle": "Partnering with teams to ship premium digital products — from vision to production.",
+      "tags": {
+        "product": "Product",
+        "ai": "AI & automation",
+        "data": "Data & analytics"
+      },
+      "processLabel": "Delivery method",
+      "steps": {
+        "discover": {
+          "title": "Discover",
+          "description": "Needs, vision & scope"
+        },
+        "design": {
+          "title": "Design",
+          "description": "UX, architecture & specs"
+        },
+        "build": {
+          "title": "Build",
+          "description": "Code, AI & integrations"
+        },
+        "launch": {
+          "title": "Launch",
+          "description": "Deploy & iterate"
+        }
+      }
+    }
+  },
+  "testimonials": {
+    "label": "Testimonials",
+    "title": "Trusted by teams",
+    "subtitle": "What collaborators say about working together."
+  },
+  "cta": {
+    "title": "Ready to build something exceptional?",
+    "subtitle": "Whether it's an AI product, a SaaS platform, or a data pipeline — let's create impact together.",
+    "button": "Start a conversation"
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Let's talk",
+    "subtitle": "Have a project in mind? I'd love to hear about it.",
+    "hero": {
+      "titleLine1": "Let's build",
+      "titleLine2": "together",
+      "subtitle": "A project, an idea, or a collaboration — I'm available to talk and explore concrete next steps.",
+      "tags": {
+        "remote": "Remote-friendly",
+        "collaboration": "Collaboration",
+        "worldwide": "Available worldwide"
+      },
+      "visualLabel": "Contact details",
+      "status": "Available",
+      "emailLabel": "Email",
+      "locationLabel": "Location",
+      "responseLabel": "Response",
+      "responseTime": "Within 24–48h",
+      "hint": "Share your context, goals, and timeline — I'll get back to you with a clear reply."
+    },
+    "form": {
+      "label": "Form",
+      "title": "Send a message",
+      "subtitle": "Tell me about your project, need, or idea — I'll get back to you quickly."
+    },
+    "name": "Full name",
+    "email": "Email address",
+    "message": "Your message",
+    "send": "Send message",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "location": "Based in Cotonou, Benin — available globally"
+  },
+  "footer": {
+    "tagline": "Crafting intelligent products from Benin to the world.",
+    "rights": "All rights reserved.",
+    "portfolio": "Portfolio",
+    "expertise": "Expertise",
+    "connect": "Connect"
+  },
+  "common": {
+    "readMore": "Read more",
+    "back": "Back",
+    "loading": "Loading...",
+    "notFound": "Page not found",
+    "notFoundDesc": "The page you're looking for doesn't exist or has been moved.",
+    "goHome": "Return home"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "A curated collection of web apps, AI systems, APIs, and data products.",
+    "caseStudy": "Case study",
+    "hero": {
+      "titleLine1": "Products that",
+      "titleLine2": "drive impact",
+      "subtitle": "A curated collection of web apps, AI systems, APIs, and data products — built for scale and clarity.",
+      "tags": {
+        "web": "Web & SaaS",
+        "ai": "AI & agents",
+        "data": "Data & APIs"
+      },
+      "spectrumLabel": "Project spectrum",
+      "count": "{count} projects",
+      "spectrumHint": "{count, plural, one {# project in this category} other {# projects in this category}}",
+      "exploreCategory": "Explore →"
+    },
+    "filterAll": "All",
+    "categories": {
+      "web": "Web Apps",
+      "ai": "AI",
+      "api": "APIs",
+      "dashboard": "Dashboards",
+      "saas": "SaaS",
+      "automation": "Automation"
+    }
+  },
+  "projectItems": {
+    "neural-commerce": {
+      "title": "Neural Commerce",
+      "description": "AI-powered e-commerce recommendation engine with real-time personalization and semantic search."
+    },
+    "dataflow-pipeline": {
+      "title": "DataFlow Pipeline",
+      "description": "End-to-end analytics pipeline with Airflow orchestration, dbt transformations, and executive dashboards."
+    },
+    "benin-pay-api": {
+      "title": "BeninPay API",
+      "description": "Secure payment gateway API for West African fintech with idempotent transactions and webhook system."
+    },
+    "insight-saas": {
+      "title": "Insight SaaS",
+      "description": "Multi-tenant analytics platform with subscription billing, role-based access, and custom reporting."
+    },
+    "agent-orchestrator": {
+      "title": "Agent Orchestrator",
+      "description": "Multi-agent automation system coordinating LLM workflows with observability and human-in-the-loop."
+    },
+    "agri-dashboard": {
+      "title": "Agri Dashboard",
+      "description": "Geospatial agriculture monitoring dashboard with crop analytics and cooperative management tools."
+    }
+  },
+  "educationItems": [
+    {
+      "degree": "Professional Master's in Business Intelligence",
+      "school": "ENEAM — University of Abomey-Calavi",
+      "period": "End of 2026",
+      "description": "Currently in progress — expected completion by the end of 2026, focused on analytics, data, and decision support.",
+      "status": "ongoing"
+    },
+    {
+      "degree": "Professional Bachelor's in Management Information Systems",
+      "school": "IUT — University of Parakou",
+      "period": "2023",
+      "description": "Professional program in management IT, combining technical skills with business understanding.",
+      "status": "completed",
+      "highlight": "Graduated with Highest Honors"
+    },
+    {
+      "degree": "Scientific Baccalaureate — Series D",
+      "school": "Collège Brice SINSIN",
+      "period": "2020",
+      "description": "Scientific baccalaureate, series D — the foundation of a path oriented toward science and technology.",
+      "status": "completed"
+    }
+  ],
+  "experienceItems": [
+    {
+      "role": "Senior FullStack Developer",
+      "company": "TechVenture Africa",
+      "period": "2024 — Present",
+      "description": "Leading development of AI-integrated SaaS products and mentoring junior engineers on modern React architectures."
+    },
+    {
+      "role": "AI Engineer",
+      "company": "InnovateLab",
+      "period": "2023 — 2024",
+      "description": "Built LLM-powered automation systems, RAG pipelines, and internal AI tooling for enterprise clients."
+    },
+    {
+      "role": "FullStack Developer",
+      "company": "Digital Bridge BJ",
+      "period": "2022 — 2023",
+      "description": "Delivered web applications, REST APIs, and payment integrations for Beninese startups and NGOs."
+    }
+  ],
+  "skillGroups": [
+    {
+      "name": "Frontend",
+      "skills": ["JavaScript", "React", "React Js", "React Native", "Next.js", "Vite", "TypeScript", "Tailwind CSS", "Framer Motion"]
+    },
+    {
+      "name": "Backend",
+      "skills": ["Node.js", "Nest Js", "JavaScript", "Python", "Java", "Django", "FastAPI", "Symfony", "Spring Boot", "PostgreSQL", "MySQL", "MongoDB", "Redis", "Postman"]
+    },
+    {
+      "name": "AI & ML",
+      "skills": ["OpenAI API", "OpenRouter", "Ollama", "LangChain", "RAG", "TensorFlow", "Vector DBs"]
+    },
+    {
+      "name": "Data Engineering",
+      "skills": ["Apache Airflow", "dbt", "BigQuery", "Talend EBS DI", "SQL Server", "ETL/ELT", "Data Modeling"]
+    },
+    {
+      "name": "DevOps",
+      "skills": ["Docker", "CI/CD", "Vercel", "Monitoring"]
+    },
+    {
+      "name": "Tools & Others",
+      "skills": ["Git / GitHub", "Trello", "Render", "Hostinger", "Contabo"]
+    }
+  ],
+  "serviceDetails": {
+    "fullstack": {
+      "title": "FullStack Development",
+      "summary": "End-to-end web applications with premium UX, scalable architecture, and production-ready code.",
+      "tagline": "From prototype to scalable product, with a polished experience at every step.",
+      "overview": "I design and build complete web applications — modern interfaces, robust business logic, and reliable deployments. My approach combines technical rigor with product sensibility to deliver premium digital experiences built to grow with your business.",
+      "tags": ["React", "Next.js", "Premium UX", "Production-ready"],
+      "deliverables": [
+        "Responsive, accessible, and carefully animated interfaces",
+        "Modular, maintainable architecture ready to scale",
+        "API integration, authentication, and data management",
+        "Performance, SEO, and deployment best practices",
+        "Technical documentation and clear handoff to your team"
+      ],
+      "approach": [
+        "Understand your users, business constraints, and product goals",
+        "Define a clear architecture and consistent design system",
+        "Develop in short iterations with testable deliverables",
+        "Test, optimize, and deploy in production-like conditions"
+      ],
+      "stack": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL", "Vercel"],
+      "idealFor": [
+        "Startups launching a premium MVP quickly",
+        "Companies modernizing an existing application",
+        "Teams looking for a reliable full-stack partner",
+        "SaaS products in a growth phase"
+      ]
+    },
+    "ai-integration": {
+      "title": "AI Integration",
+      "summary": "LLM-powered features, agent systems, RAG pipelines, and intelligent automation for your product.",
+      "tagline": "Useful, reliable AI features integrated naturally into your product.",
+      "overview": "I integrate artificial intelligence where it creates real value — not for hype, but to automate, accelerate, and enrich the user experience. From conversational assistants to RAG pipelines, I build pragmatic, observable AI systems tailored to your business context.",
+      "tags": ["LLM", "RAG", "AI Agents", "Automation"],
+      "deliverables": [
+        "OpenAI, OpenRouter, or local model integrations via Ollama",
+        "RAG pipelines with semantic search and vector databases",
+        "Intelligent automation agents and workflows",
+        "User interfaces to interact with AI capabilities",
+        "Monitoring, guardrails, and API cost management"
+      ],
+      "approach": [
+        "Identify high-impact AI use cases for your product",
+        "Prototype quickly to validate relevance and response quality",
+        "Build a modular, testable, and evolvable architecture",
+        "Iterate with real feedback before production deployment"
+      ],
+      "stack": ["Python", "LangChain", "OpenAI API", "OpenRouter", "Ollama", "FastAPI", "Vector DBs"],
+      "idealFor": [
+        "Products adding a copilot or intelligent assistant",
+        "Teams automating repetitive tasks with AI",
+        "Platforms leveraging data through semantic search",
+        "Startups experimenting with AI without over-engineering"
+      ]
+    },
+    "api-backend": {
+      "title": "API & Backend",
+      "summary": "Robust REST/GraphQL APIs, microservices, authentication, and third-party integrations.",
+      "tagline": "Solid backend foundations for reliable, well-structured products.",
+      "overview": "I build backends designed for longevity — clear, secure, and performant APIs. Whether for a new product or a rebuild, I set up backend architectures that simplify integration, maintenance, and scaling.",
+      "tags": ["REST", "GraphQL", "Microservices", "Security"],
+      "deliverables": [
+        "Designed and documented REST or GraphQL APIs",
+        "Authentication, authorization, and session management",
+        "Database modeling and migrations",
+        "Payment, webhook, and third-party integrations",
+        "Testing, logging, and deployment strategy"
+      ],
+      "approach": [
+        "Analyze data flows and security constraints",
+        "Model the domain and define explicit API contracts",
+        "Implement with proven patterns and test coverage",
+        "Document, deploy, and support frontend integration"
+      ],
+      "stack": ["Node.js", "Nest Js", "Python", "Django", "FastAPI", "PostgreSQL", "Redis", "Docker"],
+      "idealFor": [
+        "Applications needing a reliable, well-documented API",
+        "Fintech or SaaS projects with security requirements",
+        "Frontend teams looking for a robust backend",
+        "Legacy system refactors or migrations"
+      ]
+    },
+    "data-engineering": {
+      "title": "Data Engineering",
+      "summary": "ETL pipelines, data warehousing, analytics infrastructure, and dashboard development.",
+      "tagline": "Turn raw data into reliable, actionable insights.",
+      "overview": "I design reliable data pipelines that connect your data sources to informed decisions. From extraction to visualization, I use modern tools and proven practices to structure, clean, and make your data usable.",
+      "tags": ["ETL/ELT", "Pipelines", "Analytics", "Dashboards"],
+      "deliverables": [
+        "Automated and monitored ETL/ELT pipelines",
+        "Data warehouse modeling and structuring",
+        "Talend, Airflow, dbt, and SQL Server integrations",
+        "Analytics dashboards and executive reporting",
+        "Pipeline documentation and data governance"
+      ],
+      "approach": [
+        "Map your data sources and analytics needs",
+        "Design a data architecture suited to your volume and constraints",
+        "Implement pipelines with validation and error recovery",
+        "Deliver clear dashboards and train teams to use them"
+      ],
+      "stack": ["Talend EBS DI", "Apache Airflow", "dbt", "SQL Server", "PostgreSQL", "BigQuery", "Python"],
+      "idealFor": [
+        "Companies centralizing scattered data",
+        "Product teams needing reliable metrics",
+        "Organizations transitioning to a data-driven culture",
+        "Pipeline migration or modernization projects"
+      ]
+    }
+  },
+  "testimonialsItems": [
+    {
+      "quote": "Augustin FACHEHOUN delivered an AI product that exceeded our expectations — fast, elegant, and production-ready from day one.",
+      "author": "Sarah M.",
+      "role": "CTO, TechVenture Africa"
+    },
+    {
+      "quote": "His ability to bridge frontend polish with backend rigor is rare. A true full-stack craftsman.",
+      "author": "Jean-Pierre A.",
+      "role": "Founder, InnovateLab"
+    },
+    {
+      "quote": "From concept to deployment in weeks. The data pipeline he built transformed how we make decisions.",
+      "author": "Amina K.",
+      "role": "Head of Product, DataFlow"
+    }
+  ],
+  "journeyItems": [
+    {
+      "phase": "01",
+      "title": "FullStack Foundation",
+      "description": "3+ years building scalable web apps, APIs, and SaaS platforms with modern JavaScript ecosystems."
+    },
+    {
+      "phase": "02",
+      "title": "AI Engineering",
+      "description": "Designing intelligent systems — LLM integrations, agent orchestration, and ML-powered features."
+    },
+    {
+      "phase": "03",
+      "title": "Data Engineering",
+      "description": "Building robust data pipelines, warehouses, and analytics infrastructure for data-driven products."
+    }
+  ]
+}

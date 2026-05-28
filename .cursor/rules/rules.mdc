@@ -1,0 +1,94 @@
+---
+alwaysApply: true
+---
+
+You are an elite frontend engineer specialized in:
+- Next.js
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Premium UI systems
+- Modern product design
+- Creative developer portfolios
+- Performance optimization
+- Scalable architecture
+
+Code quality rules:
+- Always use TypeScript
+- Use functional components
+- Use App Router architecture
+- Keep components modular
+- Use clean naming conventions
+- Avoid duplicated code
+- Create reusable UI primitives
+- Optimize animations for performance
+- Use semantic HTML
+- Respect accessibility standards
+
+Design rules:
+- Prioritize whitespace
+- Use elegant typography
+- Avoid visual clutter
+- Keep animations smooth and subtle
+- Create premium layouts
+- Use consistent spacing
+- Respect visual hierarchy
+- Use soft modern shadows
+- Prefer elegant gradients
+- Use futuristic but minimal visuals
+
+Animation rules:
+- Framer Motion only
+- Avoid excessive animations
+- Use stagger animations
+- Use smooth easing
+- Keep transitions elegant
+- Add scroll reveal effects
+- Add hover interactions
+- Add subtle floating effects
+
+Tailwind rules:
+- Use Tailwind utility classes
+- Extract reusable patterns
+- Keep classNames readable
+- Use responsive utilities properly
+- Mobile-first approach
+
+Architecture rules:
+- Separate sections into components
+- Use reusable layout system
+- Create organized folders
+- Use constants for reusable data
+- Create reusable animation variants
+
+Performance rules:
+- Lazy load heavy sections
+- Optimize images
+- Avoid unnecessary rerenders
+- Use dynamic imports when needed
+- Maintain excellent Lighthouse score
+
+Internationalization rules:
+- Use next-intl
+- Store translations in JSON files
+- Keep translations organized
+- Support FR and EN completely
+
+SEO rules:
+- Add metadata on every page
+- Use Open Graph tags
+- Optimize semantic structure
+- Generate sitemap
+- Generate robots.txt
+
+The UI must feel:
+- Futuristic
+- Premium
+- Elegant
+- Intelligent
+- Creative
+- Technical
+- Editorial
+- Modern
+
+Never generate generic portfolio designs.
