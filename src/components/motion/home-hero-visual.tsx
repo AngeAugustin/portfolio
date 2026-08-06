@@ -1,74 +1,125 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
-import { useTranslations } from "next-intl";
-import { HeroVisualShell } from "@/components/motion/hero-visual-shell";
-import { TerminalCard } from "@/components/motion/terminal-card";
+import { useTranslations } from "@/i18n/context";
+import { cn } from "@/lib/utils";
 
-const TERMINAL_LINES = ["line1", "line2", "line3"] as const;
-const STAT_KEYS = ["years", "projects", "stack", "focus"] as const;
+const CONNECTION_KEYS = ["fullstack", "ai", "data", "local"] as const;
 
 export function HomeHeroVisual({ className }: { className?: string }) {
   const t = useTranslations("hero.visual");
-  const terminalLines = TERMINAL_LINES.map((key) => t(`terminal.${key}`));
 
   return (
-    <HeroVisualShell className={className}>
-      <div className="relative w-full">
-        <div className="mb-4 flex items-center justify-between gap-3">
-          <span className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-glow">
-            <Sparkles className="size-3" strokeWidth={1.5} />
-            {t("label")}
-          </span>
-          <span className="flex shrink-0 items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-2 py-0.5 text-[10px] text-emerald-400/90">
-            <motion.span
-              className="size-1.5 rounded-full bg-emerald-400"
-              animate={{ opacity: [1, 0.4, 1], scale: [1, 1.2, 1] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            />
-            {t("status")}
-          </span>
+    <motion.div
+      className={cn("relative mx-auto w-full", className)}
+      initial={{ opacity: 0, y: 28 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.35, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+    >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -inset-x-10 -bottom-12 top-1/4 rounded-[50%] bg-glow/12 blur-3xl"
+      />
+
+      <div className="relative overflow-hidden rounded-2xl border border-border/80 bg-card shadow-[0_28px_90px_-32px_rgba(16,44,39,0.4)] sm:rounded-3xl">
+        <div className="grid grid-cols-[132px_1fr] sm:grid-cols-[180px_1fr]">
+          <aside className="border-r border-border/70 bg-muted/35 p-3 sm:p-5">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+              {t("sidebarLabel")}
+            </p>
+            <ul className="mt-3 space-y-1 sm:mt-4 sm:space-y-1.5">
+              {CONNECTION_KEYS.map((key, index) => {
+                const active = key === "fullstack";
+                return (
+                  <motion.li
+                    key={key}
+                    initial={{ opacity: 0, x: -8 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.5 + index * 0.07, duration: 0.4 }}
+                    className={cn(
+                      "rounded-lg px-2 py-1.5 text-[11px] sm:rounded-xl sm:px-3 sm:py-2 sm:text-sm",
+                      active
+                        ? "bg-background text-foreground shadow-sm ring-1 ring-border/70"
+                        : "text-muted-foreground"
+                    )}
+                  >
+                    <span className="flex items-center gap-1.5 sm:gap-2">
+                      <span
+                        className={cn(
+                          "size-1.5 shrink-0 rounded-full",
+                          active ? "bg-glow" : "bg-border"
+                        )}
+                      />
+                      <span className="truncate">{t(`connections.${key}`)}</span>
+                    </span>
+                  </motion.li>
+                );
+              })}
+            </ul>
+          </aside>
+
+          <div className="min-w-0 p-3.5 sm:p-6 md:p-7">
+            <div className="flex flex-wrap items-start justify-between gap-2 sm:gap-3">
+              <div className="min-w-0">
+                <p className="font-display text-base font-semibold tracking-tight sm:text-lg md:text-xl">
+                  {t("activeTitle")}
+                </p>
+                <p className="mt-0.5 truncate text-xs text-muted-foreground sm:text-sm">
+                  {t("activeMeta")}
+                </p>
+              </div>
+              <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/8 px-2 py-0.5 text-[10px] font-medium text-emerald-700 sm:px-2.5 sm:py-1 sm:text-[11px] dark:text-emerald-400">
+                <motion.span
+                  className="size-1.5 rounded-full bg-emerald-500"
+                  animate={{ opacity: [1, 0.35, 1] }}
+                  transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+                />
+                {t("status")}
+              </span>
+            </div>
+
+            <div className="mt-4 rounded-xl border border-border/70 bg-background/80 p-3 sm:mt-5 sm:rounded-2xl sm:p-5">
+              <div className="flex items-center justify-between gap-3 text-[10px] text-muted-foreground sm:text-xs">
+                <span>{t("progressLabel")}</span>
+                <span className="font-medium text-foreground">{t("progressValue")}</span>
+              </div>
+              <div className="mt-2.5 h-1.5 overflow-hidden rounded-full bg-muted sm:mt-3">
+                <motion.div
+                  className="h-full rounded-full bg-glow"
+                  initial={{ width: "0%" }}
+                  animate={{ width: "72%" }}
+                  transition={{ delay: 0.7, duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+                />
+              </div>
+
+              <div className="mt-4 space-y-1.5 font-mono text-[10px] leading-relaxed text-muted-foreground sm:mt-5 sm:space-y-2 sm:text-xs">
+                {(["line1", "line2", "line3"] as const).map((key, i) => (
+                  <motion.p
+                    key={key}
+                    className="truncate"
+                    initial={{ opacity: 0, x: -6 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.85 + i * 0.12, duration: 0.4 }}
+                  >
+                    <span className="text-glow/80">{">"}</span> {t(`terminal.${key}`)}
+                    {i === 2 && (
+                      <motion.span
+                        className="ml-0.5 inline-block h-3 w-[2px] bg-glow align-middle"
+                        animate={{ opacity: [1, 0, 1] }}
+                        transition={{ duration: 1, repeat: Infinity }}
+                      />
+                    )}
+                  </motion.p>
+                ))}
+              </div>
+            </div>
+
+            <p className="mt-3 truncate text-[10px] text-muted-foreground sm:mt-4 sm:text-xs md:text-sm">
+              {t("caption")}
+            </p>
+          </div>
         </div>
-
-        <TerminalCard lines={terminalLines} />
-
-        <div className="mt-4 grid grid-cols-2 gap-2">
-          {STAT_KEYS.map((key, index) => (
-            <motion.div
-              key={key}
-              className="rounded-xl border border-border/60 bg-card/40 px-3 py-2.5 backdrop-blur-sm"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.65 + index * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              whileHover={{ y: -2, borderColor: "color-mix(in oklab, var(--glow) 25%, var(--border))" }}
-            >
-              <p className="font-display text-lg font-bold leading-none md:text-xl">
-                {t(`stats.${key}.value`)}
-              </p>
-              <p className="mt-1 text-[9px] uppercase tracking-wider text-muted-foreground md:text-[10px]">
-                {t(`stats.${key}.label`)}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-
-        <motion.div
-          className="mt-4 flex flex-wrap gap-1.5"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.95, duration: 0.5 }}
-        >
-          {(t.raw("tags") as string[]).map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full border border-glow/15 bg-glow/5 px-2.5 py-0.5 text-[10px] font-medium text-glow/90"
-            >
-              {tag}
-            </span>
-          ))}
-        </motion.div>
       </div>
-    </HeroVisualShell>
+    </motion.div>
   );
 }

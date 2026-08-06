@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/i18n/context";
 import { HeroVisualShell } from "@/components/motion/hero-visual-shell";
 
 const ROLE_CHANGE_MS = 2800;

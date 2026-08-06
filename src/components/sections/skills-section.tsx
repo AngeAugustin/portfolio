@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/i18n/context";
 import { SectionHeader } from "@/components/shared/section-header";
 import { StaggerGroup } from "@/components/motion/stagger-group";
 import { staggerItem } from "@/lib/animations";

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/i18n/context";
 import { SectionHeader } from "@/components/shared/section-header";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
 import { Link } from "@/i18n/navigation";
@@ -30,7 +30,7 @@ export function ExperienceSection({
       className={
         compact
           ? "scroll-mt-28 border-t border-border/60 pb-24 pt-16 md:pt-20"
-          : "section-padding scroll-mt-28"
+          : "section-padding scroll-mt-28 border-t border-border/60"
       }
     >
       <div className="editorial-container">
@@ -39,6 +39,7 @@ export function ExperienceSection({
             label={t("label")}
             title={t("title")}
             subtitle={t("subtitle")}
+            align="center"
           />
         )}
 

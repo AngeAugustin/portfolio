@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/i18n/context";
 import { ExperienceHeroVisual } from "@/components/motion/experience-hero-visual";
 import { SplitPageHero } from "@/components/shared/split-page-hero";
 

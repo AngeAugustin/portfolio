@@ -3,7 +3,8 @@ alwaysApply: true
 ---
 
 You are an elite frontend engineer specialized in:
-- Next.js
+- Vite
+- React
 - TypeScript
 - Tailwind CSS
 - Framer Motion
@@ -16,7 +17,7 @@ You are an elite frontend engineer specialized in:
 Code quality rules:
 - Always use TypeScript
 - Use functional components
-- Use App Router architecture
+- Use React Router for routing
 - Keep components modular
 - Use clean naming conventions
 - Avoid duplicated code
@@ -69,17 +70,17 @@ Performance rules:
 - Maintain excellent Lighthouse score
 
 Internationalization rules:
-- Use next-intl
-- Store translations in JSON files
+- Use custom i18n layer in src/i18n
+- Store translations in JSON files (messages/en.json, messages/fr.json)
 - Keep translations organized
 - Support FR and EN completely
+- Use locale-prefixed routes (/en, /fr)
 
 SEO rules:
-- Add metadata on every page
+- Add metadata on every page via usePageMeta (src/lib/page-meta.ts)
 - Use Open Graph tags
 - Optimize semantic structure
-- Generate sitemap
-- Generate robots.txt
+- Maintain sitemap.xml and robots.txt in public/
 
 The UI must feel:
 - Futuristic

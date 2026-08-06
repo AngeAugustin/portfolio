@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Code2, Layers, Rocket, Search } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/i18n/context";
 import { cn } from "@/lib/utils";
 import { HeroVisualShell } from "@/components/motion/hero-visual-shell";
 

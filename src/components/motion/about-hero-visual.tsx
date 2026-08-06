@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/i18n/context";
 import { HeroVisualShell } from "@/components/motion/hero-visual-shell";
 import { TerminalCard } from "@/components/motion/terminal-card";
 

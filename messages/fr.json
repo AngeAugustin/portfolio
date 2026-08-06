@@ -18,36 +18,46 @@
     "close": "Fermer"
   },
   "hero": {
-    "badge": "Bénin · FullStack · IA · Data",
+    "badge": "Ouvert aux collaborations · du Bénin vers le monde",
     "title": "Concevoir des expériences",
     "titleAccent": "digitales intelligentes",
-    "subtitle": "Je conçois et développe des applications web évolutives, des systèmes IA et des infrastructures data — avec plus de 3 ans d'expérience au service de produits d'Afrique de l'Ouest vers le monde.",
+    "subtitle": "Je conçois et développe des applications web évolutives, des systèmes IA et des infrastructures data — avec la clarté d'un studio produit et la rigueur de l'ingénierie.",
     "ctaPrimary": "Voir les projets",
-    "ctaSecondary": "Me contacter",
+    "ctaSecondary": "Voir comment je travaille",
     "scroll": "Faire défiler",
+    "trust": {
+      "available": "Disponible pour vos projets",
+      "stack": "FullStack · IA · Data",
+      "remote": "Remote mondial"
+    },
     "visual": {
-      "label": "Espace de travail",
-      "status": "Disponible",
+      "sidebarLabel": "Focus",
+      "connections": {
+        "fullstack": "fullstack",
+        "ai": "systèmes ia",
+        "data": "pipelines data",
+        "local": "local.studio"
+      },
+      "activeTitle": "fullstack",
+      "activeMeta": "Web · APIs · craft production",
+      "status": "En cours",
+      "progressLabel": "Livraison en cours",
+      "progressValue": "Shipping",
       "terminal": {
         "line1": "build() → apps web scalables",
         "line2": "deploy() → systèmes IA en production",
         "line3": "pipeline() → infrastructures data robustes"
       },
-      "stats": {
-        "years": { "value": "3+", "label": "Années" },
-        "projects": { "value": "40+", "label": "Projets" },
-        "stack": { "value": "12", "label": "Technos" },
-        "focus": { "value": "IA", "label": "Focus" }
-      },
-      "tags": ["FullStack", "Ingénierie IA", "Data Engineering"]
+      "caption": "~/Studio · TypeScript · Vite · systèmes intelligents"
     }
   },
   "techStack": {
     "label": "Stack Technique",
-    "title": "Outils que j'utilise"
+    "title": "Les outils avec lesquels je construis au quotidien"
   },
   "featured": {
     "label": "Travaux Sélectionnés",
+    "watermark": "Projets",
     "title": "Projets phares",
     "subtitle": "Des agents IA aux pipelines data — des produits conçus pour l'impact, l'échelle et la clarté.",
     "viewAll": "Voir tous les projets",
@@ -57,9 +67,22 @@
     "label": "À propos",
     "title": "À l'intersection du code, de l'IA et de la data",
     "hero": {
+      "back": "Retour à l'accueil",
+      "watermark": "About",
+      "title": "À l'intersection du code, de l'IA et de la data",
       "titleLine1": "À l'intersection du",
       "titleLine2": "code, de l'IA et de la data",
       "subtitle": "Développeur FullStack & Ingénieur IA béninois — je conçois des produits intelligents et j'évolue vers le Data Engineering.",
+      "ctaPrimary": "Me contacter",
+      "ctaSecondary": "Voir les projets",
+      "promiseLabel": "Promesse",
+      "promise": "« Des produits intelligents, du fullstack à la data — livrés avec exigence. »",
+      "forWhom": "Pour qui ?",
+      "audience": {
+        "startups": "Startups",
+        "product": "Équipes produit",
+        "enterprise": "Entreprises"
+      },
       "tags": {
         "fullstack": "FullStack",
         "ai": "Ingénierie IA",
@@ -91,6 +114,7 @@
   },
   "experience": {
     "label": "Expérience",
+    "watermark": "Path",
     "title": "Parcours professionnel",
     "subtitle": "Une chronologie de rôles, d'impact et de croissance continue en full-stack, IA et data.",
     "present": "Aujourd'hui",
@@ -130,21 +154,49 @@
     "subtitle": "Accompagner les équipes pour livrer des produits digitaux premium.",
     "cardsIntro": "Quatre domaines d'intervention pour concevoir, automatiser et faire évoluer vos produits digitaux.",
     "learnMore": "En savoir plus",
+    "viewAll": "Voir tous les services →",
     "detail": {
       "back": "Retour aux services",
+      "watermark": "Service",
       "serviceLabel": "Service",
+      "ctaPrimary": "Me contacter",
+      "ctaSecondary": "Voir tous les services",
       "deliverables": "Ce que je livre",
       "approach": "Mon approche",
       "stack": "Technologies & outils",
       "idealFor": "Idéal pour",
       "ctaTitle": "Un projet en tête ?",
       "ctaSubtitle": "Discutons de vos objectifs et construisons ensemble une solution adaptée à votre contexte.",
-      "ctaButton": "Démarrer une conversation"
+      "ctaButton": "Démarrer une conversation",
+      "visual": {
+        "path": "studio / services / {slug}",
+        "eyebrow": "Aperçu du service",
+        "status": "Disponible",
+        "statDeliverables": "Livrables",
+        "statDeliverablesHint": "clés",
+        "statSteps": "Étapes",
+        "statStepsHint": "approche",
+        "statStack": "Stack",
+        "statStackHint": "outils"
+      }
     },
     "hero": {
+      "back": "Retour à l'accueil",
+      "watermark": "Craft",
+      "title": "Comment je peux aider",
       "titleLine1": "Comment je",
       "titleLine2": "peux aider",
       "subtitle": "Accompagner les équipes pour livrer des produits digitaux premium, de la vision au déploiement.",
+      "ctaPrimary": "Me contacter",
+      "ctaSecondary": "Voir les projets",
+      "promiseLabel": "Promesse",
+      "promise": "« Du cadrage au déploiement — des livrables clairs, utiles et durables. »",
+      "forWhom": "Pour qui ?",
+      "audience": {
+        "product": "Produit",
+        "ai": "IA & automatisation",
+        "data": "Data & analytics"
+      },
       "tags": {
         "product": "Produit",
         "ai": "IA & automatisation",
@@ -173,22 +225,37 @@
   },
   "testimonials": {
     "label": "Témoignages",
+    "watermark": "Trust",
     "title": "La confiance des équipes",
     "subtitle": "Ce que disent les collaborateurs de notre travail ensemble."
   },
   "cta": {
     "title": "Prêt à construire quelque chose d'exceptionnel ?",
     "subtitle": "Qu'il s'agisse d'un produit IA, d'une plateforme SaaS ou d'un pipeline data — créons de l'impact ensemble.",
-    "button": "Démarrer une conversation"
+    "button": "Démarrer une conversation",
+    "watermark": "Build"
   },
   "contact": {
     "label": "Contact",
     "title": "Discutons",
     "subtitle": "Un projet en tête ? J'aimerais en savoir plus.",
     "hero": {
+      "back": "Retour à l'accueil",
+      "watermark": "Hello",
+      "title": "Construisons ensemble",
       "titleLine1": "Construisons",
       "titleLine2": "ensemble",
       "subtitle": "Un projet, une idée ou une collaboration — je suis disponible pour échanger et voir comment avancer concrètement.",
+      "ctaPrimary": "Envoyer un message",
+      "ctaSecondary": "Voir les projets",
+      "promiseLabel": "Promesse",
+      "promise": "« Une réponse claire sous 24–48 h — pour avancer sans friction. »",
+      "forWhom": "Pour qui ?",
+      "audience": {
+        "remote": "Remote-friendly",
+        "collaboration": "Collaboration",
+        "worldwide": "Disponible mondialement"
+      },
       "tags": {
         "remote": "Remote-friendly",
         "collaboration": "Collaboration",
@@ -230,14 +297,172 @@
     "notFoundDesc": "La page que vous recherchez n'existe pas ou a été déplacée.",
     "goHome": "Retour à l'accueil"
   },
+  "blog": {
+    "title": "Blog",
+    "hero": {
+      "back": "Retour à l'accueil",
+      "watermark": "Notes",
+      "title": "Idées, craft & profondeur technique",
+      "titleLine1": "Idées, craft &",
+      "titleLine2": "profondeur technique",
+      "subtitle": "Notes long format sur les systèmes IA, le data engineering et le frontend premium — écrites pour les builders qui visent la clarté.",
+      "ctaPrimary": "Me contacter",
+      "ctaSecondary": "Voir les projets",
+      "promiseLabel": "Promesse",
+      "promise": "« Des notes utiles, sans bruit — pour builder avec plus de clarté. »",
+      "forWhom": "Pour qui ?",
+      "audience": {
+        "ai": "Systèmes IA",
+        "data": "Data engineering",
+        "craft": "Craft frontend"
+      },
+      "tags": {
+        "ai": "Systèmes IA",
+        "data": "Data engineering",
+        "craft": "Craft frontend"
+      },
+      "visual": {
+        "label": "Atelier rédaction",
+        "status": "En cours",
+        "fileName": "notes.md",
+        "drafts": {
+          "ai": "Livrer des pipelines RAG qui tiennent la production.",
+          "data": "Du code produit aux plateformes data fiables.",
+          "frontend": "Des patterns perf qui tiennent à l'échelle."
+        },
+        "stats": {
+          "articles": "Articles",
+          "topics": "Sujets",
+          "avgRead": "Lecture moy."
+        }
+      }
+    },
+    "featured": "À la une",
+    "comingSoon": "Bientôt disponible",
+    "readArticle": "Lire l'article",
+    "minRead": "{minutes} min de lecture",
+    "filterAll": "Tous",
+    "categories": {
+      "ai": "IA",
+      "data": "Data",
+      "frontend": "Frontend"
+    },
+    "detail": {
+      "back": "Retour au blog",
+      "watermark": "Notes",
+      "ctaPrimary": "Me contacter",
+      "ctaSecondary": "Tous les articles",
+      "ctaTitle": "Un sujet à explorer ensemble ?",
+      "ctaSubtitle": "Parlons de vos pipelines, de votre stack frontend ou de vos systèmes IA — avec clarté et exigence.",
+      "ctaButton": "Démarrer une conversation",
+      "relatedLabel": "Continuer",
+      "relatedTitle": "Autres notes"
+    },
+    "posts": {
+      "rag-pipelines": {
+        "title": "Construire des pipelines RAG en production",
+        "excerpt": "Du chunking à l'observabilité — comment livrer des systèmes de retrieval qui tiennent la charge réelle.",
+        "sections": [
+          {
+            "heading": "Le décalage démo → production",
+            "paragraphs": [
+              "Un RAG qui impressionne en démo peut s'effondrer dès qu'il rencontre des documents bruités, des pics de trafic ou des questions ambiguës. La différence se joue rarement sur le modèle seul : elle se joue sur le pipeline.",
+              "En production, le retrieval doit rester stable, mesurable et révisable. Sans ces garde-fous, on livre une expérience brillante… jusqu'au premier incident métier."
+            ]
+          },
+          {
+            "heading": "Chunking, embeddings et ranking",
+            "paragraphs": [
+              "Le chunking trop agressif casse le contexte ; trop large, il dilue le signal. Je préfère une stratégie hybride : chunks sémantiques, overlaps contrôlés, et métadonnées riches (source, date, type de document).",
+              "Ensuite vient le ranking. Un simple top-k vectoriel ne suffit pas. Combiner similarité dense, filtres métier et re-ranking léger améliore drastiquement la pertinence sans exploser la latence."
+            ]
+          },
+          {
+            "heading": "Observabilité et boucle d'amélioration",
+            "paragraphs": [
+              "Sans traces, on navigue à l'aveugle. Je journalise les requêtes, les chunks retenus, les scores et les feedbacks utilisateurs. Ces signaux alimentent des evals continues : précision perçue, hallucination rate, latence p95.",
+              "Le vrai livrable n'est pas un chatbot. C'est un système de retrieval fiable, avec des leviers d'amélioration clairs et une architecture prête à évoluer."
+            ]
+          }
+        ]
+      },
+      "data-engineering-path": {
+        "title": "Mon parcours vers le Data Engineering",
+        "excerpt": "Retour d'expérience sur la transition du produit full-stack vers pipelines, entrepôts et plateformes data fiables.",
+        "sections": [
+          {
+            "heading": "Pourquoi cette transition",
+            "paragraphs": [
+              "Après des années à livrer des produits full-stack et des systèmes IA, une évidence s'est imposée : sans data fiable, l'intelligence reste fragile. Les modèles, les dashboards et les automatisations dépendent tous d'une fondation saine.",
+              "Passer au Data Engineering, ce n'est pas abandonner le produit. C'est remonter d'un cran pour construire l'infrastructure qui le rend durable."
+            ]
+          },
+          {
+            "heading": "Ce que j'ai dû réapprendre",
+            "paragraphs": [
+              "Le craft change : orchestration (Airflow), transformations (dbt), modélisation, contrats de données, qualité et lineage. On ne code plus seulement pour une UI — on code pour des flux, des SLA et des équipes aval.",
+              "La rigueur produit reste utile. Un pipeline lisible, testé et documenté se comporte comme un bon composant React : clair, prévisible, maintenable."
+            ]
+          },
+          {
+            "heading": "Ce que je construis maintenant",
+            "paragraphs": [
+              "Je relie les deux mondes : APIs et apps d'un côté, pipelines et warehouses de l'autre. L'objectif est simple — des produits intelligents appuyés sur une data digne de confiance.",
+              "Cette trajectoire guide mon travail aujourd'hui : moins de prototypes jetables, plus de systèmes qui tiennent dans le temps."
+            ]
+          }
+        ]
+      },
+      "nextjs-performance": {
+        "title": "Patterns de performance Next.js",
+        "excerpt": "Patterns concrets pour des navigations plus rapides, un cache intelligent et des scores Lighthouse stables en production.",
+        "sections": [
+          {
+            "heading": "Mesurer avant d'optimiser",
+            "paragraphs": [
+              "La performance commence par des chiffres : LCP, INP, CLS, poids JS, waterfall réseau. Sans baseline, on optimise au feeling — et on rate souvent le vrai goulot.",
+              "Je fixe d'abord 2 ou 3 budgets (JS initial, images hero, temps jusqu'à interaction), puis je travaille par impact décroissant."
+            ]
+          },
+          {
+            "heading": "Patterns qui tiennent à l'échelle",
+            "paragraphs": [
+              "Streaming, lazy loading des sections lourdes, images responsives, cache HTTP/CDN, et réduction des re-renders inutiles. Sur Vite/React comme sur Next, le principe reste le même : charger moins, plus tôt, et seulement ce qui compte.",
+              "Le design système entre aussi dans l'équation. Trop d'animations, trop de polices, trop de JS décoratif — et le Lighthouse s'effondre. La sobriété visuelle est une stratégie de perf."
+            ]
+          },
+          {
+            "heading": "Garder la perf dans le temps",
+            "paragraphs": [
+              "Une bonne perf se protège : budgets CI, monitoring RUM, revue des dépendances. Sinon, chaque feature la dégrade silencieusement.",
+              "Livrer vite, oui. Mais livrer vite et rester rapide — c'est le vrai craft frontend."
+            ]
+          }
+        ]
+      }
+    }
+  },
   "projects": {
     "title": "Projets",
     "subtitle": "Une collection d'applications web, systèmes IA, APIs et produits data.",
     "caseStudy": "Étude de cas",
     "hero": {
+      "back": "Retour à l'accueil",
+      "watermark": "Work",
+      "title": "Des produits qui créent de l'impact",
       "titleLine1": "Des produits",
       "titleLine2": "qui créent de l'impact",
       "subtitle": "Une collection d'applications web, systèmes IA, APIs et produits data — conçus pour l'échelle et la clarté.",
+      "ctaPrimary": "Me contacter",
+      "ctaSecondary": "Voir les services",
+      "promiseLabel": "Promesse",
+      "promise": "« Des produits livrés avec clarté — du web à l'IA et à la data. »",
+      "forWhom": "Pour qui ?",
+      "audience": {
+        "web": "Web & SaaS",
+        "ai": "IA & agents",
+        "data": "Data & APIs"
+      },
       "tags": {
         "web": "Web & SaaS",
         "ai": "IA & agents",

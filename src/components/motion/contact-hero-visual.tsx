@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Clock, Mail, MapPin } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/i18n/context";
 import { HeroVisualShell } from "@/components/motion/hero-visual-shell";
 import { siteConfig } from "@/lib/site";
 

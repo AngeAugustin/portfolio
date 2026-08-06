@@ -18,36 +18,46 @@
     "close": "Close"
   },
   "hero": {
-    "badge": "Benin · FullStack · AI · Data",
+    "badge": "Open to collaborate · from Benin to the world",
     "title": "Engineering intelligent",
     "titleAccent": "digital experiences",
-    "subtitle": "I design and build scalable web applications, AI-powered systems, and data infrastructures — with 3+ years crafting products from West Africa to the world.",
+    "subtitle": "I design and build scalable web apps, AI systems, and data infrastructures — with the clarity of a product studio and the rigor of engineering.",
     "ctaPrimary": "View Projects",
-    "ctaSecondary": "Let's Connect",
+    "ctaSecondary": "See how I work",
     "scroll": "Scroll to explore",
+    "trust": {
+      "available": "Available for projects",
+      "stack": "FullStack · AI · Data",
+      "remote": "Remote worldwide"
+    },
     "visual": {
-      "label": "Live workspace",
-      "status": "Available",
+      "sidebarLabel": "Focus",
+      "connections": {
+        "fullstack": "fullstack",
+        "ai": "ai systems",
+        "data": "data pipelines",
+        "local": "local.studio"
+      },
+      "activeTitle": "fullstack",
+      "activeMeta": "Web · APIs · production craft",
+      "status": "Building",
+      "progressLabel": "Current delivery",
+      "progressValue": "Shipping",
       "terminal": {
         "line1": "build() → scalable web apps",
         "line2": "deploy() → production AI systems",
         "line3": "pipeline() → robust data infrastructure"
       },
-      "stats": {
-        "years": { "value": "3+", "label": "Years" },
-        "projects": { "value": "40+", "label": "Projects" },
-        "stack": { "value": "12", "label": "Stack" },
-        "focus": { "value": "AI", "label": "Focus" }
-      },
-      "tags": ["FullStack", "AI Engineering", "Data Engineering"]
+      "caption": "~/Studio · TypeScript · Vite · intelligent systems"
     }
   },
   "techStack": {
     "label": "Tech Stack",
-    "title": "Tools I use"
+    "title": "Works with the tools I ship with every day"
   },
   "featured": {
     "label": "Selected Work",
+    "watermark": "Work",
     "title": "Featured projects",
     "subtitle": "From AI agents to data pipelines — products built for impact, scale, and clarity.",
     "viewAll": "View all projects",
@@ -57,9 +67,22 @@
     "label": "About",
     "title": "Building at the intersection of code, AI & data",
     "hero": {
+      "back": "Back to home",
+      "watermark": "About",
+      "title": "Building at the intersection of code, AI & data",
       "titleLine1": "Building at the",
       "titleLine2": "intersection of code, AI & data",
       "subtitle": "Beninese FullStack Developer & AI Engineer — crafting intelligent products while growing into Data Engineering.",
+      "ctaPrimary": "Get in touch",
+      "ctaSecondary": "View projects",
+      "promiseLabel": "Promise",
+      "promise": "« Intelligent products, from fullstack to data — delivered with craft. »",
+      "forWhom": "Who for?",
+      "audience": {
+        "startups": "Startups",
+        "product": "Product teams",
+        "enterprise": "Enterprises"
+      },
       "tags": {
         "fullstack": "FullStack",
         "ai": "AI Engineering",
@@ -91,6 +114,7 @@
   },
   "experience": {
     "label": "Experience",
+    "watermark": "Path",
     "title": "Professional journey",
     "subtitle": "A timeline of roles, impact, and continuous growth across full-stack, AI, and data.",
     "present": "Present",
@@ -130,21 +154,49 @@
     "subtitle": "Partnering with teams to ship premium digital products.",
     "cardsIntro": "Four areas of expertise to design, automate, and scale your digital products.",
     "learnMore": "Learn more",
+    "viewAll": "View all services →",
     "detail": {
       "back": "Back to services",
+      "watermark": "Service",
       "serviceLabel": "Service",
+      "ctaPrimary": "Get in touch",
+      "ctaSecondary": "View all services",
       "deliverables": "What I deliver",
       "approach": "My approach",
       "stack": "Technologies & tools",
       "idealFor": "Ideal for",
       "ctaTitle": "Have a project in mind?",
       "ctaSubtitle": "Let's discuss your goals and build a solution tailored to your context.",
-      "ctaButton": "Start a conversation"
+      "ctaButton": "Start a conversation",
+      "visual": {
+        "path": "studio / services / {slug}",
+        "eyebrow": "Service overview",
+        "status": "Available",
+        "statDeliverables": "Deliverables",
+        "statDeliverablesHint": "key items",
+        "statSteps": "Steps",
+        "statStepsHint": "approach",
+        "statStack": "Stack",
+        "statStackHint": "tools"
+      }
     },
     "hero": {
+      "back": "Back to home",
+      "watermark": "Craft",
+      "title": "How I can help",
       "titleLine1": "How I",
       "titleLine2": "can help",
       "subtitle": "Partnering with teams to ship premium digital products — from vision to production.",
+      "ctaPrimary": "Get in touch",
+      "ctaSecondary": "View projects",
+      "promiseLabel": "Promise",
+      "promise": "« From framing to launch — clear, useful, lasting deliverables. »",
+      "forWhom": "Who for?",
+      "audience": {
+        "product": "Product",
+        "ai": "AI & automation",
+        "data": "Data & analytics"
+      },
       "tags": {
         "product": "Product",
         "ai": "AI & automation",
@@ -173,22 +225,37 @@
   },
   "testimonials": {
     "label": "Testimonials",
+    "watermark": "Trust",
     "title": "Trusted by teams",
     "subtitle": "What collaborators say about working together."
   },
   "cta": {
     "title": "Ready to build something exceptional?",
     "subtitle": "Whether it's an AI product, a SaaS platform, or a data pipeline — let's create impact together.",
-    "button": "Start a conversation"
+    "button": "Start a conversation",
+    "watermark": "Build"
   },
   "contact": {
     "label": "Contact",
     "title": "Let's talk",
     "subtitle": "Have a project in mind? I'd love to hear about it.",
     "hero": {
+      "back": "Back to home",
+      "watermark": "Hello",
+      "title": "Let's build together",
       "titleLine1": "Let's build",
       "titleLine2": "together",
       "subtitle": "A project, an idea, or a collaboration — I'm available to talk and explore concrete next steps.",
+      "ctaPrimary": "Send a message",
+      "ctaSecondary": "View projects",
+      "promiseLabel": "Promise",
+      "promise": "« A clear reply within 24–48h — so we can move forward without friction. »",
+      "forWhom": "Who for?",
+      "audience": {
+        "remote": "Remote-friendly",
+        "collaboration": "Collaboration",
+        "worldwide": "Available worldwide"
+      },
       "tags": {
         "remote": "Remote-friendly",
         "collaboration": "Collaboration",
@@ -230,14 +297,172 @@
     "notFoundDesc": "The page you're looking for doesn't exist or has been moved.",
     "goHome": "Return home"
   },
+  "blog": {
+    "title": "Blog",
+    "hero": {
+      "back": "Back to home",
+      "watermark": "Notes",
+      "title": "Ideas, craft & technical depth",
+      "titleLine1": "Ideas, craft &",
+      "titleLine2": "technical depth",
+      "subtitle": "Long-form notes on AI systems, data engineering, and premium frontend — written for builders who care about clarity.",
+      "ctaPrimary": "Get in touch",
+      "ctaSecondary": "View projects",
+      "promiseLabel": "Promise",
+      "promise": "« Useful notes, no noise — to build with more clarity. »",
+      "forWhom": "Who for?",
+      "audience": {
+        "ai": "AI systems",
+        "data": "Data engineering",
+        "craft": "Frontend craft"
+      },
+      "tags": {
+        "ai": "AI systems",
+        "data": "Data engineering",
+        "craft": "Frontend craft"
+      },
+      "visual": {
+        "label": "Draft studio",
+        "status": "In progress",
+        "fileName": "notes.md",
+        "drafts": {
+          "ai": "Ship RAG pipelines that survive production traffic.",
+          "data": "From product code to reliable data platforms.",
+          "frontend": "Performance patterns that hold at scale."
+        },
+        "stats": {
+          "articles": "Articles",
+          "topics": "Topics",
+          "avgRead": "Avg. read"
+        }
+      }
+    },
+    "featured": "Featured",
+    "comingSoon": "Coming soon",
+    "readArticle": "Read article",
+    "minRead": "{minutes} min read",
+    "filterAll": "All",
+    "categories": {
+      "ai": "AI",
+      "data": "Data",
+      "frontend": "Frontend"
+    },
+    "detail": {
+      "back": "Back to blog",
+      "watermark": "Notes",
+      "ctaPrimary": "Get in touch",
+      "ctaSecondary": "All articles",
+      "ctaTitle": "Want to explore a topic together?",
+      "ctaSubtitle": "Let's talk about your pipelines, frontend stack, or AI systems — with clarity and craft.",
+      "ctaButton": "Start a conversation",
+      "relatedLabel": "Keep reading",
+      "relatedTitle": "More notes"
+    },
+    "posts": {
+      "rag-pipelines": {
+        "title": "Building Production RAG Pipelines",
+        "excerpt": "From chunking strategies to observability — how to ship retrieval systems that survive real traffic.",
+        "sections": [
+          {
+            "heading": "The demo-to-production gap",
+            "paragraphs": [
+              "A RAG that dazzles in a demo can collapse once it meets noisy documents, traffic spikes, or ambiguous questions. The difference rarely sits in the model alone — it sits in the pipeline.",
+              "In production, retrieval must stay stable, measurable, and revisable. Without those guardrails, you ship a brilliant experience… until the first business incident."
+            ]
+          },
+          {
+            "heading": "Chunking, embeddings, and ranking",
+            "paragraphs": [
+              "Aggressive chunking breaks context; oversized chunks dilute signal. I prefer a hybrid approach: semantic chunks, controlled overlaps, and rich metadata (source, date, document type).",
+              "Then comes ranking. Simple vector top-k is not enough. Combining dense similarity, business filters, and light re-ranking improves relevance drastically without exploding latency."
+            ]
+          },
+          {
+            "heading": "Observability and the improvement loop",
+            "paragraphs": [
+              "Without traces, you fly blind. I log queries, selected chunks, scores, and user feedback. Those signals feed continuous evals: perceived precision, hallucination rate, p95 latency.",
+              "The real deliverable is not a chatbot. It is a reliable retrieval system with clear improvement levers and an architecture ready to evolve."
+            ]
+          }
+        ]
+      },
+      "data-engineering-path": {
+        "title": "My Path Into Data Engineering",
+        "excerpt": "Lessons from moving from full-stack product work to pipelines, warehouses, and reliable data platforms.",
+        "sections": [
+          {
+            "heading": "Why this transition",
+            "paragraphs": [
+              "After years shipping full-stack products and AI systems, one truth became obvious: without reliable data, intelligence stays fragile. Models, dashboards, and automations all depend on a sound foundation.",
+              "Moving into Data Engineering is not leaving product behind. It is stepping one layer deeper to build the infrastructure that makes product durable."
+            ]
+          },
+          {
+            "heading": "What I had to relearn",
+            "paragraphs": [
+              "The craft changes: orchestration (Airflow), transformations (dbt), modeling, data contracts, quality, and lineage. You no longer code only for a UI — you code for flows, SLAs, and downstream teams.",
+              "Product rigor still helps. A readable, tested, documented pipeline behaves like a good React component: clear, predictable, maintainable."
+            ]
+          },
+          {
+            "heading": "What I build now",
+            "paragraphs": [
+              "I connect both worlds: APIs and apps on one side, pipelines and warehouses on the other. The goal is simple — intelligent products backed by trustworthy data.",
+              "That trajectory guides my work today: fewer throwaway prototypes, more systems that hold over time."
+            ]
+          }
+        ]
+      },
+      "nextjs-performance": {
+        "title": "Next.js Performance Patterns",
+        "excerpt": "Practical patterns for faster navigations, smarter caching, and Lighthouse scores that hold in production.",
+        "sections": [
+          {
+            "heading": "Measure before you optimize",
+            "paragraphs": [
+              "Performance starts with numbers: LCP, INP, CLS, JS weight, network waterfall. Without a baseline, you optimize by feel — and often miss the real bottleneck.",
+              "I set two or three budgets first (initial JS, hero images, time to interaction), then work by descending impact."
+            ]
+          },
+          {
+            "heading": "Patterns that scale",
+            "paragraphs": [
+              "Streaming, lazy-loading heavy sections, responsive images, HTTP/CDN caching, and cutting unnecessary re-renders. On Vite/React as on Next, the principle stays the same: load less, earlier, and only what matters.",
+              "Design systems are part of the equation too. Too many animations, fonts, or decorative JS — and Lighthouse collapses. Visual restraint is a performance strategy."
+            ]
+          },
+          {
+            "heading": "Keeping performance over time",
+            "paragraphs": [
+              "Good performance must be protected: CI budgets, RUM monitoring, dependency reviews. Otherwise every feature silently erodes it.",
+              "Ship fast, yes. But ship fast and stay fast — that is real frontend craft."
+            ]
+          }
+        ]
+      }
+    }
+  },
   "projects": {
     "title": "Projects",
     "subtitle": "A curated collection of web apps, AI systems, APIs, and data products.",
     "caseStudy": "Case study",
     "hero": {
+      "back": "Back to home",
+      "watermark": "Work",
+      "title": "Products that drive impact",
       "titleLine1": "Products that",
       "titleLine2": "drive impact",
       "subtitle": "A curated collection of web apps, AI systems, APIs, and data products — built for scale and clarity.",
+      "ctaPrimary": "Get in touch",
+      "ctaSecondary": "View services",
+      "promiseLabel": "Promise",
+      "promise": "« Products shipped with clarity — from web to AI and data. »",
+      "forWhom": "Who for?",
+      "audience": {
+        "web": "Web & SaaS",
+        "ai": "AI & agents",
+        "data": "Data & APIs"
+      },
       "tags": {
         "web": "Web & SaaS",
         "ai": "AI & agents",

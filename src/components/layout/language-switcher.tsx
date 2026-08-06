@@ -1,6 +1,4 @@
-"use client";
-
-import { useLocale } from "next-intl";
+import { useLocale } from "@/i18n/context";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 

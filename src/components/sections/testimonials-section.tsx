@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/i18n/context";
 import { SectionHeader } from "@/components/shared/section-header";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
 
@@ -14,7 +14,7 @@ export function TestimonialsSection() {
   const items = tRoot.raw("testimonialsItems") as Testimonial[];
 
   return (
-    <section className="section-padding">
+    <section className="section-padding border-t border-border/60 bg-card">
       <div className="editorial-container">
         <SectionHeader
           label={t("label")}

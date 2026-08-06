@@ -1,11 +1,10 @@
 export const siteConfig = {
   name: "Augustin FACHEHOUN",
   brand: "Augustin FACHEHOUN",
-  brandUnderline: "/images/outils/benin.png",
   title: "FullStack & AI Developer",
   description:
     "Beninese FullStack & AI Developer crafting scalable web applications and intelligent systems — transitioning into Data Engineering.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://augustinfachehoun.dev",
+  url: import.meta.env.VITE_SITE_URL ?? "https://augustinfachehoun.dev",
   email: "hello@augustinfachehoun.dev",
   location: "Cotonou, Benin",
   social: {
@@ -98,17 +97,49 @@ export const services = [
 export type ServiceSlug = (typeof services)[number]["slug"];
 
 export const tools = [
-  { src: "/images/outils/next.png", name: "Next.js" },
-  { src: "/images/outils/Node.png", name: "Node.js" },
-  { src: "/images/outils/python.png", name: "Python" },
-  { src: "/images/outils/symfony.png", name: "Symfony" },
-  { src: "/images/outils/postgresql.png", name: "PostgreSQL" },
-  { src: "/images/outils/MONGO.png", name: "MongoDB" },
-  { src: "/images/outils/logo-mysql.utrC_Fpn_C0E4q.webp", name: "MySQL" },
-  { src: "/images/outils/reidis.webp", name: "Redis" },
-  { src: "/images/outils/talend.png", name: "Talend" },
-  { src: "/images/outils/tensorflow.png", name: "TensorFlow" },
+  { name: "Next.js", tag: "app", color: "#171717" },
+  { name: "Vite", tag: "spa", color: "#646cff" },
+  { name: "Node.js", tag: "api", color: "#339933" },
+  { name: "Python", tag: "ai", color: "#3776ab" },
+  { name: "Symfony", tag: "php", color: "#000000" },
+  { name: "PostgreSQL", tag: "sql", color: "#2a75ba" },
+  { name: "MySQL", tag: "sql", color: "#cb7229" },
+  { name: "MongoDB", tag: "nosql", color: "#319751" },
+  { name: "Redis", tag: "cache", color: "#dc382d" },
+  { name: "Talend", tag: "etl", color: "#ff6d00" },
+  { name: "TensorFlow", tag: "ml", color: "#ff6f00" },
 ] as const;
+
+export type BlogCategory = "ai" | "data" | "frontend";
+
+export const blogPosts = [
+  {
+    slug: "rag-pipelines",
+    date: "2025-03",
+    category: "ai" as const,
+    readMinutes: 8,
+    featured: true,
+    image: "/images/blog/rag-pipelines.svg",
+  },
+  {
+    slug: "data-engineering-path",
+    date: "2025-01",
+    category: "data" as const,
+    readMinutes: 6,
+    featured: false,
+    image: "/images/blog/data-engineering-path.svg",
+  },
+  {
+    slug: "nextjs-performance",
+    date: "2024-11",
+    category: "frontend" as const,
+    readMinutes: 7,
+    featured: false,
+    image: "/images/blog/nextjs-performance.svg",
+  },
+] as const;
+
+export type BlogPostSlug = (typeof blogPosts)[number]["slug"];
 
 export const navLinks = [
   { href: "/", key: "home" },

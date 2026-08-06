@@ -1,9 +1,6 @@
-"use client";
-
 import { Github, Linkedin, Twitter } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/i18n/context";
 import { Link } from "@/i18n/navigation";
-import { Separator } from "@/components/ui/separator";
 import { footerNavGroups, siteConfig } from "@/lib/site";
 
 export function Footer() {
@@ -79,7 +76,7 @@ export function Footer() {
           </div>
         </div>
 
-        <Separator className="my-10" />
+        <div className="my-10 h-px w-full bg-border" role="separator" />
 
         <p className="text-center text-xs text-muted-foreground md:text-left">
           © {year} {siteConfig.name}. {t("rights")}

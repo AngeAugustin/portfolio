@@ -3,10 +3,11 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FolderOpen } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/i18n/context";
 import { Link } from "@/i18n/navigation";
 import { HeroVisualShell } from "@/components/motion/hero-visual-shell";
-import { projects, type ProjectCategory } from "@/lib/site";
+import { useProjects } from "@/lib/cms";
+import type { ProjectCategory } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const CATEGORY_KEYS: ProjectCategory[] = [
@@ -21,14 +22,14 @@ const CATEGORY_KEYS: ProjectCategory[] = [
 const CYCLE_MS = 2200;
 const ORBIT_RADIUS = 108;
 
-function getCategoryCount(category: ProjectCategory) {
-  return projects.filter((p) => p.category === category).length;
-}
-
 export function ProjectsHeroVisual({ className }: { className?: string }) {
   const t = useTranslations("projects.hero");
   const tCategories = useTranslations("projects.categories");
+  const { data: projects } = useProjects();
   const [activeIndex, setActiveIndex] = useState(0);
+
+  const getCategoryCount = (category: ProjectCategory) =>
+    projects.filter((p) => p.category === category).length;
 
   useEffect(() => {
     const id = window.setInterval(() => {

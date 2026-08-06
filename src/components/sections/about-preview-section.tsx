@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/i18n/context";
 import { Link } from "@/i18n/navigation";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
 import { SectionHeader } from "@/components/shared/section-header";
