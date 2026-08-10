@@ -3,23 +3,40 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Send } from "lucide-react";
-import { useTranslations } from "@/i18n/context";
+import { useLocale, useTranslations } from "@/i18n/context";
 import { SectionHeader } from "@/components/shared/section-header";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { submitContactMessage } from "@/lib/cms";
 
 export function ContactSection({ compact = false }: { compact?: boolean }) {
   const t = useTranslations("contact");
-  const [status, setStatus] = useState<"idle" | "sending" | "success">("idle");
+  const locale = useLocale();
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">(
+    "idle"
+  );
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const name = String(formData.get("name") ?? "");
+    const email = String(formData.get("email") ?? "");
+    const message = String(formData.get("message") ?? "");
+
     setStatus("sending");
-    await new Promise((r) => setTimeout(r, 1200));
-    setStatus("success");
+
+    try {
+      await submitContactMessage({ name, email, message, locale });
+      form.reset();
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -54,7 +71,13 @@ export function ContactSection({ compact = false }: { compact?: boolean }) {
             <form onSubmit={handleSubmit} className="flex flex-col gap-5">
               <div className="flex flex-col gap-2">
                 <Label htmlFor="name">{t("name")}</Label>
-                <Input id="name" name="name" required placeholder="Your name" />
+                <Input
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Your name"
+                  disabled={status === "sending"}
+                />
               </div>
               <div className="flex flex-col gap-2">
                 <Label htmlFor="email">{t("email")}</Label>
@@ -64,6 +87,7 @@ export function ContactSection({ compact = false }: { compact?: boolean }) {
                   type="email"
                   required
                   placeholder="hello@example.com"
+                  disabled={status === "sending"}
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -74,6 +98,7 @@ export function ContactSection({ compact = false }: { compact?: boolean }) {
                   required
                   placeholder="..."
                   rows={5}
+                  disabled={status === "sending"}
                 />
               </div>
               <Button type="submit" disabled={status === "sending"} className="gap-2">
@@ -87,6 +112,15 @@ export function ContactSection({ compact = false }: { compact?: boolean }) {
                   className="text-sm text-glow"
                 >
                   {t("success")}
+                </motion.p>
+              )}
+              {status === "error" && (
+                <motion.p
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-sm text-destructive"
+                >
+                  {t("error")}
                 </motion.p>
               )}
             </form>

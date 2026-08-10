@@ -13,6 +13,7 @@ type StrapiProject = {
   featured?: boolean;
   year?: string;
   stack?: unknown;
+  imageUrl?: string | null;
   cover?: StrapiMedia;
   liveUrl?: string | null;
   repoUrl?: string | null;
@@ -43,7 +44,10 @@ function mapProject(entry: StrapiProject): CmsProject | null {
     featured: Boolean(entry.featured),
     year: entry.year ?? "",
     stack: asStringArray(entry.stack),
-    image: mediaUrl(entry.cover, "/images/projects/neural-commerce.svg"),
+    image: mediaUrl(
+      entry.cover,
+      entry.imageUrl || "/images/projects/insight-saas.svg"
+    ),
     liveUrl: entry.liveUrl ?? undefined,
     repoUrl: entry.repoUrl ?? undefined,
   };

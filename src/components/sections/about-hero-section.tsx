@@ -30,6 +30,7 @@ export function AboutHeroSection() {
       <div className="editorial-container relative z-10 pt-28 pb-16 md:pt-36 md:pb-24">
         <SectionWatermark
           text={t("hero.watermark")}
+          bleed="none"
           className="top-[18%] -translate-y-0 text-[clamp(4.5rem,18vw,11rem)] text-foreground/[0.045]"
         />
 

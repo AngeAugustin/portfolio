@@ -280,6 +280,7 @@
     "send": "Send message",
     "sending": "Sending...",
     "success": "Message sent successfully!",
+    "error": "Something went wrong. Please try again in a moment.",
     "location": "Based in Cotonou, Benin — available globally"
   },
   "footer": {
@@ -481,32 +482,72 @@
       "dashboard": "Dashboards",
       "saas": "SaaS",
       "automation": "Automation"
+    },
+    "detail": {
+      "back": "Back to projects",
+      "watermark": "Work",
+      "ctaPrimary": "Get in touch",
+      "ctaSecondary": "All projects",
+      "ctaTitle": "Want to build something similar?",
+      "ctaSubtitle": "Let's talk about your product, API, or AI system — with clarity, craft, and production focus.",
+      "ctaButton": "Start a conversation",
+      "relatedLabel": "Keep exploring",
+      "relatedTitle": "More projects",
+      "stackLabel": "Tech stack",
+      "liveDemo": "Live demo",
+      "viewCode": "View code",
+      "viewProject": "View project",
+      "comingSoon": "Detailed case study — architecture, technical challenges, and outcomes coming soon."
     }
   },
   "projectItems": {
-    "neural-commerce": {
-      "title": "Neural Commerce",
-      "description": "AI-powered e-commerce recommendation engine with real-time personalization and semantic search."
+    "cnss-pension-tracking": {
+      "title": "Pension Case Tracking — CNSS Benin",
+      "description": "Web application for tracking pension cases at CNSS Benin, with a frontend/backend architecture and REST API."
     },
-    "dataflow-pipeline": {
-      "title": "DataFlow Pipeline",
-      "description": "End-to-end analytics pipeline with Airflow orchestration, dbt transformations, and executive dashboards."
+    "tutoring-platform": {
+      "title": "Tutoring Management Platform — Freelance Benin",
+      "description": "Web and mobile platform helping parents find and hire full-time or on-demand tutors for their children."
     },
-    "benin-pay-api": {
-      "title": "BeninPay API",
-      "description": "Secure payment gateway API for West African fintech with idempotent transactions and webhook system."
+    "packaging-crm": {
+      "title": "Packaging Sales CRM — Freelance Benin",
+      "description": "Web CRM to centralize sales, appointments, deliveries, support, and commercial follow-up, also packaged as an Electron desktop app."
     },
-    "insight-saas": {
-      "title": "Insight SaaS",
-      "description": "Multi-tenant analytics platform with subscription billing, role-based access, and custom reporting."
+    "banking-management": {
+      "title": "Banking Management Web App — Freelance",
+      "description": "Banking platform simulator with a structured frontend/backend architecture and UML modeling."
     },
-    "agent-orchestrator": {
-      "title": "Agent Orchestrator",
-      "description": "Multi-agent automation system coordinating LLM workflows with observability and human-in-the-loop."
+    "accounting-ai": {
+      "title": "AI Accounting Balance Management — LuxAIIT",
+      "description": "Web app for accounting balance analysis with automatic generation, dashboards, and LLM-powered explanations."
     },
-    "agri-dashboard": {
-      "title": "Agri Dashboard",
-      "description": "Geospatial agriculture monitoring dashboard with crop analytics and cooperative management tools."
+    "connectors-audit-ai": {
+      "title": "Connectors & AI Audit Platform — LuxAIIT",
+      "description": "Connector platform to audit databases, REST/SOAP APIs, email services, and servers, enriched with LLMs."
+    },
+    "dncf-personnel-transfers": {
+      "title": "Personnel Transfer Management — DNCF Benin",
+      "description": "Web application to manage personnel transfers end to end at the National Directorate of Financial Control."
+    },
+    "dncf-committees-projects": {
+      "title": "Committees & Project Tracking — DNCF Benin",
+      "description": "Platform to centralize management committees and project follow-up at DNCF."
+    },
+    "sigfip-dgb": {
+      "title": "SIGFIP Project Contribution — DGB Benin / GIZ",
+      "description": "Contribution to the DGB scope redesign of SIGFIP, with a focus on interoperability and X-ROAD."
+    },
+    "grc-saas": {
+      "title": "Governance, Risk & Compliance SaaS — Govern Group",
+      "description": "GRC SaaS covering standards, ECOWAS-CEMAC obligations, AML/CFT, and risk management, with AI assistance."
+    },
+    "aml-detection": {
+      "title": "AML Suspicious Transaction Detection — Govern Group",
+      "description": "Machine Learning AML engine to detect suspicious patterns in Core Banking transaction flows."
+    },
+    "grc-landing": {
+      "title": "GRC SaaS Landing Page — Govern Group",
+      "description": "Marketing site for the GRC SaaS presenting features, roadmap, and an AI conversational assistant."
     }
   },
   "educationItems": [

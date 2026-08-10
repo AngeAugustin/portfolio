@@ -38,7 +38,7 @@ export function SectionHeader({
 
   return (
     <ScrollReveal
-      className={cn("relative mb-16 overflow-x-clip md:mb-20", className)}
+      className={cn("relative mb-16 md:mb-20", className)}
     >
       {watermarkText && <SectionWatermark text={watermarkText} />}
 

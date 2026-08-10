@@ -17,7 +17,7 @@ export function LanguageSwitcher() {
       role="group"
       aria-label="Language"
     >
-      {(["en", "fr"] as const).map((lang) => (
+      {(["fr", "en"] as const).map((lang) => (
         <button
           key={lang}
           type="button"

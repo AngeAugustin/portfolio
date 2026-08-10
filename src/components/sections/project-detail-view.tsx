@@ -1,77 +1,108 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
-import { useLocale, useTranslations } from "@/i18n/context";
+import { ArrowLeft, ArrowRight, ExternalLink, Github } from "lucide-react";
+import { useTranslations } from "@/i18n/context";
 import { Link } from "@/i18n/navigation";
 import { GradientOrb } from "@/components/motion/gradient-orb";
 import { Magnetic } from "@/components/motion/magnetic";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
-import { OptimizedImage } from "@/components/shared/optimized-image";
+import { ProjectImage } from "@/components/shared/project-image";
 import { SectionWatermark } from "@/components/shared/section-watermark";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { blurReveal, staggerContainer, staggerItem } from "@/lib/animations";
-import { useArticles, type CmsArticle } from "@/lib/cms";
+import { useProjects, type CmsProject } from "@/lib/cms";
 import { cn } from "@/lib/utils";
 
-const CATEGORY_STYLES: Record<
-  CmsArticle["category"],
-  string
-> = {
+const CATEGORY_STYLES: Record<CmsProject["category"], string> = {
+  web: "text-foreground border-border bg-accent/60",
   ai: "text-glow border-glow/30 bg-glow/10",
-  data: "text-glow border-forest/30 bg-forest/10",
-  frontend: "text-foreground border-border bg-accent/60",
+  api: "text-glow border-forest/30 bg-forest/10",
+  dashboard: "text-glow border-glow/30 bg-glow/10",
+  saas: "text-foreground border-border bg-accent/60",
+  automation: "text-glow border-forest/30 bg-forest/10",
 };
-
-function formatDate(date: string, locale: string) {
-  const [year, month] = date.split("-");
-  return new Intl.DateTimeFormat(locale, {
-    month: "long",
-    year: "numeric",
-  }).format(new Date(Number(year), Number(month) - 1));
-}
 
 function stripHtml(value: string) {
   return value.replace(/<[^>]+>/g, "").trim();
 }
 
-function ArticleBody({ article }: { article: CmsArticle }) {
-  if (article.content) {
-    const looksLikeHtml = /<\/?[a-z][\s\S]*>/i.test(article.content);
-    if (looksLikeHtml) {
-      return (
-        <div
-          className="article-prose mx-auto max-w-3xl space-y-6 text-base leading-relaxed text-muted-foreground md:text-lg [&_a]:text-glow [&_a]:underline-offset-4 hover:[&_a]:underline [&_h2]:mt-12 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-foreground [&_h3]:mt-8 [&_h3]:font-display [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-foreground [&_li]:ml-5 [&_li]:list-disc [&_p]:leading-relaxed [&_strong]:text-foreground"
-          dangerouslySetInnerHTML={{ __html: article.content }}
-        />
-      );
-    }
+function ProjectBody({
+  project,
+  comingSoon,
+}: {
+  project: CmsProject;
+  comingSoon: string;
+}) {
+  const content = project.caseStudy?.trim();
 
+  if (!content) {
     return (
-      <div className="mx-auto max-w-3xl space-y-6 text-base leading-relaxed text-muted-foreground md:text-lg">
-        {article.content
-          .split(/\n\n+/)
-          .map((paragraph) => paragraph.trim())
-          .filter(Boolean)
-          .map((paragraph) => (
-            <p key={paragraph.slice(0, 48)}>{paragraph}</p>
-          ))}
+      <div className="mx-auto max-w-3xl space-y-6">
+        <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
+          {project.description}
+        </p>
+        <p className="text-sm leading-relaxed text-muted-foreground/80 md:text-base">
+          {comingSoon}
+        </p>
       </div>
     );
   }
 
-  if (article.sections && article.sections.length > 0) {
+  const looksLikeHtml = /<\/?[a-z][\s\S]*>/i.test(content);
+  if (looksLikeHtml) {
+    return (
+      <div
+        className="article-prose mx-auto max-w-3xl space-y-6 text-base leading-relaxed text-muted-foreground md:text-lg [&_a]:text-glow [&_a]:underline-offset-4 hover:[&_a]:underline [&_h2]:mt-12 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-foreground [&_h3]:mt-8 [&_h3]:font-display [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-foreground [&_li]:ml-5 [&_li]:list-disc [&_p]:leading-relaxed [&_strong]:text-foreground"
+        dangerouslySetInnerHTML={{ __html: content }}
+      />
+    );
+  }
+
+  const blocks = content
+    .split(/\n\n+/)
+    .map((block) => block.trim())
+    .filter(Boolean);
+
+  const hasHeadings = blocks.some((block) => /^##\s+/.test(block));
+
+  if (hasHeadings) {
+    const sections: { heading?: string; paragraphs: string[] }[] = [];
+    let current: { heading?: string; paragraphs: string[] } = { paragraphs: [] };
+
+    for (const block of blocks) {
+      if (/^##\s+/.test(block)) {
+        if (current.heading || current.paragraphs.length > 0) {
+          sections.push(current);
+        }
+        current = {
+          heading: block.replace(/^##\s+/, "").trim(),
+          paragraphs: [],
+        };
+      } else {
+        current.paragraphs.push(block);
+      }
+    }
+    if (current.heading || current.paragraphs.length > 0) {
+      sections.push(current);
+    }
+
     return (
       <div className="mx-auto max-w-3xl space-y-12">
-        {article.sections.map((section) => (
-          <section key={section.heading || section.paragraphs[0]}>
+        {sections.map((section) => (
+          <section key={section.heading || section.paragraphs[0]?.slice(0, 48)}>
             {section.heading ? (
               <h2 className="font-display text-2xl font-bold tracking-tight text-foreground md:text-3xl">
                 {section.heading}
               </h2>
             ) : null}
-            <div className={cn("space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg", section.heading && "mt-5")}>
+            <div
+              className={cn(
+                "space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg",
+                section.heading && "mt-5"
+              )}
+            >
               {section.paragraphs.map((paragraph) => (
                 <p key={paragraph.slice(0, 48)}>{paragraph}</p>
               ))}
@@ -83,24 +114,31 @@ function ArticleBody({ article }: { article: CmsArticle }) {
   }
 
   return (
-    <p className="mx-auto max-w-3xl text-lg leading-relaxed text-muted-foreground">
-      {stripHtml(article.excerpt)}
-    </p>
+    <div className="mx-auto max-w-3xl space-y-6 text-base leading-relaxed text-muted-foreground md:text-lg">
+      {blocks.map((paragraph) => (
+        <p key={paragraph.slice(0, 48)}>{stripHtml(paragraph)}</p>
+      ))}
+    </div>
   );
 }
 
-interface BlogDetailViewProps {
-  article: CmsArticle;
+interface ProjectDetailViewProps {
+  project: CmsProject;
 }
 
-export function BlogDetailView({ article }: BlogDetailViewProps) {
-  const t = useTranslations("blog");
-  const tDetail = useTranslations("blog.detail");
-  const locale = useLocale();
-  const { data: articles } = useArticles();
-  const related = articles
-    .filter((item) => item.slug !== article.slug)
-    .slice(0, 2);
+export function ProjectDetailView({ project }: ProjectDetailViewProps) {
+  const t = useTranslations("projects");
+  const tDetail = useTranslations("projects.detail");
+  const { data: projects } = useProjects();
+
+  const related = [
+    ...projects.filter(
+      (item) => item.slug !== project.slug && item.category === project.category
+    ),
+    ...projects.filter(
+      (item) => item.slug !== project.slug && item.category !== project.category
+    ),
+  ].slice(0, 2);
 
   return (
     <>
@@ -129,7 +167,7 @@ export function BlogDetailView({ article }: BlogDetailViewProps) {
           >
             <motion.div variants={staggerItem}>
               <Link
-                href="/blog"
+                href="/projects"
                 className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 <ArrowLeft className="size-4" strokeWidth={1.75} />
@@ -138,37 +176,36 @@ export function BlogDetailView({ article }: BlogDetailViewProps) {
             </motion.div>
 
             <div className="mt-8 max-w-3xl">
-              <motion.div variants={staggerItem} className="flex flex-wrap items-center gap-2">
+              <motion.div
+                variants={staggerItem}
+                className="flex flex-wrap items-center gap-2"
+              >
                 <Badge
                   variant="outline"
                   className={cn(
                     "text-[10px] font-semibold uppercase tracking-wider",
-                    CATEGORY_STYLES[article.category]
+                    CATEGORY_STYLES[project.category]
                   )}
                 >
-                  {t(`categories.${article.category}`)}
+                  {t(`categories.${project.category}`)}
                 </Badge>
-                <span className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
-                  <Clock className="size-3.5" />
-                  {t("minRead", { minutes: article.readMinutes })}
-                </span>
                 <time className="text-xs uppercase tracking-[0.16em] text-muted-foreground">
-                  {formatDate(article.date, locale)}
+                  {project.year}
                 </time>
               </motion.div>
 
               <motion.h1
                 variants={blurReveal}
-                className="mt-5 font-display text-[clamp(2.25rem,5.5vw,4.25rem)] font-extrabold leading-[1.05] tracking-tight text-balance"
+                className="mt-5 font-display text-[clamp(1.85rem,4vw,3.25rem)] font-extrabold leading-[1.1] tracking-tight text-balance"
               >
-                {article.title}
+                {project.title}
               </motion.h1>
 
               <motion.p
                 variants={staggerItem}
                 className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg"
               >
-                {article.excerpt}
+                {project.description}
               </motion.p>
 
               <motion.div
@@ -185,12 +222,32 @@ export function BlogDetailView({ article }: BlogDetailViewProps) {
                 </Magnetic>
                 <Magnetic strength={0.25}>
                   <Button asChild size="lg" variant="outline" className="group gap-2">
-                    <Link href="/blog">
+                    <Link href="/projects">
                       {tDetail("ctaSecondary")}
                       <ArrowRight className="size-4 opacity-60 transition-transform group-hover:translate-x-0.5" />
                     </Link>
                   </Button>
                 </Magnetic>
+                {project.liveUrl ? (
+                  <Magnetic strength={0.2}>
+                    <Button asChild size="lg" variant="outline" className="group gap-2">
+                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                        {tDetail("liveDemo")}
+                        <ExternalLink className="size-4 opacity-70" />
+                      </a>
+                    </Button>
+                  </Magnetic>
+                ) : null}
+                {project.repoUrl ? (
+                  <Magnetic strength={0.2}>
+                    <Button asChild size="lg" variant="outline" className="group gap-2">
+                      <a href={project.repoUrl} target="_blank" rel="noopener noreferrer">
+                        {tDetail("viewCode")}
+                        <Github className="size-4 opacity-70" />
+                      </a>
+                    </Button>
+                  </Magnetic>
+                ) : null}
               </motion.div>
             </div>
 
@@ -199,12 +256,10 @@ export function BlogDetailView({ article }: BlogDetailViewProps) {
               className="relative mt-12 overflow-hidden rounded-2xl border border-border/80 bg-muted/30 shadow-[0_28px_90px_-36px_rgba(16,44,39,0.45)] sm:rounded-3xl md:mt-14"
             >
               <div className="relative aspect-[16/9] w-full">
-                <OptimizedImage
-                  src={article.image}
-                  alt={article.title}
-                  fill
+                <ProjectImage
+                  src={project.image}
+                  alt={project.title}
                   priority
-                  className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-forest/35 via-transparent to-transparent" />
               </div>
@@ -215,8 +270,27 @@ export function BlogDetailView({ article }: BlogDetailViewProps) {
 
       <div className="editorial-container section-padding pt-0">
         <ScrollReveal>
-          <ArticleBody article={article} />
+          <ProjectBody project={project} comingSoon={tDetail("comingSoon")} />
         </ScrollReveal>
+
+        {project.stack.length > 0 ? (
+          <ScrollReveal className="mx-auto mt-12 max-w-3xl md:mt-16" delay={0.05}>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-glow">
+              {tDetail("stackLabel")}
+            </p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {project.stack.map((tech) => (
+                <Badge
+                  key={tech}
+                  variant="outline"
+                  className="border-border/80 bg-card/60 px-3 py-1.5 text-xs font-medium"
+                >
+                  {tech}
+                </Badge>
+              ))}
+            </div>
+          </ScrollReveal>
+        ) : null}
 
         <ScrollReveal className="mt-16 md:mt-20" delay={0.1}>
           <div className="relative overflow-hidden rounded-[2rem] bg-forest px-8 py-12 text-center text-forest-foreground md:px-12 md:py-16">
@@ -252,37 +326,36 @@ export function BlogDetailView({ article }: BlogDetailViewProps) {
             </div>
 
             <div className="grid gap-6 md:grid-cols-2">
-              {related.map((post) => (
+              {related.map((item) => (
                 <Link
-                  key={post.slug}
-                  href={`/blog/${post.slug}`}
+                  key={item.slug}
+                  href={`/projects/${item.slug}`}
                   className="group overflow-hidden rounded-2xl border border-border/70 bg-card transition-colors hover:border-glow/40"
                 >
                   <div className="relative aspect-[16/10] overflow-hidden bg-secondary/40">
-                    <OptimizedImage
-                      src={post.image}
-                      alt={post.title}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    <ProjectImage
+                      src={item.image}
+                      alt={item.title}
+                      className="transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>
                   <div className="p-6">
                     <span
                       className={cn(
                         "rounded-full border px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider",
-                        CATEGORY_STYLES[post.category]
+                        CATEGORY_STYLES[item.category]
                       )}
                     >
-                      {t(`categories.${post.category}`)}
+                      {t(`categories.${item.category}`)}
                     </span>
                     <h3 className="mt-4 font-display text-xl font-bold tracking-tight text-foreground">
-                      {post.title}
+                      {item.title}
                     </h3>
                     <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-muted-foreground">
-                      {post.excerpt}
+                      {item.description}
                     </p>
                     <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-glow">
-                      {t("readArticle")}
+                      {tDetail("viewProject")}
                       <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
                     </span>
                   </div>

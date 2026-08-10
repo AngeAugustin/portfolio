@@ -16,15 +16,20 @@ export function mediaUrl(media: StrapiMedia | string | undefined | null, fallbac
 
 export function asStringArray(value: unknown): string[] {
   if (Array.isArray(value)) {
-    return value.filter((item): item is string => typeof item === "string");
+    return value
+      .flatMap((item) => (typeof item === "string" ? asStringArray(item) : []))
+      .filter(Boolean);
   }
   if (typeof value === "string") {
+    const trimmed = value.trim();
+    if (!trimmed) return [];
+
     try {
-      const parsed = JSON.parse(value) as unknown;
+      const parsed = JSON.parse(trimmed) as unknown;
       return asStringArray(parsed);
     } catch {
-      return value
-        .split(",")
+      return trimmed
+        .split(/[\n,;|]+/)
         .map((part) => part.trim())
         .filter(Boolean);
     }

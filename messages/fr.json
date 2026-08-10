@@ -280,6 +280,7 @@
     "send": "Envoyer",
     "sending": "Envoi...",
     "success": "Message envoyé avec succès !",
+    "error": "Une erreur est survenue. Réessaie dans un instant.",
     "location": "Basé à Cotonou, Bénin — disponible mondialement"
   },
   "footer": {
@@ -481,32 +482,72 @@
       "dashboard": "Dashboards",
       "saas": "SaaS",
       "automation": "Automatisation"
+    },
+    "detail": {
+      "back": "Retour aux projets",
+      "watermark": "Work",
+      "ctaPrimary": "Me contacter",
+      "ctaSecondary": "Tous les projets",
+      "ctaTitle": "Envie de construire quelque chose de similaire ?",
+      "ctaSubtitle": "Parlons de votre produit, API ou système IA — avec clarté, craft et exigence production.",
+      "ctaButton": "Démarrer une conversation",
+      "relatedLabel": "Continuer",
+      "relatedTitle": "Autres projets",
+      "stackLabel": "Stack technique",
+      "liveDemo": "Démo live",
+      "viewCode": "Voir le code",
+      "viewProject": "Voir le projet",
+      "comingSoon": "Étude de cas détaillée — architecture, défis techniques et résultats à venir."
     }
   },
   "projectItems": {
-    "neural-commerce": {
-      "title": "Neural Commerce",
-      "description": "Moteur de recommandation e-commerce IA avec personnalisation temps réel et recherche sémantique."
+    "cnss-pension-tracking": {
+      "title": "Suivi des dossiers de pension — CNSS Bénin",
+      "description": "Application web de suivi des dossiers de pension à la CNSS Bénin, avec architecture frontend/backend et API REST."
     },
-    "dataflow-pipeline": {
-      "title": "DataFlow Pipeline",
-      "description": "Pipeline analytique de bout en bout avec orchestration Airflow, transformations dbt et dashboards exécutifs."
+    "tutoring-platform": {
+      "title": "Plateforme de gestion du tutorat — Freelance Bénin",
+      "description": "Application web et mobile permettant aux parents de rechercher et d’engager des tuteurs pour leurs enfants."
     },
-    "benin-pay-api": {
-      "title": "BeninPay API",
-      "description": "API de paiement sécurisée pour la fintech ouest-africaine avec transactions idempotentes et webhooks."
+    "packaging-crm": {
+      "title": "CRM de gestion des ventes de packaging — Freelance Bénin",
+      "description": "CRM web pour centraliser ventes, rendez-vous, livraisons, support client et suivi commercial, aussi packagé en desktop Electron."
     },
-    "insight-saas": {
-      "title": "Insight SaaS",
-      "description": "Plateforme analytique multi-tenant avec facturation, accès par rôles et rapports personnalisés."
+    "banking-management": {
+      "title": "Application web de gestion bancaire — Freelance",
+      "description": "Simulateur de plateforme bancaire avec architecture frontend/backend structurée et modélisation UML."
     },
-    "agent-orchestrator": {
-      "title": "Agent Orchestrator",
-      "description": "Système d'automatisation multi-agents coordonnant des workflows LLM avec observabilité et validation humaine."
+    "accounting-ai": {
+      "title": "Gestion de bilan comptable avec IA — LuxAIIT",
+      "description": "Application web d’analyse de bilans comptables avec génération automatique, dashboards et explications LLM."
     },
-    "agri-dashboard": {
-      "title": "Agri Dashboard",
-      "description": "Tableau de bord agricole géospatial avec analytics cultures et outils de gestion coopérative."
+    "connectors-audit-ai": {
+      "title": "Connecteurs et audit avec IA — LuxAIIT",
+      "description": "Plateforme de connecteurs pour auditer bases, APIs REST/SOAP, e-mails et serveurs, enrichie par des LLM."
+    },
+    "dncf-personnel-transfers": {
+      "title": "Gestion des mutations de personnel — DNCF Bénin",
+      "description": "Application web pour gérer les mutations de personnel de bout en bout à la Direction Nationale du Contrôle Financier."
+    },
+    "dncf-committees-projects": {
+      "title": "Gestion des comités et suivi des projets — DNCF Bénin",
+      "description": "Plateforme de centralisation des comités de gestion et du suivi des projets à la DNCF."
+    },
+    "sigfip-dgb": {
+      "title": "Participation au projet SIGFIP — DGB Bénin / GIZ",
+      "description": "Contribution à la refonte du périmètre DGB du SIGFIP, avec focus interopérabilité et X-ROAD."
+    },
+    "grc-saas": {
+      "title": "SaaS Gouvernance, Risques et Conformité (GRC) — Govern Group",
+      "description": "SaaS GRC couvrant normes, obligations CEDEAO-CEMAC, LCB-FT-FP et gestion des risques, avec assistance IA."
+    },
+    "aml-detection": {
+      "title": "Système AML de détection des transactions suspectes — Govern Group",
+      "description": "Moteur AML en Machine Learning pour détecter des schémas suspects dans les flux d’un Core Banking."
+    },
+    "grc-landing": {
+      "title": "Landing Page SaaS GRC — Govern Group",
+      "description": "Site vitrine du SaaS GRC présentant fonctionnalités, roadmap et assistance conversationnelle IA."
     }
   },
   "educationItems": [

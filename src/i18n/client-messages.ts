@@ -59,4 +59,9 @@ export const BLOG_MESSAGE_NAMESPACES = ["blog"] as const;
 
 export const BLOG_DETAIL_MESSAGE_NAMESPACES = ["blog", "common", "contact"] as const;
 
-export const PROJECT_DETAIL_MESSAGE_NAMESPACES = ["projectItems", "common"] as const;
+export const PROJECT_DETAIL_MESSAGE_NAMESPACES = [
+  "projects",
+  "projectItems",
+  "common",
+  "contact",
+] as const;

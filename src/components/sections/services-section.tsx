@@ -32,7 +32,7 @@ export function ServicesSection({ compact = false }: { compact?: boolean }) {
 
       <div className="relative mx-auto max-w-6xl">
         {!compact ? (
-          <ScrollReveal className="relative mb-12 overflow-x-clip">
+          <ScrollReveal className="relative mb-12">
             <SectionWatermark text={t("label")} />
             <div className="relative z-10 mx-auto max-w-2xl text-center">
               <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-glow">
