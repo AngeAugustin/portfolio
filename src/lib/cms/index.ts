@@ -2,10 +2,12 @@ export { getStrapiUrl } from "./config";
 export { mediaUrl } from "./media";
 export { submitContactMessage } from "./contact";
 export type { ContactMessagePayload } from "./contact";
-export type { CmsArticle, CmsProject, CmsService } from "./types";
+export type { CmsArticle, CmsEducation, CmsExperience, CmsProject, CmsService } from "./types";
 export {
   useArticle,
   useArticles,
+  useEducations,
+  useExperiences,
   useProject,
   useProjects,
   useService,

@@ -6,7 +6,7 @@ import {
   type BlogPostSlug,
   type ServiceSlug,
 } from "@/lib/site";
-import type { CmsArticle, CmsProject, CmsService } from "./types";
+import type { CmsArticle, CmsEducation, CmsExperience, CmsProject, CmsService } from "./types";
 
 type LocalizedCopy = Record<string, string | undefined>;
 
@@ -104,4 +104,56 @@ export function articleFallbacks(messages: IntlMessages): CmsArticle[] {
 
 export function isKnownServiceSlug(slug: string): slug is ServiceSlug {
   return services.some((service) => service.slug === slug);
+}
+
+type ExperienceFallbackItem = {
+  role: string;
+  company: string;
+  period: string;
+  description: string;
+};
+
+type EducationFallbackItem = {
+  degree: string;
+  school: string;
+  period: string;
+  description: string;
+  status: "completed" | "ongoing";
+  highlight?: string;
+};
+
+export function experienceFallbacks(messages: IntlMessages): CmsExperience[] {
+  const items = messages.experienceItems;
+  if (!Array.isArray(items)) return [];
+
+  return items.map((item, index) => {
+    const entry = item as ExperienceFallbackItem;
+    return {
+      key: `${entry.company}-${index}`,
+      role: entry.role ?? "",
+      company: entry.company ?? "",
+      period: entry.period ?? "",
+      description: entry.description ?? "",
+      order: index,
+    };
+  });
+}
+
+export function educationFallbacks(messages: IntlMessages): CmsEducation[] {
+  const items = messages.educationItems;
+  if (!Array.isArray(items)) return [];
+
+  return items.map((item, index) => {
+    const entry = item as EducationFallbackItem;
+    return {
+      key: `${entry.degree}-${index}`,
+      degree: entry.degree ?? "",
+      school: entry.school ?? "",
+      period: entry.period ?? "",
+      description: entry.description ?? "",
+      status: entry.status === "ongoing" ? "ongoing" : "completed",
+      highlight: entry.highlight,
+      order: index,
+    };
+  });
 }

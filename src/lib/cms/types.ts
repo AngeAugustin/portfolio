@@ -41,6 +41,26 @@ export type CmsArticle = {
   image: string;
 };
 
+export type CmsExperience = {
+  key: string;
+  role: string;
+  company: string;
+  period: string;
+  description: string;
+  order: number;
+};
+
+export type CmsEducation = {
+  key: string;
+  degree: string;
+  school: string;
+  period: string;
+  description: string;
+  status: "completed" | "ongoing";
+  highlight?: string;
+  order: number;
+};
+
 export type StrapiListResponse<T> = {
   data: T[];
   meta?: {

@@ -1,14 +1,24 @@
 import { useEffect, useState } from "react";
 import { useLocale, useMessages } from "@/i18n/context";
 import { fetchArticles, fetchArticleBySlug } from "./articles";
+import { fetchEducations } from "./educations";
+import { fetchExperiences } from "./experiences";
 import {
   articleFallbacks,
+  educationFallbacks,
+  experienceFallbacks,
   projectFallbacks,
   serviceFallbacks,
 } from "./fallbacks";
 import { fetchProjectBySlug, fetchProjects } from "./projects";
 import { fetchServiceBySlug, fetchServices } from "./services";
-import type { CmsArticle, CmsProject, CmsService } from "./types";
+import type {
+  CmsArticle,
+  CmsEducation,
+  CmsExperience,
+  CmsProject,
+  CmsService,
+} from "./types";
 
 type CmsListState<T> = {
   data: T[];
@@ -305,6 +315,86 @@ export function useArticle(slug: string | undefined): CmsItemState<CmsArticle> {
       cancelled = true;
     };
   }, [slug, locale, messages]);
+
+  return { data, loading, fromCms };
+}
+
+export function useExperiences(): CmsListState<CmsExperience> {
+  const locale = useLocale();
+  const messages = useMessages();
+  const fallback = experienceFallbacks(messages);
+  const [data, setData] = useState<CmsExperience[]>(fallback);
+  const [loading, setLoading] = useState(true);
+  const [fromCms, setFromCms] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    setLoading(true);
+
+    fetchExperiences(locale)
+      .then((items) => {
+        if (cancelled) return;
+        if (items.length > 0) {
+          setData(items);
+          setFromCms(true);
+        } else {
+          setData(experienceFallbacks(messages));
+          setFromCms(false);
+        }
+      })
+      .catch(() => {
+        if (cancelled) return;
+        setData(experienceFallbacks(messages));
+        setFromCms(false);
+      })
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [locale, messages]);
+
+  return { data, loading, fromCms };
+}
+
+export function useEducations(): CmsListState<CmsEducation> {
+  const locale = useLocale();
+  const messages = useMessages();
+  const fallback = educationFallbacks(messages);
+  const [data, setData] = useState<CmsEducation[]>(fallback);
+  const [loading, setLoading] = useState(true);
+  const [fromCms, setFromCms] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    setLoading(true);
+
+    fetchEducations(locale)
+      .then((items) => {
+        if (cancelled) return;
+        if (items.length > 0) {
+          setData(items);
+          setFromCms(true);
+        } else {
+          setData(educationFallbacks(messages));
+          setFromCms(false);
+        }
+      })
+      .catch(() => {
+        if (cancelled) return;
+        setData(educationFallbacks(messages));
+        setFromCms(false);
+      })
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [locale, messages]);
 
   return { data, loading, fromCms };
 }
