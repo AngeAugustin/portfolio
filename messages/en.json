@@ -96,14 +96,15 @@
     },
     "p1": "I'm a Beninese FullStack Developer and AI Engineer with 3+ years of experience shipping production-grade applications for startups and enterprises.",
     "p2": "My work spans intelligent automation, API platforms, SaaS products, and analytics dashboards — always with a focus on performance, accessibility, and elegant UX.",
-    "p3": "I'm actively transitioning into Data Engineering, deepening my expertise in pipelines, warehousing, and ML infrastructure.",
+    "p3": "I'm actively transitioning into AI engineering and Data Engineering, deepening my expertise in intelligent systems, data pipelines, machine learning, data mining, LLMs, RAG, AI, and integration.",
     "cta": "Learn more about me",
     "resume": {
       "label": "Resume",
       "title": "Download my resume",
       "subtitle": "Experience, skills, and highlights — ready to share with your team.",
       "hint": "PDF document tailored for hiring and professional opportunities.",
-      "download": "Download PDF"
+      "download": "Download PDF",
+      "unavailable": "Please check back later. My resume will be available soon."
     }
   },
   "education": {
