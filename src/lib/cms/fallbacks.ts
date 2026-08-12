@@ -109,6 +109,7 @@ export function isKnownServiceSlug(slug: string): slug is ServiceSlug {
 type ExperienceFallbackItem = {
   role: string;
   company: string;
+  location?: string;
   period: string;
   description: string;
 };
@@ -132,6 +133,7 @@ export function experienceFallbacks(messages: IntlMessages): CmsExperience[] {
       key: `${entry.company}-${index}`,
       role: entry.role ?? "",
       company: entry.company ?? "",
+      location: entry.location,
       period: entry.period ?? "",
       description: entry.description ?? "",
       order: index,

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useTranslations } from "@/i18n/context";
 import { SectionHeader } from "@/components/shared/section-header";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
+import { Badge } from "@/components/ui/badge";
 import { Link } from "@/i18n/navigation";
 import { useExperiences } from "@/lib/cms";
 
@@ -71,7 +72,14 @@ export function ExperienceSection({
                         <h3 className="mt-2 font-display text-xl font-bold md:text-2xl">
                           {item.role}
                         </h3>
-                        <p className="mt-1 text-muted-foreground">{item.company}</p>
+                        <div className="mt-1 flex flex-wrap items-center gap-2">
+                          <p className="text-muted-foreground">{item.company}</p>
+                          {item.location ? (
+                            <Badge variant="secondary" className="text-[10px]">
+                              {item.location}
+                            </Badge>
+                          ) : null}
+                        </div>
                       </div>
                       <p className="leading-relaxed text-muted-foreground">
                         {item.description}

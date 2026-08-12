@@ -6,6 +6,7 @@ type StrapiExperience = {
   key?: string;
   role?: string;
   company?: string;
+  location?: string | null;
   period?: string;
   description?: string;
   order?: number | null;
@@ -18,6 +19,7 @@ function mapExperience(entry: StrapiExperience): CmsExperience | null {
     key: entry.key,
     role: entry.role,
     company: entry.company,
+    location: entry.location ?? undefined,
     period: entry.period ?? "",
     description: entry.description ?? "",
     order: entry.order ?? 0,
