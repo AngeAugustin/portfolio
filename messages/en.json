@@ -763,5 +763,27 @@
       "title": "Data Engineering",
       "description": "Building robust data pipelines, warehouses, and analytics infrastructure for data-driven products."
     }
-  ]
+  ],
+  "chat": {
+    "openChat": "Open chat",
+    "closeChat": "Close chat",
+    "chatTitle": "Kadoukpè",
+    "chatSubtitle": "Powered by RAG · streaming",
+    "assistantRole": "AI Assistant",
+    "justNow": "Just now",
+    "welcome": "👋 Hello! I'm Kadoukpè, Augustin's assistant. Ask me anything.",
+    "placeholder": "Type your message…",
+    "send": "Send",
+    "typing": "Thinking…",
+    "disclaimer": "AI-generated answers (RAG) based on the public profile. Messages are processed by Google Gemini.",
+    "language": "Language",
+    "errorGeneric": "Sorry, something went wrong. Try again in a moment or reach Augustin at hello@augustinfachehoun.dev.",
+    "errorRateLimit": "Too many messages sent. Please wait a few minutes before trying again.",
+    "errorNotConfigured": "The AI service is not configured on the server yet.",
+    "suggestions": [
+      { "id": "projects", "label": "What projects have you built?" },
+      { "id": "skills", "label": "What's your tech stack?" },
+      { "id": "contact", "label": "How can I reach you?" }
+    ]
+  }
 }

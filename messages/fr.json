@@ -763,5 +763,27 @@
       "title": "Data Engineering",
       "description": "Construction de pipelines data robustes, entrepôts et infrastructure analytique pour produits data-driven."
     }
-  ]
+  ],
+  "chat": {
+    "openChat": "Ouvrir le chat",
+    "closeChat": "Fermer le chat",
+    "chatTitle": "Kadoukpè",
+    "chatSubtitle": "Propulsé par RAG · streaming",
+    "assistantRole": "Assistant IA",
+    "justNow": "À l'instant",
+    "welcome": "👋 Bonjour ! Je suis Kadoukpè, l'assistant d'Augustin. Posez-moi toutes vos questions.",
+    "placeholder": "Écrivez votre message…",
+    "send": "Envoyer",
+    "typing": "Réflexion en cours…",
+    "disclaimer": "Réponses générées par IA (RAG) à partir du profil public. Les messages sont traités par Google Gemini.",
+    "language": "Langue",
+    "errorGeneric": "Désolé, une erreur s'est produite. Réessayez dans un instant ou contactez Augustin à hello@augustinfachehoun.dev.",
+    "errorRateLimit": "Trop de messages envoyés. Patientez quelques minutes avant de réessayer.",
+    "errorNotConfigured": "Le service IA n'est pas encore configuré sur le serveur.",
+    "suggestions": [
+      { "id": "projects", "label": "Quels projets as-tu réalisés ?" },
+      { "id": "skills", "label": "Quelle est ta stack ?" },
+      { "id": "contact", "label": "Comment te contacter ?" }
+    ]
+  }
 }
