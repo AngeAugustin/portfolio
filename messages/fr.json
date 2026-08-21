@@ -1,7 +1,35 @@
 {
   "meta": {
     "title": "Augustin FACHEHOUN — Développeur FullStack & IA",
-    "description": "Développeur FullStack & IA béninois créant des applications web évolutives et des systèmes intelligents. En transition vers le Data Engineering."
+    "description": "Portfolio d'Augustin FACHEHOUN, développeur FullStack & IA. Découvrez mes projets, services et solutions digitales."
+  },
+  "seo": {
+    "pages": {
+      "home": {
+        "title": "Augustin FACHEHOUN — Développeur FullStack & IA",
+        "description": "Portfolio d'Augustin FACHEHOUN, développeur FullStack & IA. Découvrez mes projets, services et solutions digitales."
+      },
+      "about": {
+        "title": "À propos — Augustin FACHEHOUN",
+        "description": "Parcours, compétences et CV d'Augustin FACHEHOUN, développeur FullStack et ingénieur IA basé à Cotonou."
+      },
+      "projects": {
+        "title": "Projets — Augustin FACHEHOUN",
+        "description": "Découvrez les projets et réalisations d'Augustin FACHEHOUN : applications web, systèmes IA, APIs et produits data."
+      },
+      "services": {
+        "title": "Services — Augustin FACHEHOUN",
+        "description": "Création d'applications web, intégration IA, APIs backend et data engineering — des solutions digitales sur mesure."
+      },
+      "blog": {
+        "title": "Blog — Augustin FACHEHOUN",
+        "description": "Articles sur le développement web, l'IA en production et le data engineering — notes techniques d'Augustin FACHEHOUN."
+      },
+      "contact": {
+        "title": "Contact — Augustin FACHEHOUN",
+        "description": "Je suis disponible pour répondre à vos besoins. Parlons de votre projet web, IA ou data."
+      }
+    }
   },
   "nav": {
     "home": "Accueil",
@@ -31,24 +59,39 @@
       "remote": "Remote mondial"
     },
     "visual": {
-      "sidebarLabel": "Focus",
-      "connections": {
-        "fullstack": "fullstack",
-        "ai": "systèmes ia",
-        "data": "pipelines data",
-        "local": "local.studio"
+      "windowTitle": "augustin@studio: ~",
+      "user": "augustin",
+      "host": "studio",
+      "cwd": "~",
+      "shell": "zsh",
+      "path": "~/studio",
+      "connected": "connecté",
+      "ariaLabel": "Terminal Linux présentant Augustin Fachehoun",
+      "fetch": {
+        "title": "augustin@studio",
+        "os": "OS",
+        "osValue": "FullStack Linux x86_64",
+        "host": "Hôte",
+        "hostValue": "Cotonou, Bénin",
+        "kernel": "Kernel",
+        "kernelValue": "TypeScript · Python · SQL",
+        "uptime": "Uptime",
+        "uptimeValue": "3+ ans en production",
+        "packages": "Paquets",
+        "packagesValue": "Next.js · Django · PostgreSQL · RAG",
+        "status": "Statut",
+        "statusValue": "disponible"
       },
-      "activeTitle": "fullstack",
-      "activeMeta": "Web · APIs · craft production",
-      "status": "En cours",
-      "progressLabel": "Livraison en cours",
-      "progressValue": "Shipping",
-      "terminal": {
-        "line1": "build() → apps web scalables",
-        "line2": "deploy() → systèmes IA en production",
-        "line3": "pipeline() → infrastructures data robustes"
+      "git": {
+        "branch": "main",
+        "status": "working tree clean"
       },
-      "caption": "~/Studio · TypeScript · Vite · systèmes intelligents"
+      "commands": {
+        "whoami": "whoami",
+        "whoamiOut": "développeur fullstack & ia",
+        "cat": "cat ./focus.md",
+        "catOut": "web · apis · IA production · pipelines data"
+      }
     }
   },
   "techStack": {
@@ -778,7 +821,7 @@
     "typing": "Réflexion en cours…",
     "disclaimer": "Réponses générées par IA (RAG) à partir du profil public. Les messages sont traités par Google Gemini.",
     "language": "Langue",
-    "errorGeneric": "Désolé, une erreur s'est produite. Réessayez dans un instant ou contactez Augustin à hello@augustinfachehoun.dev.",
+    "errorGeneric": "Désolé, une erreur s'est produite. Réessayez dans un instant ou contactez Augustin à me@augustinfachehoun.pro.",
     "errorRateLimit": "Trop de messages envoyés. Patientez quelques minutes avant de réessayer.",
     "errorNotConfigured": "Le service IA n'est pas encore configuré sur le serveur.",
     "suggestions": [

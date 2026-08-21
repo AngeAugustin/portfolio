@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Augustin FACHEHOUN">
+  <rect width="1200" height="630" fill="#0c1f1c"/>
+  <rect x="56" y="56" width="1088" height="518" rx="28" fill="none" stroke="#1e4a42" stroke-width="2"/>
+  <rect x="96" y="96" width="72" height="72" rx="16" fill="#102c27" stroke="#3d8b7a" stroke-width="2"/>
+  <text x="132" y="142" text-anchor="middle" fill="#3d8b7a" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700">AF</text>
+  <text x="96" y="290" fill="#f4f7f6" font-family="Georgia, 'Times New Roman', serif" font-size="58" font-weight="700">Augustin FACHEHOUN</text>
+  <text x="96" y="362" fill="#8fb8ae" font-family="Inter, system-ui, sans-serif" font-size="30">Développeur FullStack &amp; IA</text>
+  <text x="96" y="510" fill="#5a8a80" font-family="Inter, system-ui, sans-serif" font-size="22">augustinfachehoun.pro</text>
+</svg>

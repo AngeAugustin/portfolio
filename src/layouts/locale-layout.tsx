@@ -7,8 +7,7 @@ import { ThemeProvider } from "@/components/layout/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { ChatWidget } from "@/components/chat/ChatWidget";
-import { siteConfig } from "@/lib/site";
-import { useDocumentLang, usePageMeta } from "@/lib/page-meta";
+import { useDocumentLang } from "@/lib/page-meta";
 
 export function LocaleLayout() {
   const { locale: localeParam } = useParams<{ locale: string }>();
@@ -37,15 +36,6 @@ function LocaleShell({ locale }: { locale: Locale }) {
 
   useDocumentLang(locale);
 
-  const meta = messages?.meta as { title: string; description: string } | undefined;
-
-  usePageMeta({
-    title: meta?.title,
-    description: meta?.description,
-    ogTitle: meta?.title,
-    ogDescription: meta?.description,
-  });
-
   if (!messages) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-background">
@@ -57,25 +47,6 @@ function LocaleShell({ locale }: { locale: Locale }) {
   return (
     <IntlProvider locale={locale} messages={messages}>
       <ThemeProvider>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: siteConfig.name,
-              jobTitle: siteConfig.title,
-              url: siteConfig.url,
-              email: siteConfig.email,
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Cotonou",
-                addressCountry: "BJ",
-              },
-              sameAs: Object.values(siteConfig.social),
-            }),
-          }}
-        />
         <Navbar />
         <main className="overflow-x-clip">
           <Outlet />

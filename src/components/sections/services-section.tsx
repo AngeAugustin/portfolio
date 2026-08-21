@@ -21,6 +21,7 @@ function getServiceIcon(slug: string): LucideIcon {
 export function ServicesSection({ compact = false }: { compact?: boolean }) {
   const t = useTranslations("services");
   const { data: services, loading } = useServices();
+  const displayedServices = compact ? services : services.slice(0, 3);
 
   return (
     <section className="relative overflow-x-clip px-5 py-20 sm:px-8 md:py-24 lg:px-12">
@@ -54,9 +55,9 @@ export function ServicesSection({ compact = false }: { compact?: boolean }) {
           </ScrollReveal>
         )}
 
-        {loading && services.length === 0 ? (
+        {loading && displayedServices.length === 0 ? (
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {[0, 1, 2, 3].map((i) => (
+            {(compact ? [0, 1, 2, 3] : [0, 1, 2]).map((i) => (
               <div
                 key={i}
                 className="h-44 animate-pulse rounded-2xl border border-border bg-card"
@@ -65,7 +66,7 @@ export function ServicesSection({ compact = false }: { compact?: boolean }) {
           </div>
         ) : (
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service, index) => {
+            {displayedServices.map((service, index) => {
               const Icon = getServiceIcon(service.slug);
 
               return (

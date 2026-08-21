@@ -4,8 +4,9 @@ import { PageIntl } from "@/components/layout/page-intl";
 import { BLOG_DETAIL_MESSAGE_NAMESPACES } from "@/i18n/client-messages";
 import { lazySection } from "@/lib/lazy-section";
 import { siteConfig } from "@/lib/site";
+import { localePath } from "@/lib/seo-config";
 import { useArticle } from "@/lib/cms";
-import { useLocale } from "@/i18n/context";
+import { useLocale, useTranslations } from "@/i18n/context";
 
 const BlogDetailView = lazySection(
   () => import("@/components/sections/blog-detail-view"),
@@ -15,6 +16,7 @@ const BlogDetailView = lazySection(
 export function BlogDetailPage() {
   const { slug } = useParams<{ slug: string }>();
   const locale = useLocale();
+  const tNav = useTranslations("nav");
   const { data: article, loading } = useArticle(slug);
 
   usePageMeta({
@@ -22,6 +24,17 @@ export function BlogDetailPage() {
     description: article?.excerpt,
     ogTitle: article ? `${article.title} | ${siteConfig.name}` : undefined,
     ogDescription: article?.excerpt,
+    ogType: "article",
+    breadcrumbs: article
+      ? [
+          { name: tNav("home"), path: localePath(locale, "") },
+          { name: tNav("blog"), path: localePath(locale, "/blog") },
+          {
+            name: article.title,
+            path: localePath(locale, `/blog/${article.slug}`),
+          },
+        ]
+      : undefined,
   });
 
   if (loading) {

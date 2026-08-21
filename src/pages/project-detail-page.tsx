@@ -4,8 +4,9 @@ import { PageIntl } from "@/components/layout/page-intl";
 import { PROJECT_DETAIL_MESSAGE_NAMESPACES } from "@/i18n/client-messages";
 import { lazySection } from "@/lib/lazy-section";
 import { siteConfig } from "@/lib/site";
+import { localePath } from "@/lib/seo-config";
 import { useProject } from "@/lib/cms";
-import { useLocale } from "@/i18n/context";
+import { useLocale, useTranslations } from "@/i18n/context";
 
 const ProjectDetailView = lazySection(
   () => import("@/components/sections/project-detail-view"),
@@ -15,6 +16,7 @@ const ProjectDetailView = lazySection(
 export function ProjectDetailPage() {
   const { slug } = useParams<{ slug: string }>();
   const locale = useLocale();
+  const tNav = useTranslations("nav");
   const { data: project, loading } = useProject(slug);
 
   usePageMeta({
@@ -22,6 +24,17 @@ export function ProjectDetailPage() {
     description: project?.description,
     ogTitle: project ? `${project.title} | ${siteConfig.name}` : undefined,
     ogDescription: project?.description,
+    ogType: "article",
+    breadcrumbs: project
+      ? [
+          { name: tNav("home"), path: localePath(locale, "") },
+          { name: tNav("projects"), path: localePath(locale, "/projects") },
+          {
+            name: project.title,
+            path: localePath(locale, `/projects/${project.slug}`),
+          },
+        ]
+      : undefined,
   });
 
   if (loading) {

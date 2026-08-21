@@ -1,6 +1,7 @@
 import { useTranslations } from "@/i18n/context";
 import { AboutHeroSection } from "@/components/sections/about-hero-section";
 import { PageIntl } from "@/components/layout/page-intl";
+import { PageSeo } from "@/components/seo/page-seo";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
 import { ABOUT_MESSAGE_NAMESPACES } from "@/i18n/client-messages";
 import { lazySection } from "@/lib/lazy-section";
@@ -27,6 +28,7 @@ export function AboutPage() {
 
   return (
     <PageIntl namespaces={ABOUT_MESSAGE_NAMESPACES}>
+      <PageSeo page="about" />
       <AboutHeroSection />
       <div className="editorial-container section-padding pt-0">
         <ScrollReveal>

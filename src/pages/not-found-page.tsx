@@ -3,9 +3,17 @@ import { useTranslations } from "@/i18n/context";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import { GradientOrb } from "@/components/motion/gradient-orb";
+import { usePageMeta } from "@/lib/page-meta";
+import { siteConfig } from "@/lib/site";
 
 export function NotFoundPage() {
   const t = useTranslations("common");
+
+  usePageMeta({
+    title: `${t("notFound")} | ${siteConfig.name}`,
+    description: t("notFoundDesc"),
+    robots: "noindex, follow",
+  });
 
   return (
     <section className="relative flex min-h-[80vh] flex-col items-center justify-center overflow-hidden px-6 text-center">

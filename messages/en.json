@@ -1,7 +1,35 @@
 {
   "meta": {
     "title": "Augustin FACHEHOUN — FullStack & AI Developer",
-    "description": "Beninese FullStack & AI Developer building scalable web apps and intelligent systems. Transitioning into Data Engineering."
+    "description": "Portfolio of Augustin FACHEHOUN, FullStack & AI developer. Discover my projects, services and digital solutions."
+  },
+  "seo": {
+    "pages": {
+      "home": {
+        "title": "Augustin FACHEHOUN — FullStack & AI Developer",
+        "description": "Portfolio of Augustin FACHEHOUN, FullStack & AI developer. Discover my projects, services and digital solutions."
+      },
+      "about": {
+        "title": "About — Augustin FACHEHOUN",
+        "description": "Background, skills and resume of Augustin FACHEHOUN, FullStack developer and AI engineer based in Cotonou."
+      },
+      "projects": {
+        "title": "Projects — Augustin FACHEHOUN",
+        "description": "Explore the projects and work of Augustin FACHEHOUN: web apps, AI systems, APIs and data products."
+      },
+      "services": {
+        "title": "Services — Augustin FACHEHOUN",
+        "description": "Web application development, AI integration, backend APIs and data engineering — tailored digital solutions."
+      },
+      "blog": {
+        "title": "Blog — Augustin FACHEHOUN",
+        "description": "Articles on web development, production AI and data engineering — technical notes by Augustin FACHEHOUN."
+      },
+      "contact": {
+        "title": "Contact — Augustin FACHEHOUN",
+        "description": "Available to discuss your needs. Let's talk about your web, AI or data project."
+      }
+    }
   },
   "nav": {
     "home": "Home",
@@ -31,24 +59,39 @@
       "remote": "Remote worldwide"
     },
     "visual": {
-      "sidebarLabel": "Focus",
-      "connections": {
-        "fullstack": "fullstack",
-        "ai": "ai systems",
-        "data": "data pipelines",
-        "local": "local.studio"
+      "windowTitle": "augustin@studio: ~",
+      "user": "augustin",
+      "host": "studio",
+      "cwd": "~",
+      "shell": "zsh",
+      "path": "~/studio",
+      "connected": "connected",
+      "ariaLabel": "Linux terminal introducing Augustin Fachehoun",
+      "fetch": {
+        "title": "augustin@studio",
+        "os": "OS",
+        "osValue": "FullStack Linux x86_64",
+        "host": "Host",
+        "hostValue": "Cotonou, Benin",
+        "kernel": "Kernel",
+        "kernelValue": "TypeScript · Python · SQL",
+        "uptime": "Uptime",
+        "uptimeValue": "3+ years shipping",
+        "packages": "Packages",
+        "packagesValue": "Next.js · Django · PostgreSQL · RAG",
+        "status": "Status",
+        "statusValue": "available"
       },
-      "activeTitle": "fullstack",
-      "activeMeta": "Web · APIs · production craft",
-      "status": "Building",
-      "progressLabel": "Current delivery",
-      "progressValue": "Shipping",
-      "terminal": {
-        "line1": "build() → scalable web apps",
-        "line2": "deploy() → production AI systems",
-        "line3": "pipeline() → robust data infrastructure"
+      "git": {
+        "branch": "main",
+        "status": "working tree clean"
       },
-      "caption": "~/Studio · TypeScript · Vite · intelligent systems"
+      "commands": {
+        "whoami": "whoami",
+        "whoamiOut": "fullstack & ai developer",
+        "cat": "cat ./focus.md",
+        "catOut": "web · apis · production AI · data pipelines"
+      }
     }
   },
   "techStack": {
@@ -778,7 +821,7 @@
     "typing": "Thinking…",
     "disclaimer": "AI-generated answers (RAG) based on the public profile. Messages are processed by Google Gemini.",
     "language": "Language",
-    "errorGeneric": "Sorry, something went wrong. Try again in a moment or reach Augustin at hello@augustinfachehoun.dev.",
+    "errorGeneric": "Sorry, something went wrong. Try again in a moment or reach Augustin at me@augustinfachehoun.pro.",
     "errorRateLimit": "Too many messages sent. Please wait a few minutes before trying again.",
     "errorNotConfigured": "The AI service is not configured on the server yet.",
     "suggestions": [

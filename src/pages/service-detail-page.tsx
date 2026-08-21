@@ -4,8 +4,9 @@ import { PageIntl } from "@/components/layout/page-intl";
 import { SERVICE_DETAIL_MESSAGE_NAMESPACES } from "@/i18n/client-messages";
 import { lazySection } from "@/lib/lazy-section";
 import { siteConfig } from "@/lib/site";
+import { localePath } from "@/lib/seo-config";
 import { useService } from "@/lib/cms";
-import { useLocale } from "@/i18n/context";
+import { useLocale, useTranslations } from "@/i18n/context";
 
 const ServiceDetailView = lazySection(
   () => import("@/components/sections/service-detail-view"),
@@ -15,6 +16,7 @@ const ServiceDetailView = lazySection(
 export function ServiceDetailPage() {
   const { slug } = useParams<{ slug: string }>();
   const locale = useLocale();
+  const tNav = useTranslations("nav");
   const { data: service, loading } = useService(slug);
 
   usePageMeta({
@@ -22,6 +24,16 @@ export function ServiceDetailPage() {
     description: service?.summary,
     ogTitle: service ? `${service.title} | ${siteConfig.name}` : undefined,
     ogDescription: service?.summary,
+    breadcrumbs: service
+      ? [
+          { name: tNav("home"), path: localePath(locale, "") },
+          { name: tNav("services"), path: localePath(locale, "/services") },
+          {
+            name: service.title,
+            path: localePath(locale, `/services/${service.slug}`),
+          },
+        ]
+      : undefined,
   });
 
   if (loading) {

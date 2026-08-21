@@ -26,6 +26,7 @@
   --color-glow: var(--glow);
   --font-sans: var(--font-geist-sans);
   --font-display: var(--font-heading);
+  --font-mono: var(--font-jetbrains-mono);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);

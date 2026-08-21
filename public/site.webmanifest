@@ -1,0 +1,18 @@
+{
+  "name": "Augustin FACHEHOUN",
+  "short_name": "Augustin",
+  "description": "Portfolio d'Augustin FACHEHOUN, développeur FullStack & IA.",
+  "start_url": "/fr",
+  "display": "browser",
+  "background_color": "#0c1f1c",
+  "theme_color": "#102c27",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

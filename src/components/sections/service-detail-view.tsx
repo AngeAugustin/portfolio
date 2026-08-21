@@ -20,8 +20,10 @@ import { ScrollReveal } from "@/components/motion/scroll-reveal";
 import { SectionWatermark } from "@/components/shared/section-watermark";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { ToolLogoChip } from "@/components/shared/tool-logo-chip";
 import { blurReveal, staggerContainer, staggerItem } from "@/lib/animations";
 import { useServices, type CmsService } from "@/lib/cms";
+import { getToolImage } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const SERVICE_ICONS: Record<string, LucideIcon> = {
@@ -181,12 +183,20 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
         <ScrollReveal className="mt-10" delay={0.15}>
           <div className="rounded-3xl border border-border/80 bg-secondary/20 p-8 md:p-10">
             <h2 className="font-display text-2xl font-bold">{t("stack")}</h2>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {service.stack.map((tech) => (
-                <Badge key={tech} variant="secondary" className="px-3 py-1.5 text-xs">
-                  {tech}
-                </Badge>
-              ))}
+            <div className="mt-6 flex flex-wrap gap-3">
+              {service.stack.map((tech) => {
+                const image = getToolImage(tech);
+
+                if (image) {
+                  return <ToolLogoChip key={tech} name={tech} image={image} />;
+                }
+
+                return (
+                  <Badge key={tech} variant="secondary" className="h-11 px-3 py-1.5 text-xs">
+                    {tech}
+                  </Badge>
+                );
+              })}
             </div>
           </div>
         </ScrollReveal>

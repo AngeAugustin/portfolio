@@ -4,8 +4,8 @@ export const siteConfig = {
   title: "FullStack & AI Developer",
   description:
     "Beninese FullStack & AI Developer crafting scalable web applications and intelligent systems — transitioning into Data Engineering.",
-  url: import.meta.env.VITE_SITE_URL ?? "https://augustinfachehoun.dev",
-  email: "hello@augustinfachehoun.dev",
+  url: import.meta.env.VITE_SITE_URL ?? "https://augustinfachehoun.pro",
+  email: "me@augustinfachehoun.pro",
   location: "Cotonou, Benin",
   social: {
     github: "https://github.com/AngeAugustin",
@@ -145,18 +145,72 @@ export const services = [
 export type ServiceSlug = (typeof services)[number]["slug"];
 
 export const tools = [
-  { name: "Next.js", tag: "app", color: "#171717" },
-  { name: "Vite", tag: "spa", color: "#646cff" },
-  { name: "Node.js", tag: "api", color: "#339933" },
-  { name: "Python", tag: "ai", color: "#3776ab" },
-  { name: "Symfony", tag: "php", color: "#000000" },
-  { name: "PostgreSQL", tag: "sql", color: "#2a75ba" },
-  { name: "MySQL", tag: "sql", color: "#cb7229" },
-  { name: "MongoDB", tag: "nosql", color: "#319751" },
-  { name: "Redis", tag: "cache", color: "#dc382d" },
-  { name: "Talend", tag: "etl", color: "#ff6d00" },
-  { name: "TensorFlow", tag: "ml", color: "#ff6f00" },
+  { name: "Next.js", tag: "app", image: "/images/outils/Next Js.png" },
+  { name: "React", tag: "ui", image: "/images/outils/React Js.png" },
+  { name: "Node.js", tag: "api", image: "/images/outils/Node.png" },
+  { name: "Python", tag: "ai", image: "/images/outils/Python.png" },
+  { name: "Django", tag: "py", image: "/images/outils/Django.png" },
+  { name: "Symfony", tag: "php", image: "/images/outils/Symfony.png" },
+  { name: "Java", tag: "jvm", image: "/images/outils/Java.png" },
+  { name: "Spring Boot", tag: "java", image: "/images/outils/SpringBoot.png" },
+  { name: "PostgreSQL", tag: "sql", image: "/images/outils/PostgreSQL.png" },
+  { name: "MySQL", tag: "sql", image: "/images/outils/MySQL.png" },
+  { name: "MongoDB", tag: "nosql", image: "/images/outils/Mongo.png" },
+  { name: "Redis", tag: "cache", image: "/images/outils/Redis.png" },
+  { name: "Oracle", tag: "db", image: "/images/outils/Oracle.png" },
+  { name: "Talend", tag: "etl", image: "/images/outils/Talend.png" },
+  { name: "LangChain", tag: "llm", image: "/images/outils/LangChain.png" },
+  { name: "OpenRouter", tag: "llm", image: "/images/outils/OpenRouter.png" },
+  { name: "Docker", tag: "ops", image: "/images/outils/Docker.png" },
+  { name: "Vercel", tag: "cloud", image: "/images/outils/Vercel.png" },
+  { name: "Render", tag: "cloud", image: "/images/outils/Render.png" },
+  { name: "Cursor", tag: "ide", image: "/images/outils/Cursor.png" },
+  { name: "Cline", tag: "ide", image: "/images/outils/Cline.png" },
+  { name: "Postman", tag: "api", image: "/images/outils/Postman.png" },
+  { name: "Stitch", tag: "ui", image: "/images/outils/Stitch - Figma.png" },
 ] as const;
+
+function normalizeToolKey(value: string) {
+  return value
+    .toLowerCase()
+    .replace(/\.js/g, "js")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+const TOOL_ALIASES: Record<string, (typeof tools)[number]["name"]> = {
+  "react js": "React",
+  reactjs: "React",
+  "next js": "Next.js",
+  nextjs: "Next.js",
+  "node js": "Node.js",
+  nodejs: "Node.js",
+  node: "Node.js",
+  springboot: "Spring Boot",
+  mongo: "MongoDB",
+  mongodb: "MongoDB",
+  postgres: "PostgreSQL",
+  postgresql: "PostgreSQL",
+  figma: "Stitch",
+};
+
+export function getToolImage(label: string): string | undefined {
+  const key = normalizeToolKey(label);
+  const compact = key.replace(/\s/g, "");
+
+  const exact = tools.find((tool) => {
+    const toolKey = normalizeToolKey(tool.name);
+    return toolKey === key || toolKey.replace(/\s/g, "") === compact;
+  });
+  if (exact) return exact.image;
+
+  const alias = TOOL_ALIASES[key] ?? TOOL_ALIASES[compact];
+  if (alias) {
+    return tools.find((tool) => tool.name === alias)?.image;
+  }
+
+  return tools.find((tool) => key.startsWith(`${normalizeToolKey(tool.name)} `))?.image;
+}
 
 export type BlogCategory = "ai" | "data" | "frontend";
 

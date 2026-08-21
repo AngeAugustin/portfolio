@@ -1,6 +1,7 @@
 import { lazySection } from "@/lib/lazy-section";
 import { HeroSection } from "@/components/sections/hero-section";
 import { PageIntl } from "@/components/layout/page-intl";
+import { PageSeo } from "@/components/seo/page-seo";
 import { HOME_MESSAGE_NAMESPACES } from "@/i18n/client-messages";
 
 const TechStackSection = lazySection(
@@ -39,6 +40,7 @@ const ContactSection = lazySection(
 export function HomePage() {
   return (
     <PageIntl namespaces={HOME_MESSAGE_NAMESPACES}>
+      <PageSeo page="home" />
       {/* 1. Hero */}
       <HeroSection />
 
