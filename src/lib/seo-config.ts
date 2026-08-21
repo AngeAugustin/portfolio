@@ -1,4 +1,5 @@
 export const INDEXABLE_LOCALE = "fr" as const;
+export const DEFAULT_SITE_URL = "https://augustinfachehoun.pro";
 export const INDEX_ROBOTS =
   "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
 export const NOINDEX_ROBOTS = "noindex, follow";
