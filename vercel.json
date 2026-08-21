@@ -1,11 +1,5 @@
 {
   "redirects": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.augustinfachehoun.pro" }],
-      "destination": "https://augustinfachehoun.pro/:path*",
-      "permanent": true
-    },
     { "source": "/", "destination": "/fr", "permanent": true }
   ],
   "rewrites": [
