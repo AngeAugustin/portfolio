@@ -9,9 +9,9 @@
   "lang": "fr",
   "icons": [
     {
-      "src": "/icon.svg",
+      "src": "/images/drapeau.png",
       "sizes": "any",
-      "type": "image/svg+xml",
+      "type": "image/png",
       "purpose": "any"
     }
   ]
