@@ -170,48 +170,6 @@ export const tools = [
   { name: "Stitch", tag: "ui", image: "/images/outils/Stitch - Figma.png" },
 ] as const;
 
-function normalizeToolKey(value: string) {
-  return value
-    .toLowerCase()
-    .replace(/\.js/g, "js")
-    .replace(/[^a-z0-9]+/g, " ")
-    .trim();
-}
-
-const TOOL_ALIASES: Record<string, (typeof tools)[number]["name"]> = {
-  "react js": "React",
-  reactjs: "React",
-  "next js": "Next.js",
-  nextjs: "Next.js",
-  "node js": "Node.js",
-  nodejs: "Node.js",
-  node: "Node.js",
-  springboot: "Spring Boot",
-  mongo: "MongoDB",
-  mongodb: "MongoDB",
-  postgres: "PostgreSQL",
-  postgresql: "PostgreSQL",
-  figma: "Stitch",
-};
-
-export function getToolImage(label: string): string | undefined {
-  const key = normalizeToolKey(label);
-  const compact = key.replace(/\s/g, "");
-
-  const exact = tools.find((tool) => {
-    const toolKey = normalizeToolKey(tool.name);
-    return toolKey === key || toolKey.replace(/\s/g, "") === compact;
-  });
-  if (exact) return exact.image;
-
-  const alias = TOOL_ALIASES[key] ?? TOOL_ALIASES[compact];
-  if (alias) {
-    return tools.find((tool) => tool.name === alias)?.image;
-  }
-
-  return tools.find((tool) => key.startsWith(`${normalizeToolKey(tool.name)} `))?.image;
-}
-
 export type BlogCategory = "ai" | "data" | "frontend";
 
 export const blogPosts = [

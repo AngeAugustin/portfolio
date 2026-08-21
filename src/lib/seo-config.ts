@@ -1,4 +1,7 @@
-export const DEFAULT_SITE_URL = "https://augustinfachehoun.pro";
+export const INDEXABLE_LOCALE = "fr" as const;
+export const INDEX_ROBOTS =
+  "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
+export const NOINDEX_ROBOTS = "noindex, follow";
 export const SITE_NAME = "Augustin FACHEHOUN";
 export const OG_IMAGE_PATH = "/og.svg";
 
@@ -84,7 +87,7 @@ export function buildGraphJsonLd(input: JsonLdInput) {
       "@id": websiteId,
       name: input.name,
       url: siteUrl,
-      inLanguage: ["fr", "en"],
+      inLanguage: ["fr"],
       publisher: { "@id": personId },
     },
     {
@@ -92,7 +95,7 @@ export function buildGraphJsonLd(input: JsonLdInput) {
       "@id": personId,
       name: input.name,
       jobTitle: input.jobTitle,
-      url: toAbsoluteUrl(siteUrl, localePath(locale, "")),
+      url: toAbsoluteUrl(siteUrl, localePath("fr", "")),
       email: input.email,
       image: input.image,
       knowsLanguage: ["fr", "en"],

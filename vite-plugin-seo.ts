@@ -3,7 +3,9 @@ import path from "node:path";
 import type { Plugin } from "vite";
 import {
   DEFAULT_SITE_URL,
+  INDEX_ROBOTS,
   JOB_TITLE,
+  NOINDEX_ROBOTS,
   OG_IMAGE_PATH,
   SITE_NAME,
   STATIC_PAGES,
@@ -143,44 +145,45 @@ function collectRoutes(messages: Record<Locale, Messages>): RouteRecord[] {
 }
 
 function buildHead(route: RouteRecord, siteUrl: string, email: string, sameAs: string[]) {
-  const canonical = toAbsoluteUrl(siteUrl, route.path);
-  const frUrl = toAbsoluteUrl(siteUrl, route.path.replace(/^\/en\b/, "/fr"));
-  const enUrl = toAbsoluteUrl(siteUrl, route.path.replace(/^\/fr\b/, "/en"));
+  const indexable = route.locale === "fr";
+  const canonical = toAbsoluteUrl(siteUrl, route.path.replace(/^\/en\b/, "/fr"));
+  const pageUrl = toAbsoluteUrl(siteUrl, route.path);
   const ogImage = toAbsoluteUrl(siteUrl, OG_IMAGE_PATH);
   const jsonLd = buildGraphJsonLd({
     siteUrl,
     canonical,
-    locale: route.locale,
+    locale: "fr",
     title: route.title,
     description: route.description,
     name: SITE_NAME,
-    jobTitle: JOB_TITLE[route.locale],
+    jobTitle: JOB_TITLE.fr,
     email,
     sameAs,
     location: "Cotonou, Benin",
     image: ogImage,
     pageType: route.pageType,
-    breadcrumbs: route.breadcrumbs,
+    breadcrumbs: indexable ? route.breadcrumbs : route.breadcrumbs.map((item) => ({
+      ...item,
+      path: item.path.replace(/^\/en\b/, "/fr"),
+    })),
   });
 
   return `<!--seo:start-->
     <title>${escapeAttr(route.title)}</title>
     <meta name="description" content="${escapeAttr(route.description)}" />
     <meta name="author" content="${SITE_NAME}" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="robots" content="${indexable ? INDEX_ROBOTS : NOINDEX_ROBOTS}" />
     <link rel="canonical" href="${canonical}" />
-    <link rel="alternate" hreflang="fr" href="${frUrl}" />
-    <link rel="alternate" hreflang="en" href="${enUrl}" />
-    <link rel="alternate" hreflang="x-default" href="${frUrl}" />
+    <link rel="alternate" hreflang="fr" href="${canonical}" />
+    <link rel="alternate" hreflang="x-default" href="${canonical}" />
     <meta property="og:type" content="${route.pageType === "article" ? "article" : "website"}" />
     <meta property="og:site_name" content="${SITE_NAME}" />
     <meta property="og:title" content="${escapeAttr(route.title)}" />
     <meta property="og:description" content="${escapeAttr(route.description)}" />
-    <meta property="og:url" content="${canonical}" />
+    <meta property="og:url" content="${pageUrl}" />
     <meta property="og:image" content="${ogImage}" />
     <meta property="og:image:alt" content="${SITE_NAME}" />
     <meta property="og:locale" content="${route.locale === "fr" ? "fr_FR" : "en_US"}" />
-    <meta property="og:locale:alternate" content="${route.locale === "fr" ? "en_US" : "fr_FR"}" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${escapeAttr(route.title)}" />
     <meta name="twitter:description" content="${escapeAttr(route.description)}" />
@@ -204,43 +207,21 @@ function buildNoscript(messages: Record<Locale, Messages>) {
 }
 
 function buildSitemap(routes: RouteRecord[], siteUrl: string) {
-  const grouped = new Map<string, RouteRecord[]>();
-  for (const route of routes) {
-    const key = route.path.replace(/^\/(fr|en)/, "");
-    const list = grouped.get(key) ?? [];
-    list.push(route);
-    grouped.set(key, list);
-  }
-
   const lastmod = new Date().toISOString().slice(0, 10);
-  const urls = [...grouped.values()].map((pair) => {
-    const fr = pair.find((item) => item.locale === "fr") ?? pair[0];
-    const en = pair.find((item) => item.locale === "en") ?? pair[0];
-    const frLoc = toAbsoluteUrl(siteUrl, fr.path);
-    const enLoc = toAbsoluteUrl(siteUrl, en.path);
-    return `  <url>
-    <loc>${frLoc}</loc>
+  const urls = routes
+    .filter((route) => route.locale === "fr")
+    .map((route) => {
+      const loc = toAbsoluteUrl(siteUrl, route.path);
+      return `  <url>
+    <loc>${loc}</loc>
     <lastmod>${lastmod}</lastmod>
-    <changefreq>${fr.changefreq}</changefreq>
-    <priority>${fr.priority.toFixed(1)}</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="${frLoc}" />
-    <xhtml:link rel="alternate" hreflang="en" href="${enLoc}" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="${frLoc}" />
-  </url>
-  <url>
-    <loc>${enLoc}</loc>
-    <lastmod>${lastmod}</lastmod>
-    <changefreq>${en.changefreq}</changefreq>
-    <priority>${en.priority.toFixed(1)}</priority>
-    <xhtml:link rel="alternate" hreflang="fr" href="${frLoc}" />
-    <xhtml:link rel="alternate" hreflang="en" href="${enLoc}" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="${frLoc}" />
+    <changefreq>${route.changefreq}</changefreq>
+    <priority>${route.priority.toFixed(1)}</priority>
   </url>`;
-  });
+    });
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.join("\n")}
 </urlset>
 `;

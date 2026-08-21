@@ -5,7 +5,9 @@ import { isLocale, type Locale } from "@/i18n/routing";
 import { siteConfig } from "@/lib/site";
 import {
   DEFAULT_SITE_URL,
-  JOB_TITLE,
+  INDEXABLE_LOCALE,
+  INDEX_ROBOTS,
+  NOINDEX_ROBOTS,
   OG_IMAGE_PATH,
   STATIC_PAGES,
   buildGraphJsonLd,
@@ -68,7 +70,7 @@ export function usePageMeta({
   description,
   ogTitle,
   ogDescription,
-  robots = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  robots = INDEX_ROBOTS,
   ogType = "website",
   image,
   breadcrumbs,
@@ -80,26 +82,27 @@ export function usePageMeta({
 
   useEffect(() => {
     const siteUrl = getSiteUrl();
-    const canonical = toAbsoluteUrl(siteUrl, location.pathname);
+    const indexable = locale === INDEXABLE_LOCALE;
+    const canonical = toAbsoluteUrl(siteUrl, swapLocalePath(location.pathname, "fr"));
+    const pageUrl = toAbsoluteUrl(siteUrl, location.pathname);
     const resolvedTitle = title || `${siteConfig.name} — ${JOB_TITLE[locale]}`;
     const resolvedDescription = description || siteConfig.description;
     const ogImage = toAbsoluteUrl(siteUrl, image || OG_IMAGE_PATH);
-    const frUrl = toAbsoluteUrl(siteUrl, swapLocalePath(location.pathname, "fr"));
-    const enUrl = toAbsoluteUrl(siteUrl, swapLocalePath(location.pathname, "en"));
+    const resolvedRobots =
+      indexable && !robots.includes("noindex") ? robots : NOINDEX_ROBOTS;
 
     document.title = resolvedTitle;
     upsertMeta("description", resolvedDescription);
-    upsertMeta("robots", robots);
+    upsertMeta("robots", resolvedRobots);
     upsertMeta("author", siteConfig.name);
     upsertMeta("og:type", ogType === "article" ? "article" : "website", "property");
     upsertMeta("og:site_name", siteConfig.name, "property");
     upsertMeta("og:title", ogTitle || resolvedTitle, "property");
     upsertMeta("og:description", ogDescription || resolvedDescription, "property");
-    upsertMeta("og:url", canonical, "property");
+    upsertMeta("og:url", pageUrl, "property");
     upsertMeta("og:image", ogImage, "property");
     upsertMeta("og:image:alt", siteConfig.name, "property");
     upsertMeta("og:locale", locale === "fr" ? "fr_FR" : "en_US", "property");
-    upsertMeta("og:locale:alternate", locale === "fr" ? "en_US" : "fr_FR", "property");
     upsertMeta("twitter:card", "summary_large_image");
     upsertMeta("twitter:title", ogTitle || resolvedTitle);
     upsertMeta("twitter:description", ogDescription || resolvedDescription);
@@ -109,24 +112,21 @@ export function usePageMeta({
     upsertLink('link[rel="alternate"][hreflang="fr"]', {
       rel: "alternate",
       hreflang: "fr",
-      href: frUrl,
-    });
-    upsertLink('link[rel="alternate"][hreflang="en"]', {
-      rel: "alternate",
-      hreflang: "en",
-      href: enUrl,
+      href: canonical,
     });
     upsertLink('link[rel="alternate"][hreflang="x-default"]', {
       rel: "alternate",
       hreflang: "x-default",
-      href: frUrl,
+      href: canonical,
     });
+    document.querySelector('link[rel="alternate"][hreflang="en"]')?.remove();
+    document.querySelector('meta[property="og:locale:alternate"]')?.remove();
 
     upsertJsonLd(
       buildGraphJsonLd({
         siteUrl,
         canonical,
-        locale,
+        locale: "fr",
         title: resolvedTitle,
         description: resolvedDescription,
         name: siteConfig.name,
