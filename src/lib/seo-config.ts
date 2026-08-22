@@ -75,11 +75,12 @@ export function buildGraphJsonLd(input: JsonLdInput) {
   const pageId = `${canonical}#webpage`;
 
   const isHome = /\/(fr|en)\/?$/.test(canonical) || canonical === siteUrl;
+  const isProfilePage = isHome || input.pageType === "profile";
   const pageType =
     input.pageType === "article"
       ? "Article"
-      : isHome || input.pageType === "profile"
-        ? ["WebPage", "ProfilePage"]
+      : isProfilePage
+        ? ["ProfilePage", "WebPage"]
         : "WebPage";
 
   const graph: Record<string, unknown>[] = [
@@ -95,7 +96,9 @@ export function buildGraphJsonLd(input: JsonLdInput) {
       "@type": "Person",
       "@id": personId,
       name: input.name,
+      alternateName: "Augustin Fachehoun",
       jobTitle: input.jobTitle,
+      description,
       url: toAbsoluteUrl(siteUrl, localePath("fr", "")),
       email: input.email,
       image: input.image,
@@ -106,6 +109,7 @@ export function buildGraphJsonLd(input: JsonLdInput) {
         addressCountry: "BJ",
       },
       sameAs: input.sameAs,
+      ...(isProfilePage ? { mainEntityOfPage: { "@id": pageId } } : {}),
     },
     {
       "@type": pageType,
@@ -116,6 +120,7 @@ export function buildGraphJsonLd(input: JsonLdInput) {
       inLanguage: locale,
       isPartOf: { "@id": websiteId },
       about: { "@id": personId },
+      ...(isProfilePage ? { mainEntity: { "@id": personId } } : {}),
       primaryImageOfPage: input.image,
       ...(input.breadcrumbs?.length
         ? { breadcrumb: { "@id": `${canonical}#breadcrumb` } }
