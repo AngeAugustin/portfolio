@@ -146,8 +146,9 @@ function collectRoutes(messages: Record<Locale, Messages>): RouteRecord[] {
 
 function buildHead(route: RouteRecord, siteUrl: string, email: string, sameAs: string[]) {
   const indexable = route.locale === "fr";
-  const canonical = toAbsoluteUrl(siteUrl, route.path.replace(/^\/en\b/, "/fr"));
   const pageUrl = toAbsoluteUrl(siteUrl, route.path);
+  const frCanonical = toAbsoluteUrl(siteUrl, route.path.replace(/^\/en\b/, "/fr"));
+  const canonical = indexable ? frCanonical : pageUrl;
   const ogImage = toAbsoluteUrl(siteUrl, OG_IMAGE_PATH);
   const jsonLd = buildGraphJsonLd({
     siteUrl,
@@ -174,8 +175,8 @@ function buildHead(route: RouteRecord, siteUrl: string, email: string, sameAs: s
     <meta name="author" content="${SITE_NAME}" />
     <meta name="robots" content="${indexable ? INDEX_ROBOTS : NOINDEX_ROBOTS}" />
     <link rel="canonical" href="${canonical}" />
-    <link rel="alternate" hreflang="fr" href="${canonical}" />
-    <link rel="alternate" hreflang="x-default" href="${canonical}" />
+    <link rel="alternate" hreflang="fr" href="${frCanonical}" />
+    <link rel="alternate" hreflang="x-default" href="${frCanonical}" />
     <meta property="og:type" content="${route.pageType === "article" ? "article" : "website"}" />
     <meta property="og:site_name" content="${SITE_NAME}" />
     <meta property="og:title" content="${escapeAttr(route.title)}" />

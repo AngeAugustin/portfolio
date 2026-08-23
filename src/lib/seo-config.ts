@@ -1,5 +1,5 @@
 export const INDEXABLE_LOCALE = "fr" as const;
-export const DEFAULT_SITE_URL = "https://augustinfachehoun.pro";
+export const DEFAULT_SITE_URL = "https://www.augustinfachehoun.pro";
 export const INDEX_ROBOTS =
   "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
 export const NOINDEX_ROBOTS = "noindex, follow";
@@ -74,7 +74,7 @@ export function buildGraphJsonLd(input: JsonLdInput) {
   const personId = `${siteUrl}/#person`;
   const pageId = `${canonical}#webpage`;
 
-  const isHome = /\/(fr|en)\/?$/.test(canonical) || canonical === siteUrl;
+  const isHome = /\/fr\/?$/.test(canonical);
   const isProfilePage = isHome || input.pageType === "profile";
   const pageType =
     input.pageType === "article"

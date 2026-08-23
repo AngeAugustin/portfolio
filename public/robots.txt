@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://augustinfachehoun.pro/sitemap.xml
+Sitemap: https://www.augustinfachehoun.pro/sitemap.xml

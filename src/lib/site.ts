@@ -4,7 +4,7 @@ export const siteConfig = {
   title: "FullStack & AI Developer",
   description:
     "Beninese FullStack & AI Developer crafting scalable web applications and intelligent systems — transitioning into Data Engineering.",
-  url: import.meta.env.VITE_SITE_URL ?? "https://augustinfachehoun.pro",
+  url: import.meta.env.VITE_SITE_URL ?? "https://www.augustinfachehoun.pro",
   email: "me@augustinfachehoun.pro",
   location: "Cotonou, Benin",
   social: {

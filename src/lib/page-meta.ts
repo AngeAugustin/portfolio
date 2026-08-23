@@ -84,8 +84,9 @@ export function usePageMeta({
   useEffect(() => {
     const siteUrl = getSiteUrl();
     const indexable = locale === INDEXABLE_LOCALE;
-    const canonical = toAbsoluteUrl(siteUrl, swapLocalePath(location.pathname, "fr"));
     const pageUrl = toAbsoluteUrl(siteUrl, location.pathname);
+    const frCanonical = toAbsoluteUrl(siteUrl, swapLocalePath(location.pathname, "fr"));
+    const canonical = indexable ? frCanonical : pageUrl;
     const resolvedTitle = title || `${siteConfig.name} — ${JOB_TITLE[locale]}`;
     const resolvedDescription = description || siteConfig.description;
     const ogImage = toAbsoluteUrl(siteUrl, image || OG_IMAGE_PATH);
@@ -113,12 +114,12 @@ export function usePageMeta({
     upsertLink('link[rel="alternate"][hreflang="fr"]', {
       rel: "alternate",
       hreflang: "fr",
-      href: canonical,
+      href: frCanonical,
     });
     upsertLink('link[rel="alternate"][hreflang="x-default"]', {
       rel: "alternate",
       hreflang: "x-default",
-      href: canonical,
+      href: frCanonical,
     });
     document.querySelector('link[rel="alternate"][hreflang="en"]')?.remove();
     document.querySelector('meta[property="og:locale:alternate"]')?.remove();
