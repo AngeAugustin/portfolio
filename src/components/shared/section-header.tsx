@@ -21,7 +21,7 @@ function resolveWatermark(
   label: string
 ): string | null {
   if (watermark === false) return null;
-  // Missing i18n keys fall back to the path ("watermark") — treat as unset.
+  // Missing i18n keys fall back to the path ("watermark") - treat as unset.
   if (!watermark || watermark === "watermark") return label;
   return watermark;
 }

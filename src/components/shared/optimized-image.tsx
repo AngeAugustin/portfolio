@@ -11,7 +11,7 @@ interface OptimizedImageProps {
   fill?: boolean;
 }
 
-/** Local image component — replaces next/image for Vite. */
+/** Local image component - replaces next/image for Vite. */
 export function OptimizedImage({
   src,
   alt,

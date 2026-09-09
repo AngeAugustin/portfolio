@@ -4,7 +4,7 @@ interface StaticPageHeroProps {
   subtitle?: string;
 }
 
-/** Lightweight server hero — no Framer Motion (faster dev compiles & navigation). */
+/** Lightweight server hero - no Framer Motion (faster dev compiles & navigation). */
 export function StaticPageHero({ label, title, subtitle }: StaticPageHeroProps) {
   return (
     <section className="relative overflow-hidden border-b border-border pt-32 pb-20 md:pt-40 md:pb-28">

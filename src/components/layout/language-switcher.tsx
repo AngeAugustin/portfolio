@@ -1,6 +1,12 @@
+import { LocaleFlag } from "@/components/LocaleFlag";
 import { useLocale } from "@/i18n/context";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
+
+const LABELS = {
+  fr: "Français",
+  en: "English",
+} as const;
 
 export function LanguageSwitcher() {
   const locale = useLocale();
@@ -13,7 +19,7 @@ export function LanguageSwitcher() {
 
   return (
     <div
-      className="flex items-center gap-0.5 rounded-full border border-border bg-secondary/50 p-0.5 text-xs font-medium"
+      className="flex items-center gap-0.5 rounded-full border border-border bg-secondary/50 p-0.5"
       role="group"
       aria-label="Language"
     >
@@ -22,14 +28,17 @@ export function LanguageSwitcher() {
           key={lang}
           type="button"
           onClick={() => switchLocale(lang)}
+          aria-label={LABELS[lang]}
+          aria-pressed={locale === lang}
+          title={LABELS[lang]}
           className={cn(
-            "rounded-full px-3 py-1.5 uppercase tracking-wider transition-all",
+            "inline-flex items-center justify-center rounded-full p-1.5 transition-all",
             locale === lang
-              ? "bg-primary text-primary-foreground shadow-sm"
-              : "text-muted-foreground hover:text-foreground"
+              ? "bg-primary shadow-sm"
+              : "opacity-60 hover:opacity-100"
           )}
         >
-          {lang}
+          <LocaleFlag locale={lang} />
         </button>
       ))}
     </div>

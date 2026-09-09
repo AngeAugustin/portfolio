@@ -5,7 +5,7 @@ type Props = {
   children: ReactNode;
 };
 
-/** Page-scoped intl wrapper — kept for API parity; root provider loads all messages. */
+/** Page-scoped intl wrapper - kept for API parity; root provider loads all messages. */
 export function PageIntl({ children }: Props) {
   return children;
 }

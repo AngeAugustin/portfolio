@@ -13,7 +13,7 @@ interface SectionWatermarkProps {
 }
 
 /**
- * Large faint word behind section titles — left-aligned, free to paint over
+ * Large faint word behind section titles - left-aligned, free to paint over
  * left/right padding. Horizontal clip is handled by section/main, not here.
  */
 export function SectionWatermark({

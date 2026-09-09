@@ -25,7 +25,7 @@ export function ServicesSection({ compact = false }: { compact?: boolean }) {
 
   return (
     <section className="relative overflow-x-clip px-5 py-20 sm:px-8 md:py-24 lg:px-12">
-      {/* Soft mint wash — mirrors DBDump Why section (no tiled grid) */}
+      {/* Soft mint wash - mirrors DBDump Why section (no tiled grid) */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-[#f7fbf8] dark:bg-[color-mix(in_oklab,var(--glow)_12%,var(--background))]" />
         <div className="absolute -top-32 left-1/2 size-[640px] -translate-x-1/2 rounded-full bg-glow/20 blur-3xl" />

@@ -47,7 +47,7 @@ export function HomePage() {
       {/* 2. Engines / tools strip */}
       <TechStackSection />
 
-      {/* 3. Why — value props */}
+      {/* 3. Why - value props */}
       <ServicesSection />
 
       {/* 4. Proof of work */}

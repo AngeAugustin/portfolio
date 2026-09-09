@@ -10,7 +10,7 @@ interface ProjectImageProps {
   fill?: boolean;
 }
 
-/** Local project assets — avoids remote image optimizer timeouts. */
+/** Local project assets - avoids remote image optimizer timeouts. */
 export function ProjectImage({
   src,
   alt,

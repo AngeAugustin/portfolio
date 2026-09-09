@@ -87,7 +87,7 @@ export function usePageMeta({
     const pageUrl = toAbsoluteUrl(siteUrl, location.pathname);
     const frCanonical = toAbsoluteUrl(siteUrl, swapLocalePath(location.pathname, "fr"));
     const canonical = indexable ? frCanonical : pageUrl;
-    const resolvedTitle = title || `${siteConfig.name} — ${JOB_TITLE[locale]}`;
+    const resolvedTitle = title || `${siteConfig.name} - ${JOB_TITLE[locale]}`;
     const resolvedDescription = description || siteConfig.description;
     const ogImage = toAbsoluteUrl(siteUrl, image || OG_IMAGE_PATH);
     const resolvedRobots =
