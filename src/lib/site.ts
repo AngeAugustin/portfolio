@@ -174,6 +174,14 @@ export type BlogCategory = "ai" | "data" | "frontend";
 
 export const blogPosts = [
   {
+    slug: "ia-generative-contemporaine",
+    date: "2026-09",
+    category: "ai" as const,
+    readMinutes: 7,
+    featured: true,
+    image: "/images/blog/ia-generative-contemporaine.svg",
+  },
+  {
     slug: "rag-pipelines",
     date: "2025-03",
     category: "ai" as const,

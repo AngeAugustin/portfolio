@@ -108,7 +108,13 @@ function collectRoutes(messages: Record<Locale, Messages>): RouteRecord[] {
         urlPath: (slug) => `/services/${slug}`,
       },
       {
-        slugs: objectKeys((bundle.blog as { posts?: unknown } | undefined)?.posts),
+        slugs: objectKeys((bundle.blog as { posts?: unknown } | undefined)?.posts).filter(
+          (slug) => {
+            const posts = (bundle.blog as { posts?: Record<string, { draft?: boolean }> })
+              ?.posts;
+            return posts?.[slug]?.draft !== true;
+          }
+        ),
         parentKey: "blog",
         parentPath: "/blog",
         titlePath: (slug) => `blog.posts.${slug}.title`,

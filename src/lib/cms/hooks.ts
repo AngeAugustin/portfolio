@@ -235,11 +235,14 @@ export function useArticles(): CmsListState<CmsArticle> {
     fetchArticles(locale)
       .then((items) => {
         if (cancelled) return;
+        const local = articleFallbacks(messages);
         if (items.length > 0) {
-          setData(items);
+          const cmsSlugs = new Set(items.map((item) => item.slug));
+          const extras = local.filter((item) => !cmsSlugs.has(item.slug));
+          setData([...extras, ...items]);
           setFromCms(true);
         } else {
-          setData(articleFallbacks(messages));
+          setData(local);
           setFromCms(false);
         }
       })

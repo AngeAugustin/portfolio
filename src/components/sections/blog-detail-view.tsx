@@ -37,6 +37,27 @@ function stripHtml(value: string) {
 }
 
 function ArticleBody({ article }: { article: CmsArticle }) {
+  if (article.sections && article.sections.length > 0) {
+    return (
+      <div className="mx-auto max-w-3xl space-y-12">
+        {article.sections.map((section) => (
+          <section key={section.heading || section.paragraphs[0]}>
+            {section.heading ? (
+              <h2 className="font-display text-2xl font-bold tracking-tight text-foreground md:text-3xl">
+                {section.heading}
+              </h2>
+            ) : null}
+            <div className={cn("space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg", section.heading && "mt-5")}>
+              {section.paragraphs.map((paragraph) => (
+                <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
+    );
+  }
+
   if (article.content) {
     const looksLikeHtml = /<\/?[a-z][\s\S]*>/i.test(article.content);
     if (looksLikeHtml) {
@@ -57,27 +78,6 @@ function ArticleBody({ article }: { article: CmsArticle }) {
           .map((paragraph) => (
             <p key={paragraph.slice(0, 48)}>{paragraph}</p>
           ))}
-      </div>
-    );
-  }
-
-  if (article.sections && article.sections.length > 0) {
-    return (
-      <div className="mx-auto max-w-3xl space-y-12">
-        {article.sections.map((section) => (
-          <section key={section.heading || section.paragraphs[0]}>
-            {section.heading ? (
-              <h2 className="font-display text-2xl font-bold tracking-tight text-foreground md:text-3xl">
-                {section.heading}
-              </h2>
-            ) : null}
-            <div className={cn("space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg", section.heading && "mt-5")}>
-              {section.paragraphs.map((paragraph) => (
-                <p key={paragraph.slice(0, 48)}>{paragraph}</p>
-              ))}
-            </div>
-          </section>
-        ))}
       </div>
     );
   }

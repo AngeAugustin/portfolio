@@ -404,6 +404,51 @@
       "relatedTitle": "Autres notes"
     },
     "posts": {
+      "ia-generative-contemporaine": {
+        "title": "IA générative contemporaine : ce qui change vraiment",
+        "excerpt": "L'IA générative n'est plus un gadget de démo. Voici, en clair, ce qu'elle sait faire aujourd'hui, où elle se trompe, et comment l'intégrer dans un produit.",
+        "sections": [
+          {
+            "heading": "L'IA générative, expliquée sans jargon",
+            "paragraphs": [
+              "Quand on dit « IA générative », on parle de systèmes capables de produire du texte, des images, du code ou du son à partir d'une demande. Pas de magie : le modèle a appris des régularités dans d'énormes volumes de données, puis il propose la suite la plus probable — phrase après phrase, pixel après pixel.",
+              "C'est pour ça que le résultat peut sembler brillant… et se tromper avec le même aplomb. L'IA générative contemporaine ne « sait » pas au sens humain. Elle génère. Cette différence compte dès qu'on l'utilise pour un vrai métier."
+            ]
+          },
+          {
+            "heading": "Ce qui a vraiment changé",
+            "paragraphs": [
+              "En quelques années, on est passé de démos spectaculaires à des outils du quotidien. Les modèles tiennent mieux le contexte. Ils prennent un peu plus le temps de « réfléchir » avant de répondre. Beaucoup acceptent plusieurs formats à la fois : un PDF, une capture d'écran, un fichier, une question.",
+              "Autre bascule : les agents. Au lieu de seulement écrire un texte, le modèle peut enchaîner des actions — chercher une info, appeler une API, rédiger un brouillon, puis corriger. Et des modèles plus petits, plus rapides, parfois ouverts, rendent ça utilisable hors des labos.",
+              "Le vrai changement n'est pas « l'IA est plus intelligente ». C'est qu'elle est devenue assez utile, et assez accessible, pour entrer dans des produits — à condition de la cadrer."
+            ]
+          },
+          {
+            "heading": "Forces, limites et hallucinations",
+            "paragraphs": [
+              "Elle est forte pour démarrer. Résumer un document, proposer une structure, traduire, extraire des champs, générer une première version de code, explorer une idée. Sur ces tâches, elle fait gagner des heures.",
+              "Elle est faible dès que la vérité compte. Une date, un chiffre, une règle métier, une citation : le modèle peut inventer une réponse fluide et fausse. On appelle ça une hallucination. Ce n'est pas un bug rare. C'est le fonctionnement normal d'un système qui complète, au lieu de vérifier.",
+              "D'où une règle simple : plus la réponse doit être exacte, plus il faut lui donner le bon contexte — documents internes, bases métier — et plus un humain doit relire. Un pipeline RAG, par exemple, ne rend pas le modèle omniscient. Il lui fournit les bonnes sources avant qu'il ne réponde."
+            ]
+          },
+          {
+            "heading": "Un modèle ne fait pas un produit",
+            "paragraphs": [
+              "Coller une boîte de chat sur un site, ce n'est pas une stratégie IA. Un produit utile pose d'abord des questions simples : quelle tâche précise accélérer ? Pour qui ? Avec quelle donnée ? Et comment saura-t-on que ça marche ?",
+              "Ensuite vient le système autour du modèle : les droits d'accès, la qualité des documents, les tests, la latence, le coût, le suivi des erreurs. Sans ça, on livre une démo. Avec ça, on livre un outil que les gens osent utiliser.",
+              "Je vois trop de projets s'arrêter au prompt. Le craft, aujourd'hui, est ailleurs : cadrer le cas d'usage, mesurer la qualité, et garder un humain dans la boucle tant que le risque est réel."
+            ]
+          },
+          {
+            "heading": "Par où commencer concrètement",
+            "paragraphs": [
+              "On n'a pas besoin d'un grand « projet IA ». On a besoin d'un problème répétitif, coûteux, et vérifiable. Un compte-rendu à rédiger. Un document à classer. Une question fréquente à traiter. Une première version de code à proposer.",
+              "Trois tests suffisent pour démarrer sans se perdre. Choisir une tâche réelle, avec un exemple de bonne réponse. Donner au modèle le contexte nécessaire, pas tout l'intranet. Mesurer ensuite : temps gagné, erreurs, confiance de l'utilisateur.",
+              "L'IA générative contemporaine n'est ni une menace abstraite, ni une baguette magique. C'est un accélérateur exigeant. Bien cadré, il démultiplie une équipe. Mal cadré, il accélère surtout la production d'erreurs."
+            ]
+          }
+        ]
+      },
       "rag-pipelines": {
         "title": "Construire des pipelines RAG en production",
         "excerpt": "Du chunking à l'observabilité - comment livrer des systèmes de retrieval qui tiennent la charge réelle.",

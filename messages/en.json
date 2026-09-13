@@ -404,6 +404,51 @@
       "relatedTitle": "More notes"
     },
     "posts": {
+      "ia-generative-contemporaine": {
+        "title": "Contemporary generative AI: what actually changed",
+        "excerpt": "Generative AI is no longer a demo toy. Here is a clear look at what it can do today, where it fails, and how to put it inside a real product.",
+        "sections": [
+          {
+            "heading": "Generative AI, without the jargon",
+            "paragraphs": [
+              "When we say “generative AI”, we mean systems that can produce text, images, code, or sound from a request. There is no magic: the model learned patterns in huge amounts of data, then it proposes the most likely next piece — sentence after sentence, pixel after pixel.",
+              "That is why the result can look brilliant… and still be wrong with the same confidence. Contemporary generative AI does not “know” the way a person knows. It generates. That difference matters as soon as you use it for real work."
+            ]
+          },
+          {
+            "heading": "What actually changed",
+            "paragraphs": [
+              "In a few years, we moved from spectacular demos to everyday tools. Models hold context better. They spend a little more time “thinking” before they answer. Many now accept several formats at once: a PDF, a screenshot, a file, a question.",
+              "Another shift: agents. Instead of only writing text, a model can chain actions — look something up, call an API, draft a reply, then correct it. Smaller, faster, sometimes open models also make this usable outside research labs.",
+              "The real change is not “AI got smarter”. It is that AI became useful enough, and accessible enough, to enter products — if you frame it well."
+            ]
+          },
+          {
+            "heading": "Strengths, limits, and hallucinations",
+            "paragraphs": [
+              "It is strong at getting started. Summarizing a document, proposing a structure, translating, extracting fields, generating a first version of code, exploring an idea. On those tasks, it saves hours.",
+              "It is weak as soon as truth matters. A date, a figure, a business rule, a citation: the model can invent a fluent, false answer. That is a hallucination. It is not a rare bug. It is the normal behavior of a system that completes, instead of checking.",
+              "Hence a simple rule: the more exact the answer must be, the more you need to give the model the right context — internal documents, business data — and the more a human should review it. A RAG pipeline, for example, does not make the model omniscient. It gives it the right sources before it answers."
+            ]
+          },
+          {
+            "heading": "A model is not a product",
+            "paragraphs": [
+              "Dropping a chat box on a website is not an AI strategy. A useful product starts with simple questions: which precise task should get faster? For whom? With which data? And how will we know it works?",
+              "Then comes the system around the model: access rights, document quality, tests, latency, cost, error tracking. Without that, you ship a demo. With it, you ship a tool people actually dare to use.",
+              "I see too many projects stop at the prompt. The craft, today, sits elsewhere: frame the use case, measure quality, and keep a human in the loop as long as the risk is real."
+            ]
+          },
+          {
+            "heading": "Where to start, in practice",
+            "paragraphs": [
+              "You do not need a grand “AI project”. You need a repetitive, costly, and checkable problem. A report to write. A document to classify. A frequent question to answer. A first version of code to propose.",
+              "Three tests are enough to start without getting lost. Pick a real task, with an example of a good answer. Give the model the context it needs, not the whole intranet. Then measure: time saved, errors, user trust.",
+              "Contemporary generative AI is neither an abstract threat nor a magic wand. It is a demanding accelerator. Framed well, it multiplies a team. Framed poorly, it mostly accelerates the production of mistakes."
+            ]
+          }
+        ]
+      },
       "rag-pipelines": {
         "title": "Building Production RAG Pipelines",
         "excerpt": "From chunking strategies to observability - how to ship retrieval systems that survive real traffic.",
