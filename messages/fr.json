@@ -411,7 +411,7 @@
           {
             "heading": "L'IA générative, expliquée sans jargon",
             "paragraphs": [
-              "Quand on dit « IA générative », on parle de systèmes capables de produire du texte, des images, du code ou du son à partir d'une demande. Pas de magie : le modèle a appris des régularités dans d'énormes volumes de données, puis il propose la suite la plus probable — phrase après phrase, pixel après pixel.",
+              "Quand on dit « IA générative », on parle de systèmes capables de produire du texte, des images, du code ou du son à partir d'une demande. Pas de magie : le modèle a appris des régularités dans d'énormes volumes de données, puis il propose la suite la plus probable, phrase après phrase, pixel après pixel.",
               "C'est pour ça que le résultat peut sembler brillant… et se tromper avec le même aplomb. L'IA générative contemporaine ne « sait » pas au sens humain. Elle génère. Cette différence compte dès qu'on l'utilise pour un vrai métier."
             ]
           },
@@ -419,8 +419,8 @@
             "heading": "Ce qui a vraiment changé",
             "paragraphs": [
               "En quelques années, on est passé de démos spectaculaires à des outils du quotidien. Les modèles tiennent mieux le contexte. Ils prennent un peu plus le temps de « réfléchir » avant de répondre. Beaucoup acceptent plusieurs formats à la fois : un PDF, une capture d'écran, un fichier, une question.",
-              "Autre bascule : les agents. Au lieu de seulement écrire un texte, le modèle peut enchaîner des actions — chercher une info, appeler une API, rédiger un brouillon, puis corriger. Et des modèles plus petits, plus rapides, parfois ouverts, rendent ça utilisable hors des labos.",
-              "Le vrai changement n'est pas « l'IA est plus intelligente ». C'est qu'elle est devenue assez utile, et assez accessible, pour entrer dans des produits — à condition de la cadrer."
+              "Autre bascule : les agents. Au lieu de seulement écrire un texte, le modèle peut enchaîner des actions : chercher une info, appeler une API, rédiger un brouillon, puis corriger. Et des modèles plus petits, plus rapides, parfois ouverts, rendent ça utilisable hors des labos.",
+              "Le vrai changement n'est pas « l'IA est plus intelligente ». C'est qu'elle est devenue assez utile, et assez accessible, pour entrer dans des produits, à condition de la cadrer."
             ]
           },
           {
@@ -428,7 +428,7 @@
             "paragraphs": [
               "Elle est forte pour démarrer. Résumer un document, proposer une structure, traduire, extraire des champs, générer une première version de code, explorer une idée. Sur ces tâches, elle fait gagner des heures.",
               "Elle est faible dès que la vérité compte. Une date, un chiffre, une règle métier, une citation : le modèle peut inventer une réponse fluide et fausse. On appelle ça une hallucination. Ce n'est pas un bug rare. C'est le fonctionnement normal d'un système qui complète, au lieu de vérifier.",
-              "D'où une règle simple : plus la réponse doit être exacte, plus il faut lui donner le bon contexte — documents internes, bases métier — et plus un humain doit relire. Un pipeline RAG, par exemple, ne rend pas le modèle omniscient. Il lui fournit les bonnes sources avant qu'il ne réponde."
+              "D'où une règle simple : plus la réponse doit être exacte, plus il faut lui donner le bon contexte (documents internes, bases métier), et plus un humain doit relire. Un pipeline RAG, par exemple, ne rend pas le modèle omniscient. Il lui fournit les bonnes sources avant qu'il ne réponde."
             ]
           },
           {
