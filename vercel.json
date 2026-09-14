@@ -3,6 +3,17 @@
     { "source": "/", "destination": "/fr", "permanent": true }
   ],
   "rewrites": [
+    {
+      "source": "/:locale(fr|en)/blog/:slug",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(?i).*(facebookexternalhit|facebot|twitterbot|linkedinbot|whatsapp|telegrambot|slackbot|discordbot|redditbot|pinterest|embedly|quora link preview|skypeuripreview|vkshare|applebot|google-inspectiontool).*"
+        }
+      ],
+      "destination": "/api/blog-og?locale=:locale&slug=:slug"
+    },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

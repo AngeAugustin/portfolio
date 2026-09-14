@@ -48,6 +48,9 @@ export function stripTrailingSlash(url: string) {
 }
 
 export function toAbsoluteUrl(siteUrl: string, path: string) {
+  if (/^https?:\/\//i.test(path) || path.startsWith("//")) {
+    return path.startsWith("//") ? `https:${path}` : path;
+  }
   const base = stripTrailingSlash(siteUrl);
   if (!path || path === "/") return base;
   return `${base}${path.startsWith("/") ? path : `/${path}`}`;

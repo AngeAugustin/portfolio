@@ -31,6 +31,7 @@ export function BlogDetailPage() {
     ogTitle: article ? `${article.title} | ${siteConfig.name}` : undefined,
     ogDescription: article?.excerpt,
     ogType: "article",
+    image: article?.image,
     breadcrumbs: article
       ? [
           { name: tNav("home"), path: localePath(locale, "") },

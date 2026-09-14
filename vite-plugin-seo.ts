@@ -27,7 +27,23 @@ type RouteRecord = {
   changefreq: string;
   priority: number;
   pageType: "website" | "profile" | "article";
+  image?: string;
+  imageAlt?: string;
   breadcrumbs: { name: string; path: string }[];
+};
+
+type CmsArticleMeta = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  image?: string;
+};
+
+const FALLBACK_BLOG_IMAGES: Record<string, string> = {
+  "ia-generative-contemporaine": "/images/blog/ia-generative-contemporaine.svg",
+  "rag-pipelines": "/images/blog/rag-pipelines.svg",
+  "data-engineering-path": "/images/blog/data-engineering-path.svg",
+  "nextjs-performance": "/images/blog/nextjs-performance.svg",
 };
 
 function nestedString(source: unknown, keyPath: string) {
@@ -53,12 +69,62 @@ function escapeAttr(value: string) {
     .replace(/>/g, "&gt;");
 }
 
-function collectRoutes(messages: Record<Locale, Messages>): RouteRecord[] {
+function fallbackBlogImage(slug: string) {
+  return FALLBACK_BLOG_IMAGES[slug];
+}
+
+function resolveCoverImage(entry: Record<string, unknown>): string | undefined {
+  const imageUrl = typeof entry.imageUrl === "string" ? entry.imageUrl : undefined;
+  const cover = entry.cover;
+  const coverUrl =
+    cover && typeof cover === "object" && typeof (cover as { url?: unknown }).url === "string"
+      ? (cover as { url: string }).url
+      : undefined;
+  return imageUrl || coverUrl || undefined;
+}
+
+async function fetchCmsArticles(cmsUrl: string, locale: Locale): Promise<CmsArticleMeta[]> {
+  if (!cmsUrl) return [];
+
+  try {
+    const response = await fetch(
+      `${cmsUrl}/api/articles?locale=${encodeURIComponent(locale)}&populate=*`
+    );
+    if (!response.ok) return [];
+
+    const payload = (await response.json()) as {
+      data?: Record<string, unknown>[];
+    };
+
+    return (payload.data ?? [])
+      .flatMap((entry) => {
+        const slug = typeof entry.slug === "string" ? entry.slug : "";
+        const title = typeof entry.title === "string" ? entry.title : "";
+        if (!slug || !title) return [];
+        const image = resolveCoverImage(entry);
+        const meta: CmsArticleMeta = {
+          slug,
+          title,
+          excerpt: typeof entry.excerpt === "string" ? entry.excerpt : "",
+          ...(image ? { image } : {}),
+        };
+        return [meta];
+      });
+  } catch {
+    return [];
+  }
+}
+
+function collectRoutes(
+  messages: Record<Locale, Messages>,
+  cmsArticles: Record<Locale, CmsArticleMeta[]>
+): RouteRecord[] {
   const routes: RouteRecord[] = [];
 
   for (const locale of ["fr", "en"] as const) {
     const bundle = messages[locale];
     const homeName = nestedString(bundle, "nav.home");
+    const cmsBySlug = new Map(cmsArticles[locale].map((article) => [article.slug, article]));
 
     for (const page of STATIC_PAGES) {
       const pagePath = localePath(locale, page.path);
@@ -90,6 +156,7 @@ function collectRoutes(messages: Record<Locale, Messages>): RouteRecord[] {
       titlePath: (slug: string) => string;
       descriptionPath: (slug: string) => string;
       urlPath: (slug: string) => string;
+      imageForSlug?: (slug: string) => string | undefined;
     }[] = [
       {
         slugs: objectKeys(bundle.projectItems),
@@ -108,18 +175,24 @@ function collectRoutes(messages: Record<Locale, Messages>): RouteRecord[] {
         urlPath: (slug) => `/services/${slug}`,
       },
       {
-        slugs: objectKeys((bundle.blog as { posts?: unknown } | undefined)?.posts).filter(
-          (slug) => {
-            const posts = (bundle.blog as { posts?: Record<string, { draft?: boolean }> })
-              ?.posts;
-            return posts?.[slug]?.draft !== true;
-          }
-        ),
+        slugs: [
+          ...new Set([
+            ...objectKeys((bundle.blog as { posts?: unknown } | undefined)?.posts).filter(
+              (slug) => {
+                const posts = (bundle.blog as { posts?: Record<string, { draft?: boolean }> })
+                  ?.posts;
+                return posts?.[slug]?.draft !== true;
+              }
+            ),
+            ...cmsArticles[locale].map((article) => article.slug),
+          ]),
+        ],
         parentKey: "blog",
         parentPath: "/blog",
         titlePath: (slug) => `blog.posts.${slug}.title`,
         descriptionPath: (slug) => `blog.posts.${slug}.excerpt`,
         urlPath: (slug) => `/blog/${slug}`,
+        imageForSlug: (slug) => cmsBySlug.get(slug)?.image || fallbackBlogImage(slug),
       },
     ];
 
@@ -127,16 +200,25 @@ function collectRoutes(messages: Record<Locale, Messages>): RouteRecord[] {
       const parentLabel = nestedString(bundle, `nav.${collection.parentKey}`);
       for (const slug of collection.slugs) {
         const itemPath = localePath(locale, collection.urlPath(slug));
-        const title = nestedString(bundle, collection.titlePath(slug));
+        const cmsArticle =
+          collection.parentKey === "blog" ? cmsBySlug.get(slug) : undefined;
+        const title =
+          nestedString(bundle, collection.titlePath(slug)) || cmsArticle?.title || "";
         if (!title) continue;
+        const description =
+          nestedString(bundle, collection.descriptionPath(slug)) ||
+          cmsArticle?.excerpt ||
+          "";
         routes.push({
           locale,
           path: itemPath,
           title: `${title} | ${SITE_NAME}`,
-          description: nestedString(bundle, collection.descriptionPath(slug)),
+          description,
           changefreq: "monthly",
           priority: 0.7,
           pageType: collection.parentKey === "services" ? "website" : "article",
+          image: collection.imageForSlug?.(slug),
+          imageAlt: title,
           breadcrumbs: [
             { name: homeName, path: localePath(locale, "") },
             { name: parentLabel, path: localePath(locale, collection.parentPath) },
@@ -155,7 +237,8 @@ function buildHead(route: RouteRecord, siteUrl: string, email: string, sameAs: s
   const pageUrl = toAbsoluteUrl(siteUrl, route.path);
   const frCanonical = toAbsoluteUrl(siteUrl, route.path.replace(/^\/en\b/, "/fr"));
   const canonical = indexable ? frCanonical : pageUrl;
-  const ogImage = toAbsoluteUrl(siteUrl, OG_IMAGE_PATH);
+  const ogImage = toAbsoluteUrl(siteUrl, route.image || OG_IMAGE_PATH);
+  const imageAlt = route.imageAlt || SITE_NAME;
   const jsonLd = buildGraphJsonLd({
     siteUrl,
     canonical,
@@ -169,10 +252,12 @@ function buildHead(route: RouteRecord, siteUrl: string, email: string, sameAs: s
     location: "Cotonou, Benin",
     image: ogImage,
     pageType: route.pageType,
-    breadcrumbs: indexable ? route.breadcrumbs : route.breadcrumbs.map((item) => ({
-      ...item,
-      path: item.path.replace(/^\/en\b/, "/fr"),
-    })),
+    breadcrumbs: indexable
+      ? route.breadcrumbs
+      : route.breadcrumbs.map((item) => ({
+          ...item,
+          path: item.path.replace(/^\/en\b/, "/fr"),
+        })),
   });
 
   return `<!--seo:start-->
@@ -188,13 +273,13 @@ function buildHead(route: RouteRecord, siteUrl: string, email: string, sameAs: s
     <meta property="og:title" content="${escapeAttr(route.title)}" />
     <meta property="og:description" content="${escapeAttr(route.description)}" />
     <meta property="og:url" content="${pageUrl}" />
-    <meta property="og:image" content="${ogImage}" />
-    <meta property="og:image:alt" content="${SITE_NAME}" />
+    <meta property="og:image" content="${escapeAttr(ogImage)}" />
+    <meta property="og:image:alt" content="${escapeAttr(imageAlt)}" />
     <meta property="og:locale" content="${route.locale === "fr" ? "fr_FR" : "en_US"}" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${escapeAttr(route.title)}" />
     <meta name="twitter:description" content="${escapeAttr(route.description)}" />
-    <meta name="twitter:image" content="${ogImage}" />
+    <meta name="twitter:image" content="${escapeAttr(ogImage)}" />
     <script type="application/ld+json" id="jsonld-graph">${JSON.stringify(jsonLd).replace(/</g, "\\u003c")}</script>
     <!--seo:end-->`;
 }
@@ -247,7 +332,9 @@ function injectSeo(html: string, head: string, lang: string, noscript: string) {
   return next;
 }
 
-export function seoPlugin(siteUrlFromEnv?: string): Plugin {
+export function seoPlugin(options?: { siteUrl?: string; cmsUrl?: string }): Plugin {
+  const siteUrlFromEnv = typeof options === "string" ? options : options?.siteUrl;
+  const cmsUrlFromEnv = typeof options === "string" ? undefined : options?.cmsUrl;
   let outDir = "dist";
   let root = process.cwd();
 
@@ -258,13 +345,18 @@ export function seoPlugin(siteUrlFromEnv?: string): Plugin {
       root = config.root;
       outDir = path.resolve(config.root, config.build.outDir);
     },
-    writeBundle() {
+    async writeBundle() {
       const siteUrl = stripTrailingSlash(siteUrlFromEnv || DEFAULT_SITE_URL);
+      const cmsUrl = stripTrailingSlash(cmsUrlFromEnv || "");
       const messages = {
         fr: JSON.parse(fs.readFileSync(path.join(root, "messages/fr.json"), "utf8")) as Messages,
         en: JSON.parse(fs.readFileSync(path.join(root, "messages/en.json"), "utf8")) as Messages,
       };
-      const routes = collectRoutes(messages);
+      const cmsArticles = {
+        fr: await fetchCmsArticles(cmsUrl, "fr"),
+        en: await fetchCmsArticles(cmsUrl, "en"),
+      };
+      const routes = collectRoutes(messages, cmsArticles);
       const indexPath = path.join(outDir, "index.html");
       if (!fs.existsSync(indexPath)) return;
 

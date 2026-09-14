@@ -103,7 +103,7 @@ export function usePageMeta({
     upsertMeta("og:description", ogDescription || resolvedDescription, "property");
     upsertMeta("og:url", pageUrl, "property");
     upsertMeta("og:image", ogImage, "property");
-    upsertMeta("og:image:alt", siteConfig.name, "property");
+    upsertMeta("og:image:alt", ogTitle || resolvedTitle || siteConfig.name, "property");
     upsertMeta("og:locale", locale === "fr" ? "fr_FR" : "en_US", "property");
     upsertMeta("twitter:card", "summary_large_image");
     upsertMeta("twitter:title", ogTitle || resolvedTitle);

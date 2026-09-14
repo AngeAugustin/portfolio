@@ -7,7 +7,13 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
 
   return {
-    plugins: [react(), seoPlugin(env.VITE_SITE_URL)],
+    plugins: [
+      react(),
+      seoPlugin({
+        siteUrl: env.VITE_SITE_URL,
+        cmsUrl: env.VITE_STRAPI_URL,
+      }),
+    ],
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "./src"),
