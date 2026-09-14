@@ -403,134 +403,8 @@
       "relatedLabel": "Continuer",
       "relatedTitle": "Autres notes"
     },
-    "posts": {
-      "ia-generative-contemporaine": {
-        "title": "IA générative contemporaine : ce qui change vraiment",
-        "excerpt": "L'IA générative n'est plus un gadget de démo. Voici, en clair, ce qu'elle sait faire aujourd'hui, où elle se trompe, et comment l'intégrer dans un produit.",
-        "sections": [
-          {
-            "heading": "L'IA générative, expliquée sans jargon",
-            "paragraphs": [
-              "Quand on dit « IA générative », on parle de systèmes capables de produire du texte, des images, du code ou du son à partir d'une demande. Pas de magie : le modèle a appris des régularités dans d'énormes volumes de données, puis il propose la suite la plus probable, phrase après phrase, pixel après pixel.",
-              "C'est pour ça que le résultat peut sembler brillant… et se tromper avec le même aplomb. L'IA générative contemporaine ne « sait » pas au sens humain. Elle génère. Cette différence compte dès qu'on l'utilise pour un vrai métier."
-            ]
-          },
-          {
-            "heading": "Ce qui a vraiment changé",
-            "paragraphs": [
-              "En quelques années, on est passé de démos spectaculaires à des outils du quotidien. Les modèles tiennent mieux le contexte. Ils prennent un peu plus le temps de « réfléchir » avant de répondre. Beaucoup acceptent plusieurs formats à la fois : un PDF, une capture d'écran, un fichier, une question.",
-              "Autre bascule : les agents. Au lieu de seulement écrire un texte, le modèle peut enchaîner des actions : chercher une info, appeler une API, rédiger un brouillon, puis corriger. Et des modèles plus petits, plus rapides, parfois ouverts, rendent ça utilisable hors des labos.",
-              "Le vrai changement n'est pas « l'IA est plus intelligente ». C'est qu'elle est devenue assez utile, et assez accessible, pour entrer dans des produits, à condition de la cadrer."
-            ]
-          },
-          {
-            "heading": "Forces, limites et hallucinations",
-            "paragraphs": [
-              "Elle est forte pour démarrer. Résumer un document, proposer une structure, traduire, extraire des champs, générer une première version de code, explorer une idée. Sur ces tâches, elle fait gagner des heures.",
-              "Elle est faible dès que la vérité compte. Une date, un chiffre, une règle métier, une citation : le modèle peut inventer une réponse fluide et fausse. On appelle ça une hallucination. Ce n'est pas un bug rare. C'est le fonctionnement normal d'un système qui complète, au lieu de vérifier.",
-              "D'où une règle simple : plus la réponse doit être exacte, plus il faut lui donner le bon contexte (documents internes, bases métier), et plus un humain doit relire. Un pipeline RAG, par exemple, ne rend pas le modèle omniscient. Il lui fournit les bonnes sources avant qu'il ne réponde."
-            ]
-          },
-          {
-            "heading": "Un modèle ne fait pas un produit",
-            "paragraphs": [
-              "Coller une boîte de chat sur un site, ce n'est pas une stratégie IA. Un produit utile pose d'abord des questions simples : quelle tâche précise accélérer ? Pour qui ? Avec quelle donnée ? Et comment saura-t-on que ça marche ?",
-              "Ensuite vient le système autour du modèle : les droits d'accès, la qualité des documents, les tests, la latence, le coût, le suivi des erreurs. Sans ça, on livre une démo. Avec ça, on livre un outil que les gens osent utiliser.",
-              "Je vois trop de projets s'arrêter au prompt. Le craft, aujourd'hui, est ailleurs : cadrer le cas d'usage, mesurer la qualité, et garder un humain dans la boucle tant que le risque est réel."
-            ]
-          },
-          {
-            "heading": "Par où commencer concrètement",
-            "paragraphs": [
-              "On n'a pas besoin d'un grand « projet IA ». On a besoin d'un problème répétitif, coûteux, et vérifiable. Un compte-rendu à rédiger. Un document à classer. Une question fréquente à traiter. Une première version de code à proposer.",
-              "Trois tests suffisent pour démarrer sans se perdre. Choisir une tâche réelle, avec un exemple de bonne réponse. Donner au modèle le contexte nécessaire, pas tout l'intranet. Mesurer ensuite : temps gagné, erreurs, confiance de l'utilisateur.",
-              "L'IA générative contemporaine n'est ni une menace abstraite, ni une baguette magique. C'est un accélérateur exigeant. Bien cadré, il démultiplie une équipe. Mal cadré, il accélère surtout la production d'erreurs."
-            ]
-          }
-        ]
-      },
-      "rag-pipelines": {
-        "title": "Construire des pipelines RAG en production",
-        "excerpt": "Du chunking à l'observabilité - comment livrer des systèmes de retrieval qui tiennent la charge réelle.",
-        "sections": [
-          {
-            "heading": "Le décalage démo → production",
-            "paragraphs": [
-              "Un RAG qui impressionne en démo peut s'effondrer dès qu'il rencontre des documents bruités, des pics de trafic ou des questions ambiguës. La différence se joue rarement sur le modèle seul : elle se joue sur le pipeline.",
-              "En production, le retrieval doit rester stable, mesurable et révisable. Sans ces garde-fous, on livre une expérience brillante… jusqu'au premier incident métier."
-            ]
-          },
-          {
-            "heading": "Chunking, embeddings et ranking",
-            "paragraphs": [
-              "Le chunking trop agressif casse le contexte ; trop large, il dilue le signal. Je préfère une stratégie hybride : chunks sémantiques, overlaps contrôlés, et métadonnées riches (source, date, type de document).",
-              "Ensuite vient le ranking. Un simple top-k vectoriel ne suffit pas. Combiner similarité dense, filtres métier et re-ranking léger améliore drastiquement la pertinence sans exploser la latence."
-            ]
-          },
-          {
-            "heading": "Observabilité et boucle d'amélioration",
-            "paragraphs": [
-              "Sans traces, on navigue à l'aveugle. Je journalise les requêtes, les chunks retenus, les scores et les feedbacks utilisateurs. Ces signaux alimentent des evals continues : précision perçue, hallucination rate, latence p95.",
-              "Le vrai livrable n'est pas un chatbot. C'est un système de retrieval fiable, avec des leviers d'amélioration clairs et une architecture prête à évoluer."
-            ]
-          }
-        ]
-      },
-      "data-engineering-path": {
-        "title": "Mon parcours vers le Data Engineering",
-        "excerpt": "Retour d'expérience sur la transition du produit full-stack vers pipelines, entrepôts et plateformes data fiables.",
-        "sections": [
-          {
-            "heading": "Pourquoi cette transition",
-            "paragraphs": [
-              "Après des années à livrer des produits full-stack et des systèmes IA, une évidence s'est imposée : sans data fiable, l'intelligence reste fragile. Les modèles, les dashboards et les automatisations dépendent tous d'une fondation saine.",
-              "Passer au Data Engineering, ce n'est pas abandonner le produit. C'est remonter d'un cran pour construire l'infrastructure qui le rend durable."
-            ]
-          },
-          {
-            "heading": "Ce que j'ai dû réapprendre",
-            "paragraphs": [
-              "Le craft change : orchestration (Airflow), transformations (dbt), modélisation, contrats de données, qualité et lineage. On ne code plus seulement pour une UI - on code pour des flux, des SLA et des équipes aval.",
-              "La rigueur produit reste utile. Un pipeline lisible, testé et documenté se comporte comme un bon composant React : clair, prévisible, maintenable."
-            ]
-          },
-          {
-            "heading": "Ce que je construis maintenant",
-            "paragraphs": [
-              "Je relie les deux mondes : APIs et apps d'un côté, pipelines et warehouses de l'autre. L'objectif est simple - des produits intelligents appuyés sur une data digne de confiance.",
-              "Cette trajectoire guide mon travail aujourd'hui : moins de prototypes jetables, plus de systèmes qui tiennent dans le temps."
-            ]
-          }
-        ]
-      },
-      "nextjs-performance": {
-        "title": "Patterns de performance Next.js",
-        "excerpt": "Patterns concrets pour des navigations plus rapides, un cache intelligent et des scores Lighthouse stables en production.",
-        "sections": [
-          {
-            "heading": "Mesurer avant d'optimiser",
-            "paragraphs": [
-              "La performance commence par des chiffres : LCP, INP, CLS, poids JS, waterfall réseau. Sans baseline, on optimise au feeling - et on rate souvent le vrai goulot.",
-              "Je fixe d'abord 2 ou 3 budgets (JS initial, images hero, temps jusqu'à interaction), puis je travaille par impact décroissant."
-            ]
-          },
-          {
-            "heading": "Patterns qui tiennent à l'échelle",
-            "paragraphs": [
-              "Streaming, lazy loading des sections lourdes, images responsives, cache HTTP/CDN, et réduction des re-renders inutiles. Sur Vite/React comme sur Next, le principe reste le même : charger moins, plus tôt, et seulement ce qui compte.",
-              "Le design système entre aussi dans l'équation. Trop d'animations, trop de polices, trop de JS décoratif - et le Lighthouse s'effondre. La sobriété visuelle est une stratégie de perf."
-            ]
-          },
-          {
-            "heading": "Garder la perf dans le temps",
-            "paragraphs": [
-              "Une bonne perf se protège : budgets CI, monitoring RUM, revue des dépendances. Sinon, chaque feature la dégrade silencieusement.",
-              "Livrer vite, oui. Mais livrer vite et rester rapide - c'est le vrai craft frontend."
-            ]
-          }
-        ]
-      }
-    }
+    "empty": "Aucun article pour le moment.",
+    "emptyFilter": "Aucun article dans cette catégorie."
   },
   "projects": {
     "title": "Projets",
@@ -686,31 +560,84 @@
   "skillGroups": [
     {
       "name": "Frontend",
-      "skills": ["JavaScript", "React", "React Js", "React Native", "Next.js", "Vite", "TypeScript", "Tailwind CSS", "Framer Motion"]
+      "skills": [
+        "JavaScript",
+        "React",
+        "React Js",
+        "React Native",
+        "Next.js",
+        "Vite",
+        "TypeScript",
+        "Tailwind CSS",
+        "Framer Motion"
+      ]
     },
     {
       "name": "Backend",
-      "skills": ["Node.js", "Nest Js", "JavaScript", "Python", "Java", "Django", "FastAPI", "Symfony", "Spring Boot", "Postman"]
+      "skills": [
+        "Node.js",
+        "Nest Js",
+        "JavaScript",
+        "Python",
+        "Java",
+        "Django",
+        "FastAPI",
+        "Symfony",
+        "Spring Boot",
+        "Postman"
+      ]
     },
     {
       "name": "Base de données",
-      "skills": ["PostgreSQL", "MySQL", "MongoDB", "Redis"]
+      "skills": [
+        "PostgreSQL",
+        "MySQL",
+        "MongoDB",
+        "Redis"
+      ]
     },
     {
       "name": "IA & ML",
-      "skills": ["OpenAI API", "OpenRouter", "Ollama", "LangChain", "RAG", "TensorFlow", "Vector DBs"]
+      "skills": [
+        "OpenAI API",
+        "OpenRouter",
+        "Ollama",
+        "LangChain",
+        "RAG",
+        "TensorFlow",
+        "Vector DBs"
+      ]
     },
     {
       "name": "Data Engineering",
-      "skills": ["Apache Airflow", "dbt", "BigQuery", "Talend EBS DI", "SQL Server", "ETL/ELT", "Modélisation"]
+      "skills": [
+        "Apache Airflow",
+        "dbt",
+        "BigQuery",
+        "Talend EBS DI",
+        "SQL Server",
+        "ETL/ELT",
+        "Modélisation"
+      ]
     },
     {
       "name": "DevOps",
-      "skills": ["Docker", "CI/CD", "Vercel", "Monitoring"]
+      "skills": [
+        "Docker",
+        "CI/CD",
+        "Vercel",
+        "Monitoring"
+      ]
     },
     {
       "name": "Outils et Autres",
-      "skills": ["Git / GitHub", "Trello", "Render", "Hostinger", "Contabo"]
+      "skills": [
+        "Git / GitHub",
+        "Trello",
+        "Render",
+        "Hostinger",
+        "Contabo"
+      ]
     }
   ],
   "serviceDetails": {
@@ -719,7 +646,12 @@
       "summary": "Applications web de bout en bout avec UX premium, architecture évolutive et code production-ready.",
       "tagline": "Du prototype au produit scalable, avec une expérience soignée à chaque étape.",
       "overview": "Je conçois et développe des applications web complètes - interfaces modernes, logique métier robuste et déploiements fiables. Mon approche allie rigueur technique et sens du détail produit pour livrer des expériences digitales premium, pensées pour évoluer avec votre activité.",
-      "tags": ["React", "Next.js", "UX premium", "Production-ready"],
+      "tags": [
+        "React",
+        "Next.js",
+        "UX premium",
+        "Production-ready"
+      ],
       "deliverables": [
         "Interfaces responsives, accessibles et animées avec soin",
         "Architecture modulaire, maintenable et prête à scaler",
@@ -733,7 +665,15 @@
         "Développer par itérations courtes avec des livrables testables",
         "Tester, optimiser et déployer en conditions proches de la production"
       ],
-      "stack": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL", "Vercel"],
+      "stack": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Node.js",
+        "PostgreSQL",
+        "Vercel"
+      ],
       "idealFor": [
         "Startups qui veulent lancer un MVP premium rapidement",
         "Entreprises qui modernisent une application existante",
@@ -746,7 +686,12 @@
       "summary": "Fonctionnalités LLM, systèmes d'agents, pipelines RAG et automatisation intelligente pour votre produit.",
       "tagline": "Des fonctionnalités IA utiles, fiables et intégrées naturellement à votre produit.",
       "overview": "J'intègre l'intelligence artificielle là où elle crée une vraie valeur - pas pour le buzz, mais pour automatiser, accélérer et enrichir l'expérience utilisateur. De l'assistant conversationnel au pipeline RAG, je conçois des systèmes IA pragmatiques, observables et adaptés à votre contexte métier.",
-      "tags": ["LLM", "RAG", "Agents IA", "Automatisation"],
+      "tags": [
+        "LLM",
+        "RAG",
+        "Agents IA",
+        "Automatisation"
+      ],
       "deliverables": [
         "Intégrations OpenAI, OpenRouter ou modèles locaux via Ollama",
         "Pipelines RAG avec recherche sémantique et bases vectorielles",
@@ -760,7 +705,15 @@
         "Construire une architecture modulaire, testable et évolutive",
         "Itérer avec des retours réels avant un déploiement en production"
       ],
-      "stack": ["Python", "LangChain", "OpenAI API", "OpenRouter", "Ollama", "FastAPI", "Vector DBs"],
+      "stack": [
+        "Python",
+        "LangChain",
+        "OpenAI API",
+        "OpenRouter",
+        "Ollama",
+        "FastAPI",
+        "Vector DBs"
+      ],
       "idealFor": [
         "Produits qui veulent ajouter un copilote ou un assistant intelligent",
         "Équipes qui automatisent des tâches répétitives avec l'IA",
@@ -773,7 +726,12 @@
       "summary": "APIs REST/GraphQL robustes, microservices, authentification et intégrations tierces.",
       "tagline": "Des fondations backend solides pour des produits fiables et bien structurés.",
       "overview": "Je construis des backends pensés pour la durabilité - APIs claires, sécurisées et performantes. Que ce soit pour un nouveau produit ou une refonte, je mets en place des architectures backend qui facilitent l'intégration, la maintenance et la montée en charge.",
-      "tags": ["REST", "GraphQL", "Microservices", "Sécurité"],
+      "tags": [
+        "REST",
+        "GraphQL",
+        "Microservices",
+        "Sécurité"
+      ],
       "deliverables": [
         "Conception et développement d'APIs REST ou GraphQL documentées",
         "Authentification, autorisation et gestion des sessions",
@@ -787,7 +745,16 @@
         "Implémenter avec des patterns éprouvés et une couverture de tests",
         "Documenter, déployer et accompagner l'intégration côté frontend"
       ],
-      "stack": ["Node.js", "Nest Js", "Python", "Django", "FastAPI", "PostgreSQL", "Redis", "Docker"],
+      "stack": [
+        "Node.js",
+        "Nest Js",
+        "Python",
+        "Django",
+        "FastAPI",
+        "PostgreSQL",
+        "Redis",
+        "Docker"
+      ],
       "idealFor": [
         "Applications qui ont besoin d'une API fiable et bien documentée",
         "Projets fintech ou SaaS avec des exigences de sécurité",
@@ -800,7 +767,12 @@
       "summary": "Pipelines ETL, entrepôts de données, infrastructure analytique et développement de dashboards.",
       "tagline": "Transformer vos données brutes en insights actionnables et fiables.",
       "overview": "Je conçois des pipelines data fiables qui connectent vos sources de données à des décisions éclairées. De l'extraction à la visualisation, je m'appuie sur des outils modernes et des pratiques éprouvées pour structurer, nettoyer et rendre vos données exploitables.",
-      "tags": ["ETL/ELT", "Pipelines", "Analytics", "Dashboards"],
+      "tags": [
+        "ETL/ELT",
+        "Pipelines",
+        "Analytics",
+        "Dashboards"
+      ],
       "deliverables": [
         "Pipelines ETL/ELT automatisés et monitorés",
         "Modélisation et structuration d'entrepôts de données",
@@ -814,7 +786,15 @@
         "Implémenter les pipelines avec validation et reprise sur erreur",
         "Livrer des dashboards clairs et former les équipes à les utiliser"
       ],
-      "stack": ["Talend EBS DI", "Apache Airflow", "dbt", "SQL Server", "PostgreSQL", "BigQuery", "Python"],
+      "stack": [
+        "Talend EBS DI",
+        "Apache Airflow",
+        "dbt",
+        "SQL Server",
+        "PostgreSQL",
+        "BigQuery",
+        "Python"
+      ],
       "idealFor": [
         "Entreprises qui centralisent des données dispersées",
         "Équipes produit qui ont besoin de métriques fiables",
@@ -874,9 +854,18 @@
     "errorRateLimit": "Trop de messages envoyés. Patientez quelques minutes avant de réessayer.",
     "errorNotConfigured": "Le service IA n'est pas encore configuré sur le serveur.",
     "suggestions": [
-      { "id": "projects", "label": "Quels projets as-tu réalisés ?" },
-      { "id": "skills", "label": "Quelle est ta stack ?" },
-      { "id": "contact", "label": "Comment te contacter ?" }
+      {
+        "id": "projects",
+        "label": "Quels projets as-tu réalisés ?"
+      },
+      {
+        "id": "skills",
+        "label": "Quelle est ta stack ?"
+      },
+      {
+        "id": "contact",
+        "label": "Comment te contacter ?"
+      }
     ]
   }
 }

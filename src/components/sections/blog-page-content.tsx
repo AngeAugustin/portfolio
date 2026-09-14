@@ -202,6 +202,8 @@ export function BlogPageContent() {
   const rest = featured ? articles.filter((post) => post.slug !== featured.slug) : [];
   const filteredRest =
     filter === "all" ? rest : rest.filter((post) => post.category === filter);
+  const showFeatured =
+    Boolean(featured) && (filter === "all" || featured?.category === filter);
 
   return (
     <div className="editorial-container section-padding pt-0">
@@ -232,11 +234,13 @@ export function BlogPageContent() {
             <div className="h-64 animate-pulse rounded-2xl bg-secondary/60" />
           </div>
         </div>
+      ) : articles.length === 0 ? (
+        <p className="rounded-2xl border border-border/60 bg-card/60 px-6 py-16 text-center text-base text-muted-foreground md:text-lg">
+          {t("empty")}
+        </p>
       ) : (
         <div className="space-y-8">
-          {featured && (filter === "all" || featured.category === filter) && (
-            <FeaturedPostCard post={featured} />
-          )}
+          {showFeatured && featured ? <FeaturedPostCard post={featured} /> : null}
 
           {filteredRest.length > 0 && (
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -245,6 +249,12 @@ export function BlogPageContent() {
               ))}
             </div>
           )}
+
+          {!showFeatured && filteredRest.length === 0 ? (
+            <p className="rounded-2xl border border-border/60 bg-card/60 px-6 py-16 text-center text-base text-muted-foreground md:text-lg">
+              {t("emptyFilter")}
+            </p>
+          ) : null}
         </div>
       )}
     </div>

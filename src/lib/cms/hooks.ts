@@ -4,7 +4,6 @@ import { fetchArticles, fetchArticleBySlug } from "./articles";
 import { fetchEducations } from "./educations";
 import { fetchExperiences } from "./experiences";
 import {
-  articleFallbacks,
   educationFallbacks,
   experienceFallbacks,
   projectFallbacks,
@@ -222,9 +221,7 @@ export function useService(slug: string | undefined): CmsItemState<CmsService> {
 
 export function useArticles(): CmsListState<CmsArticle> {
   const locale = useLocale();
-  const messages = useMessages();
-  const fallback = articleFallbacks(messages);
-  const [data, setData] = useState<CmsArticle[]>(fallback);
+  const [data, setData] = useState<CmsArticle[]>([]);
   const [loading, setLoading] = useState(true);
   const [fromCms, setFromCms] = useState(false);
 
@@ -235,20 +232,12 @@ export function useArticles(): CmsListState<CmsArticle> {
     fetchArticles(locale)
       .then((items) => {
         if (cancelled) return;
-        const local = articleFallbacks(messages);
-        if (items.length > 0) {
-          const cmsSlugs = new Set(items.map((item) => item.slug));
-          const extras = local.filter((item) => !cmsSlugs.has(item.slug));
-          setData([...extras, ...items]);
-          setFromCms(true);
-        } else {
-          setData(local);
-          setFromCms(false);
-        }
+        setData(items);
+        setFromCms(true);
       })
       .catch(() => {
         if (cancelled) return;
-        setData(articleFallbacks(messages));
+        setData([]);
         setFromCms(false);
       })
       .finally(() => {
@@ -258,20 +247,14 @@ export function useArticles(): CmsListState<CmsArticle> {
     return () => {
       cancelled = true;
     };
-  }, [locale, messages]);
+  }, [locale]);
 
   return { data, loading, fromCms };
 }
 
 export function useArticle(slug: string | undefined): CmsItemState<CmsArticle> {
   const locale = useLocale();
-  const messages = useMessages();
-  const fallback =
-    slug != null
-      ? articleFallbacks(messages).find((item) => item.slug === slug) ?? null
-      : null;
-
-  const [data, setData] = useState<CmsArticle | null>(fallback);
+  const [data, setData] = useState<CmsArticle | null>(null);
   const [loading, setLoading] = useState(Boolean(slug));
   const [fromCms, setFromCms] = useState(false);
 
@@ -288,30 +271,12 @@ export function useArticle(slug: string | undefined): CmsItemState<CmsArticle> {
     fetchArticleBySlug(slug, locale)
       .then((item) => {
         if (cancelled) return;
-        if (item) {
-          const local = articleFallbacks(messages).find((entry) => entry.slug === slug);
-          const content = item.content?.trim()
-            ? item.content
-            : local?.content;
-          setData({
-            ...item,
-            content,
-            // Only keep static i18n sections when CMS has no body content yet
-            sections: content ? undefined : (item.sections ?? local?.sections),
-          });
-          setFromCms(true);
-        } else {
-          setData(
-            articleFallbacks(messages).find((entry) => entry.slug === slug) ?? null
-          );
-          setFromCms(false);
-        }
+        setData(item);
+        setFromCms(Boolean(item));
       })
       .catch(() => {
         if (cancelled) return;
-        setData(
-          articleFallbacks(messages).find((entry) => entry.slug === slug) ?? null
-        );
+        setData(null);
         setFromCms(false);
       })
       .finally(() => {
@@ -321,7 +286,7 @@ export function useArticle(slug: string | undefined): CmsItemState<CmsArticle> {
     return () => {
       cancelled = true;
     };
-  }, [slug, locale, messages]);
+  }, [slug, locale]);
 
   return { data, loading, fromCms };
 }

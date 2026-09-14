@@ -39,13 +39,6 @@ type CmsArticleMeta = {
   image?: string;
 };
 
-const FALLBACK_BLOG_IMAGES: Record<string, string> = {
-  "ia-generative-contemporaine": "/images/blog/ia-generative-contemporaine.svg",
-  "rag-pipelines": "/images/blog/rag-pipelines.svg",
-  "data-engineering-path": "/images/blog/data-engineering-path.svg",
-  "nextjs-performance": "/images/blog/nextjs-performance.svg",
-};
-
 function nestedString(source: unknown, keyPath: string) {
   const keys = keyPath.split(".");
   let current: unknown = source;
@@ -67,10 +60,6 @@ function escapeAttr(value: string) {
     .replace(/"/g, "&quot;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;");
-}
-
-function fallbackBlogImage(slug: string) {
-  return FALLBACK_BLOG_IMAGES[slug];
 }
 
 function resolveCoverImage(entry: Record<string, unknown>): string | undefined {
@@ -175,24 +164,13 @@ function collectRoutes(
         urlPath: (slug) => `/services/${slug}`,
       },
       {
-        slugs: [
-          ...new Set([
-            ...objectKeys((bundle.blog as { posts?: unknown } | undefined)?.posts).filter(
-              (slug) => {
-                const posts = (bundle.blog as { posts?: Record<string, { draft?: boolean }> })
-                  ?.posts;
-                return posts?.[slug]?.draft !== true;
-              }
-            ),
-            ...cmsArticles[locale].map((article) => article.slug),
-          ]),
-        ],
+        slugs: cmsArticles[locale].map((article) => article.slug),
         parentKey: "blog",
         parentPath: "/blog",
         titlePath: (slug) => `blog.posts.${slug}.title`,
         descriptionPath: (slug) => `blog.posts.${slug}.excerpt`,
         urlPath: (slug) => `/blog/${slug}`,
-        imageForSlug: (slug) => cmsBySlug.get(slug)?.image || fallbackBlogImage(slug),
+        imageForSlug: (slug) => cmsBySlug.get(slug)?.image,
       },
     ];
 

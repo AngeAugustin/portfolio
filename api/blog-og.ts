@@ -12,13 +12,6 @@ const SITE_NAME = "Augustin FACHEHOUN";
 const DEFAULT_SITE_URL = "https://www.augustinfachehoun.pro";
 const OG_IMAGE_PATH = "/og.svg";
 
-const FALLBACK_BLOG_IMAGES: Record<string, string> = {
-  "ia-generative-contemporaine": "/images/blog/ia-generative-contemporaine.svg",
-  "rag-pipelines": "/images/blog/rag-pipelines.svg",
-  "data-engineering-path": "/images/blog/data-engineering-path.svg",
-  "nextjs-performance": "/images/blog/nextjs-performance.svg",
-};
-
 function stripTrailingSlash(url: string) {
   return url.replace(/\/$/, "");
 }
@@ -56,7 +49,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     locale === "en"
       ? "Article from Augustin FACHEHOUN's portfolio."
       : "Article du portfolio d'Augustin FACHEHOUN.";
-  let image = FALLBACK_BLOG_IMAGES[slug] || OG_IMAGE_PATH;
+  let image = OG_IMAGE_PATH;
 
   if (slug && cmsUrl) {
     try {

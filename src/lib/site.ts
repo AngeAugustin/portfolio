@@ -172,43 +172,6 @@ export const tools = [
 
 export type BlogCategory = "ai" | "data" | "frontend";
 
-export const blogPosts = [
-  {
-    slug: "ia-generative-contemporaine",
-    date: "2026-09",
-    category: "ai" as const,
-    readMinutes: 7,
-    featured: true,
-    image: "/images/blog/ia-generative-contemporaine.svg",
-  },
-  {
-    slug: "rag-pipelines",
-    date: "2025-03",
-    category: "ai" as const,
-    readMinutes: 8,
-    featured: true,
-    image: "/images/blog/rag-pipelines.svg",
-  },
-  {
-    slug: "data-engineering-path",
-    date: "2025-01",
-    category: "data" as const,
-    readMinutes: 6,
-    featured: false,
-    image: "/images/blog/data-engineering-path.svg",
-  },
-  {
-    slug: "nextjs-performance",
-    date: "2024-11",
-    category: "frontend" as const,
-    readMinutes: 7,
-    featured: false,
-    image: "/images/blog/nextjs-performance.svg",
-  },
-] as const;
-
-export type BlogPostSlug = (typeof blogPosts)[number]["slug"];
-
 export const navLinks = [
   { href: "/", key: "home" },
   { href: "/about", key: "about" },

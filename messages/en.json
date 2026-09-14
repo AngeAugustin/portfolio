@@ -403,134 +403,8 @@
       "relatedLabel": "Keep reading",
       "relatedTitle": "More notes"
     },
-    "posts": {
-      "ia-generative-contemporaine": {
-        "title": "Contemporary generative AI: what actually changed",
-        "excerpt": "Generative AI is no longer a demo toy. Here is a clear look at what it can do today, where it fails, and how to put it inside a real product.",
-        "sections": [
-          {
-            "heading": "Generative AI, without the jargon",
-            "paragraphs": [
-              "When we say “generative AI”, we mean systems that can produce text, images, code, or sound from a request. There is no magic: the model learned patterns in huge amounts of data, then it proposes the most likely next piece, sentence after sentence, pixel after pixel.",
-              "That is why the result can look brilliant… and still be wrong with the same confidence. Contemporary generative AI does not “know” the way a person knows. It generates. That difference matters as soon as you use it for real work."
-            ]
-          },
-          {
-            "heading": "What actually changed",
-            "paragraphs": [
-              "In a few years, we moved from spectacular demos to everyday tools. Models hold context better. They spend a little more time “thinking” before they answer. Many now accept several formats at once: a PDF, a screenshot, a file, a question.",
-              "Another shift: agents. Instead of only writing text, a model can chain actions: look something up, call an API, draft a reply, then correct it. Smaller, faster, sometimes open models also make this usable outside research labs.",
-              "The real change is not “AI got smarter”. It is that AI became useful enough, and accessible enough, to enter products, if you frame it well."
-            ]
-          },
-          {
-            "heading": "Strengths, limits, and hallucinations",
-            "paragraphs": [
-              "It is strong at getting started. Summarizing a document, proposing a structure, translating, extracting fields, generating a first version of code, exploring an idea. On those tasks, it saves hours.",
-              "It is weak as soon as truth matters. A date, a figure, a business rule, a citation: the model can invent a fluent, false answer. That is a hallucination. It is not a rare bug. It is the normal behavior of a system that completes, instead of checking.",
-              "Hence a simple rule: the more exact the answer must be, the more you need to give the model the right context (internal documents, business data), and the more a human should review it. A RAG pipeline, for example, does not make the model omniscient. It gives it the right sources before it answers."
-            ]
-          },
-          {
-            "heading": "A model is not a product",
-            "paragraphs": [
-              "Dropping a chat box on a website is not an AI strategy. A useful product starts with simple questions: which precise task should get faster? For whom? With which data? And how will we know it works?",
-              "Then comes the system around the model: access rights, document quality, tests, latency, cost, error tracking. Without that, you ship a demo. With it, you ship a tool people actually dare to use.",
-              "I see too many projects stop at the prompt. The craft, today, sits elsewhere: frame the use case, measure quality, and keep a human in the loop as long as the risk is real."
-            ]
-          },
-          {
-            "heading": "Where to start, in practice",
-            "paragraphs": [
-              "You do not need a grand “AI project”. You need a repetitive, costly, and checkable problem. A report to write. A document to classify. A frequent question to answer. A first version of code to propose.",
-              "Three tests are enough to start without getting lost. Pick a real task, with an example of a good answer. Give the model the context it needs, not the whole intranet. Then measure: time saved, errors, user trust.",
-              "Contemporary generative AI is neither an abstract threat nor a magic wand. It is a demanding accelerator. Framed well, it multiplies a team. Framed poorly, it mostly accelerates the production of mistakes."
-            ]
-          }
-        ]
-      },
-      "rag-pipelines": {
-        "title": "Building Production RAG Pipelines",
-        "excerpt": "From chunking strategies to observability - how to ship retrieval systems that survive real traffic.",
-        "sections": [
-          {
-            "heading": "The demo-to-production gap",
-            "paragraphs": [
-              "A RAG that dazzles in a demo can collapse once it meets noisy documents, traffic spikes, or ambiguous questions. The difference rarely sits in the model alone - it sits in the pipeline.",
-              "In production, retrieval must stay stable, measurable, and revisable. Without those guardrails, you ship a brilliant experience… until the first business incident."
-            ]
-          },
-          {
-            "heading": "Chunking, embeddings, and ranking",
-            "paragraphs": [
-              "Aggressive chunking breaks context; oversized chunks dilute signal. I prefer a hybrid approach: semantic chunks, controlled overlaps, and rich metadata (source, date, document type).",
-              "Then comes ranking. Simple vector top-k is not enough. Combining dense similarity, business filters, and light re-ranking improves relevance drastically without exploding latency."
-            ]
-          },
-          {
-            "heading": "Observability and the improvement loop",
-            "paragraphs": [
-              "Without traces, you fly blind. I log queries, selected chunks, scores, and user feedback. Those signals feed continuous evals: perceived precision, hallucination rate, p95 latency.",
-              "The real deliverable is not a chatbot. It is a reliable retrieval system with clear improvement levers and an architecture ready to evolve."
-            ]
-          }
-        ]
-      },
-      "data-engineering-path": {
-        "title": "My Path Into Data Engineering",
-        "excerpt": "Lessons from moving from full-stack product work to pipelines, warehouses, and reliable data platforms.",
-        "sections": [
-          {
-            "heading": "Why this transition",
-            "paragraphs": [
-              "After years shipping full-stack products and AI systems, one truth became obvious: without reliable data, intelligence stays fragile. Models, dashboards, and automations all depend on a sound foundation.",
-              "Moving into Data Engineering is not leaving product behind. It is stepping one layer deeper to build the infrastructure that makes product durable."
-            ]
-          },
-          {
-            "heading": "What I had to relearn",
-            "paragraphs": [
-              "The craft changes: orchestration (Airflow), transformations (dbt), modeling, data contracts, quality, and lineage. You no longer code only for a UI - you code for flows, SLAs, and downstream teams.",
-              "Product rigor still helps. A readable, tested, documented pipeline behaves like a good React component: clear, predictable, maintainable."
-            ]
-          },
-          {
-            "heading": "What I build now",
-            "paragraphs": [
-              "I connect both worlds: APIs and apps on one side, pipelines and warehouses on the other. The goal is simple - intelligent products backed by trustworthy data.",
-              "That trajectory guides my work today: fewer throwaway prototypes, more systems that hold over time."
-            ]
-          }
-        ]
-      },
-      "nextjs-performance": {
-        "title": "Next.js Performance Patterns",
-        "excerpt": "Practical patterns for faster navigations, smarter caching, and Lighthouse scores that hold in production.",
-        "sections": [
-          {
-            "heading": "Measure before you optimize",
-            "paragraphs": [
-              "Performance starts with numbers: LCP, INP, CLS, JS weight, network waterfall. Without a baseline, you optimize by feel - and often miss the real bottleneck.",
-              "I set two or three budgets first (initial JS, hero images, time to interaction), then work by descending impact."
-            ]
-          },
-          {
-            "heading": "Patterns that scale",
-            "paragraphs": [
-              "Streaming, lazy-loading heavy sections, responsive images, HTTP/CDN caching, and cutting unnecessary re-renders. On Vite/React as on Next, the principle stays the same: load less, earlier, and only what matters.",
-              "Design systems are part of the equation too. Too many animations, fonts, or decorative JS - and Lighthouse collapses. Visual restraint is a performance strategy."
-            ]
-          },
-          {
-            "heading": "Keeping performance over time",
-            "paragraphs": [
-              "Good performance must be protected: CI budgets, RUM monitoring, dependency reviews. Otherwise every feature silently erodes it.",
-              "Ship fast, yes. But ship fast and stay fast - that is real frontend craft."
-            ]
-          }
-        ]
-      }
-    }
+    "empty": "No articles yet.",
+    "emptyFilter": "No articles in this category."
   },
   "projects": {
     "title": "Projects",
@@ -686,31 +560,84 @@
   "skillGroups": [
     {
       "name": "Frontend",
-      "skills": ["JavaScript", "React", "React Js", "React Native", "Next.js", "Vite", "TypeScript", "Tailwind CSS", "Framer Motion"]
+      "skills": [
+        "JavaScript",
+        "React",
+        "React Js",
+        "React Native",
+        "Next.js",
+        "Vite",
+        "TypeScript",
+        "Tailwind CSS",
+        "Framer Motion"
+      ]
     },
     {
       "name": "Backend",
-      "skills": ["Node.js", "Nest Js", "JavaScript", "Python", "Java", "Django", "FastAPI", "Symfony", "Spring Boot", "Postman"]
+      "skills": [
+        "Node.js",
+        "Nest Js",
+        "JavaScript",
+        "Python",
+        "Java",
+        "Django",
+        "FastAPI",
+        "Symfony",
+        "Spring Boot",
+        "Postman"
+      ]
     },
     {
       "name": "Databases",
-      "skills": ["PostgreSQL", "MySQL", "MongoDB", "Redis"]
+      "skills": [
+        "PostgreSQL",
+        "MySQL",
+        "MongoDB",
+        "Redis"
+      ]
     },
     {
       "name": "AI & ML",
-      "skills": ["OpenAI API", "OpenRouter", "Ollama", "LangChain", "RAG", "TensorFlow", "Vector DBs"]
+      "skills": [
+        "OpenAI API",
+        "OpenRouter",
+        "Ollama",
+        "LangChain",
+        "RAG",
+        "TensorFlow",
+        "Vector DBs"
+      ]
     },
     {
       "name": "Data Engineering",
-      "skills": ["Apache Airflow", "dbt", "BigQuery", "Talend EBS DI", "SQL Server", "ETL/ELT", "Data Modeling"]
+      "skills": [
+        "Apache Airflow",
+        "dbt",
+        "BigQuery",
+        "Talend EBS DI",
+        "SQL Server",
+        "ETL/ELT",
+        "Data Modeling"
+      ]
     },
     {
       "name": "DevOps",
-      "skills": ["Docker", "CI/CD", "Vercel", "Monitoring"]
+      "skills": [
+        "Docker",
+        "CI/CD",
+        "Vercel",
+        "Monitoring"
+      ]
     },
     {
       "name": "Tools & Others",
-      "skills": ["Git / GitHub", "Trello", "Render", "Hostinger", "Contabo"]
+      "skills": [
+        "Git / GitHub",
+        "Trello",
+        "Render",
+        "Hostinger",
+        "Contabo"
+      ]
     }
   ],
   "serviceDetails": {
@@ -719,7 +646,12 @@
       "summary": "End-to-end web applications with premium UX, scalable architecture, and production-ready code.",
       "tagline": "From prototype to scalable product, with a polished experience at every step.",
       "overview": "I design and build complete web applications - modern interfaces, robust business logic, and reliable deployments. My approach combines technical rigor with product sensibility to deliver premium digital experiences built to grow with your business.",
-      "tags": ["React", "Next.js", "Premium UX", "Production-ready"],
+      "tags": [
+        "React",
+        "Next.js",
+        "Premium UX",
+        "Production-ready"
+      ],
       "deliverables": [
         "Responsive, accessible, and carefully animated interfaces",
         "Modular, maintainable architecture ready to scale",
@@ -733,7 +665,15 @@
         "Develop in short iterations with testable deliverables",
         "Test, optimize, and deploy in production-like conditions"
       ],
-      "stack": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL", "Vercel"],
+      "stack": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Node.js",
+        "PostgreSQL",
+        "Vercel"
+      ],
       "idealFor": [
         "Startups launching a premium MVP quickly",
         "Companies modernizing an existing application",
@@ -746,7 +686,12 @@
       "summary": "LLM-powered features, agent systems, RAG pipelines, and intelligent automation for your product.",
       "tagline": "Useful, reliable AI features integrated naturally into your product.",
       "overview": "I integrate artificial intelligence where it creates real value - not for hype, but to automate, accelerate, and enrich the user experience. From conversational assistants to RAG pipelines, I build pragmatic, observable AI systems tailored to your business context.",
-      "tags": ["LLM", "RAG", "AI Agents", "Automation"],
+      "tags": [
+        "LLM",
+        "RAG",
+        "AI Agents",
+        "Automation"
+      ],
       "deliverables": [
         "OpenAI, OpenRouter, or local model integrations via Ollama",
         "RAG pipelines with semantic search and vector databases",
@@ -760,7 +705,15 @@
         "Build a modular, testable, and evolvable architecture",
         "Iterate with real feedback before production deployment"
       ],
-      "stack": ["Python", "LangChain", "OpenAI API", "OpenRouter", "Ollama", "FastAPI", "Vector DBs"],
+      "stack": [
+        "Python",
+        "LangChain",
+        "OpenAI API",
+        "OpenRouter",
+        "Ollama",
+        "FastAPI",
+        "Vector DBs"
+      ],
       "idealFor": [
         "Products adding a copilot or intelligent assistant",
         "Teams automating repetitive tasks with AI",
@@ -773,7 +726,12 @@
       "summary": "Robust REST/GraphQL APIs, microservices, authentication, and third-party integrations.",
       "tagline": "Solid backend foundations for reliable, well-structured products.",
       "overview": "I build backends designed for longevity - clear, secure, and performant APIs. Whether for a new product or a rebuild, I set up backend architectures that simplify integration, maintenance, and scaling.",
-      "tags": ["REST", "GraphQL", "Microservices", "Security"],
+      "tags": [
+        "REST",
+        "GraphQL",
+        "Microservices",
+        "Security"
+      ],
       "deliverables": [
         "Designed and documented REST or GraphQL APIs",
         "Authentication, authorization, and session management",
@@ -787,7 +745,16 @@
         "Implement with proven patterns and test coverage",
         "Document, deploy, and support frontend integration"
       ],
-      "stack": ["Node.js", "Nest Js", "Python", "Django", "FastAPI", "PostgreSQL", "Redis", "Docker"],
+      "stack": [
+        "Node.js",
+        "Nest Js",
+        "Python",
+        "Django",
+        "FastAPI",
+        "PostgreSQL",
+        "Redis",
+        "Docker"
+      ],
       "idealFor": [
         "Applications needing a reliable, well-documented API",
         "Fintech or SaaS projects with security requirements",
@@ -800,7 +767,12 @@
       "summary": "ETL pipelines, data warehousing, analytics infrastructure, and dashboard development.",
       "tagline": "Turn raw data into reliable, actionable insights.",
       "overview": "I design reliable data pipelines that connect your data sources to informed decisions. From extraction to visualization, I use modern tools and proven practices to structure, clean, and make your data usable.",
-      "tags": ["ETL/ELT", "Pipelines", "Analytics", "Dashboards"],
+      "tags": [
+        "ETL/ELT",
+        "Pipelines",
+        "Analytics",
+        "Dashboards"
+      ],
       "deliverables": [
         "Automated and monitored ETL/ELT pipelines",
         "Data warehouse modeling and structuring",
@@ -814,7 +786,15 @@
         "Implement pipelines with validation and error recovery",
         "Deliver clear dashboards and train teams to use them"
       ],
-      "stack": ["Talend EBS DI", "Apache Airflow", "dbt", "SQL Server", "PostgreSQL", "BigQuery", "Python"],
+      "stack": [
+        "Talend EBS DI",
+        "Apache Airflow",
+        "dbt",
+        "SQL Server",
+        "PostgreSQL",
+        "BigQuery",
+        "Python"
+      ],
       "idealFor": [
         "Companies centralizing scattered data",
         "Product teams needing reliable metrics",
@@ -874,9 +854,18 @@
     "errorRateLimit": "Too many messages sent. Please wait a few minutes before trying again.",
     "errorNotConfigured": "The AI service is not configured on the server yet.",
     "suggestions": [
-      { "id": "projects", "label": "What projects have you built?" },
-      { "id": "skills", "label": "What's your tech stack?" },
-      { "id": "contact", "label": "How can I reach you?" }
+      {
+        "id": "projects",
+        "label": "What projects have you built?"
+      },
+      {
+        "id": "skills",
+        "label": "What's your tech stack?"
+      },
+      {
+        "id": "contact",
+        "label": "How can I reach you?"
+      }
     ]
   }
 }

@@ -49,7 +49,7 @@ function mapArticle(entry: StrapiArticle): CmsArticle | null {
       toYearMonth(entry.publishedAt ?? entry.createdAt),
     image: mediaUrl(
       entry.cover ?? (entry.imageUrl ? { url: entry.imageUrl } : null),
-      "/images/blog/rag-pipelines.svg"
+      "/og.svg"
     ),
   };
 }

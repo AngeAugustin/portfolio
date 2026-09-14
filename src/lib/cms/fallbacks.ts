@@ -1,12 +1,6 @@
 import type { IntlMessages } from "@/i18n/messages";
-import {
-  blogPosts,
-  projects,
-  services,
-  type BlogPostSlug,
-  type ServiceSlug,
-} from "@/lib/site";
-import type { CmsArticle, CmsEducation, CmsExperience, CmsProject, CmsService } from "./types";
+import { projects, services, type ServiceSlug } from "@/lib/site";
+import type { CmsEducation, CmsExperience, CmsProject, CmsService } from "./types";
 
 type LocalizedCopy = Record<string, string | undefined>;
 
@@ -62,46 +56,6 @@ export function serviceFallbacks(messages: IntlMessages): CmsService[] {
       idealFor: asList(copy.idealFor),
     };
   });
-}
-
-export function articleFallbacks(messages: IntlMessages): CmsArticle[] {
-  const postsRoot = (messages.blog as { posts?: Record<string, LocalizedCopy> } | undefined)
-    ?.posts;
-
-  return blogPosts
-    .filter((post) => !("draft" in post && post.draft) || import.meta.env.DEV)
-    .map((post) => {
-      const copy = (postsRoot?.[post.slug as BlogPostSlug] ?? {}) as Record<string, unknown>;
-
-      const sectionsRaw = copy.sections;
-      const sections = Array.isArray(sectionsRaw)
-        ? sectionsRaw
-            .map((section) => {
-              if (!section || typeof section !== "object") return null;
-              const entry = section as Record<string, unknown>;
-              const heading = typeof entry.heading === "string" ? entry.heading : "";
-              const paragraphs = Array.isArray(entry.paragraphs)
-                ? entry.paragraphs.filter((p): p is string => typeof p === "string")
-                : [];
-              if (!heading && paragraphs.length === 0) return null;
-              return { heading, paragraphs };
-            })
-            .filter((section): section is { heading: string; paragraphs: string[] } => section !== null)
-        : undefined;
-
-      return {
-        slug: post.slug,
-        title: typeof copy.title === "string" ? copy.title : post.slug,
-        excerpt: typeof copy.excerpt === "string" ? copy.excerpt : "",
-        content: typeof copy.content === "string" ? copy.content : undefined,
-        sections,
-        category: post.category,
-        featured: post.featured,
-        readMinutes: post.readMinutes,
-        date: post.date,
-        image: post.image,
-      };
-    });
 }
 
 export function isKnownServiceSlug(slug: string): slug is ServiceSlug {
