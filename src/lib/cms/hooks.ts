@@ -290,10 +290,14 @@ export function useArticle(slug: string | undefined): CmsItemState<CmsArticle> {
         if (cancelled) return;
         if (item) {
           const local = articleFallbacks(messages).find((entry) => entry.slug === slug);
+          const content = item.content?.trim()
+            ? item.content
+            : local?.content;
           setData({
             ...item,
-            sections: item.sections ?? local?.sections,
-            content: item.content || local?.content,
+            content,
+            // Only keep static i18n sections when CMS has no body content yet
+            sections: content ? undefined : (item.sections ?? local?.sections),
           });
           setFromCms(true);
         } else {

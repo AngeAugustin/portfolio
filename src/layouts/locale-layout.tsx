@@ -6,6 +6,7 @@ import { isLocale, routing, type Locale } from "@/i18n/routing";
 import { ThemeProvider } from "@/components/layout/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { ScrollToTop } from "@/components/layout/scroll-to-top";
 import { ChatWidget } from "@/components/chat/ChatWidget";
 import { useDocumentLang } from "@/lib/page-meta";
 
@@ -47,6 +48,7 @@ function LocaleShell({ locale }: { locale: Locale }) {
   return (
     <IntlProvider locale={locale} messages={messages}>
       <ThemeProvider>
+        <ScrollToTop />
         <Navbar />
         <main className="overflow-x-clip">
           <Outlet />

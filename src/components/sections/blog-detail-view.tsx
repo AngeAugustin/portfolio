@@ -37,6 +37,31 @@ function stripHtml(value: string) {
 }
 
 function ArticleBody({ article }: { article: CmsArticle }) {
+  // Prefer CMS/HTML content over static i18n sections (sections were a fallback).
+  if (article.content?.trim()) {
+    const looksLikeHtml = /<\/?[a-z][\s\S]*>/i.test(article.content);
+    if (looksLikeHtml) {
+      return (
+        <div
+          className="article-prose mx-auto max-w-3xl space-y-6 text-base leading-relaxed text-muted-foreground md:text-lg [&_a]:text-glow [&_a]:underline-offset-4 hover:[&_a]:underline [&_blockquote]:border-l-2 [&_blockquote]:border-border [&_blockquote]:pl-4 [&_blockquote]:italic [&_h2]:mt-12 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-foreground [&_h3]:mt-8 [&_h3]:font-display [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-foreground [&_mark]:rounded-sm [&_mark]:bg-amber-200/70 [&_mark]:px-0.5 [&_mark]:text-foreground [&_ol]:my-4 [&_ol]:list-decimal [&_ol]:pl-5 [&_p]:leading-relaxed [&_strong]:text-foreground [&_u]:underline [&_ul]:my-4 [&_ul]:list-disc [&_ul]:pl-5 [&_li]:my-1"
+          dangerouslySetInnerHTML={{ __html: article.content }}
+        />
+      );
+    }
+
+    return (
+      <div className="mx-auto max-w-3xl space-y-6 text-base leading-relaxed text-muted-foreground md:text-lg">
+        {article.content
+          .split(/\n\n+/)
+          .map((paragraph) => paragraph.trim())
+          .filter(Boolean)
+          .map((paragraph) => (
+            <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+          ))}
+      </div>
+    );
+  }
+
   if (article.sections && article.sections.length > 0) {
     return (
       <div className="mx-auto max-w-3xl space-y-12">
@@ -54,30 +79,6 @@ function ArticleBody({ article }: { article: CmsArticle }) {
             </div>
           </section>
         ))}
-      </div>
-    );
-  }
-
-  if (article.content) {
-    const looksLikeHtml = /<\/?[a-z][\s\S]*>/i.test(article.content);
-    if (looksLikeHtml) {
-      return (
-        <div
-          className="article-prose mx-auto max-w-3xl space-y-6 text-base leading-relaxed text-muted-foreground md:text-lg [&_a]:text-glow [&_a]:underline-offset-4 hover:[&_a]:underline [&_h2]:mt-12 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-foreground [&_h3]:mt-8 [&_h3]:font-display [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-foreground [&_li]:ml-5 [&_li]:list-disc [&_p]:leading-relaxed [&_strong]:text-foreground"
-          dangerouslySetInnerHTML={{ __html: article.content }}
-        />
-      );
-    }
-
-    return (
-      <div className="mx-auto max-w-3xl space-y-6 text-base leading-relaxed text-muted-foreground md:text-lg">
-        {article.content
-          .split(/\n\n+/)
-          .map((paragraph) => paragraph.trim())
-          .filter(Boolean)
-          .map((paragraph) => (
-            <p key={paragraph.slice(0, 48)}>{paragraph}</p>
-          ))}
       </div>
     );
   }

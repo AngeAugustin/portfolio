@@ -12,7 +12,9 @@ type StrapiArticle = {
   category?: BlogCategory;
   featured?: boolean;
   readMinutes?: number | null;
+  date?: string | null;
   cover?: StrapiMedia;
+  imageUrl?: string | null;
   publishedAt?: string | null;
   createdAt?: string | null;
 };
@@ -42,8 +44,13 @@ function mapArticle(entry: StrapiArticle): CmsArticle | null {
     category,
     featured: Boolean(entry.featured),
     readMinutes: entry.readMinutes ?? 5,
-    date: toYearMonth(entry.publishedAt ?? entry.createdAt),
-    image: mediaUrl(entry.cover, "/images/blog/rag-pipelines.svg"),
+    date:
+      entry.date?.trim() ||
+      toYearMonth(entry.publishedAt ?? entry.createdAt),
+    image: mediaUrl(
+      entry.cover ?? (entry.imageUrl ? { url: entry.imageUrl } : null),
+      "/images/blog/rag-pipelines.svg"
+    ),
   };
 }
 
