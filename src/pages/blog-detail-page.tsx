@@ -58,7 +58,7 @@ export function BlogDetailPage() {
 
   return (
     <PageIntl namespaces={BLOG_DETAIL_MESSAGE_NAMESPACES}>
-      <BlogDetailView article={article} />
+      <BlogDetailView article={article} fromCms={fromCms} />
     </PageIntl>
   );
 }

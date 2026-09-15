@@ -1,35 +1,7 @@
 {
   "meta": {
-    "title": "Augustin FACHEHOUN - Développeur FullStack & IA",
-    "description": "Portfolio d'Augustin FACHEHOUN, développeur FullStack & IA. Découvrez mes projets, services et solutions digitales."
-  },
-  "seo": {
-    "pages": {
-      "home": {
-        "title": "Augustin FACHEHOUN - Développeur FullStack & IA",
-        "description": "Portfolio d'Augustin FACHEHOUN, développeur FullStack & IA. Découvrez mes projets, services et solutions digitales."
-      },
-      "about": {
-        "title": "À propos - Augustin FACHEHOUN",
-        "description": "Parcours, compétences et CV d'Augustin FACHEHOUN, développeur FullStack et ingénieur IA basé à Cotonou."
-      },
-      "projects": {
-        "title": "Projets - Augustin FACHEHOUN",
-        "description": "Découvrez les projets et réalisations d'Augustin FACHEHOUN : applications web, systèmes IA, APIs et produits data."
-      },
-      "services": {
-        "title": "Services - Augustin FACHEHOUN",
-        "description": "Création d'applications web, intégration IA, APIs backend et data engineering - des solutions digitales sur mesure."
-      },
-      "blog": {
-        "title": "Blog - Augustin FACHEHOUN",
-        "description": "Articles sur le développement web, l'IA en production et le data engineering - notes techniques d'Augustin FACHEHOUN."
-      },
-      "contact": {
-        "title": "Contact - Augustin FACHEHOUN",
-        "description": "Je suis disponible pour répondre à vos besoins. Parlons de votre projet web, IA ou data."
-      }
-    }
+    "title": "Augustin FACHEHOUN — Développeur FullStack & IA",
+    "description": "Développeur FullStack & IA béninois créant des applications web évolutives et des systèmes intelligents. En transition vers le Data Engineering."
   },
   "nav": {
     "home": "Accueil",
@@ -49,7 +21,7 @@
     "badge": "Ouvert aux collaborations · du Bénin vers le monde",
     "title": "Concevoir des expériences",
     "titleAccent": "digitales intelligentes",
-    "subtitle": "Je conçois et développe des applications web évolutives, des systèmes IA et des infrastructures data - avec la clarté d'un studio produit et la rigueur de l'ingénierie.",
+    "subtitle": "Je conçois et développe des applications web évolutives, des systèmes IA et des infrastructures data — avec la clarté d'un studio produit et la rigueur de l'ingénierie.",
     "ctaPrimary": "Voir les projets",
     "ctaSecondary": "Voir comment je travaille",
     "scroll": "Faire défiler",
@@ -59,39 +31,24 @@
       "remote": "Remote mondial"
     },
     "visual": {
-      "windowTitle": "augustin@studio: ~",
-      "user": "augustin",
-      "host": "studio",
-      "cwd": "~",
-      "shell": "zsh",
-      "path": "~/studio",
-      "connected": "connecté",
-      "ariaLabel": "Terminal Linux présentant Augustin Fachehoun",
-      "fetch": {
-        "title": "augustin@studio",
-        "os": "OS",
-        "osValue": "FullStack Linux x86_64",
-        "host": "Hôte",
-        "hostValue": "Cotonou, Bénin",
-        "kernel": "Kernel",
-        "kernelValue": "TypeScript · Python · SQL",
-        "uptime": "Uptime",
-        "uptimeValue": "3+ ans en production",
-        "packages": "Paquets",
-        "packagesValue": "Next.js · Django · PostgreSQL · RAG",
-        "status": "Statut",
-        "statusValue": "disponible"
+      "sidebarLabel": "Focus",
+      "connections": {
+        "fullstack": "fullstack",
+        "ai": "systèmes ia",
+        "data": "pipelines data",
+        "local": "local.studio"
       },
-      "git": {
-        "branch": "main",
-        "status": "working tree clean"
+      "activeTitle": "fullstack",
+      "activeMeta": "Web · APIs · craft production",
+      "status": "En cours",
+      "progressLabel": "Livraison en cours",
+      "progressValue": "Shipping",
+      "terminal": {
+        "line1": "build() → apps web scalables",
+        "line2": "deploy() → systèmes IA en production",
+        "line3": "pipeline() → infrastructures data robustes"
       },
-      "commands": {
-        "whoami": "whoami",
-        "whoamiOut": "développeur fullstack & ia",
-        "cat": "cat ./focus.md",
-        "catOut": "web · apis · IA production · pipelines data"
-      }
+      "caption": "~/Studio · TypeScript · Vite · systèmes intelligents"
     }
   },
   "techStack": {
@@ -102,7 +59,7 @@
     "label": "Travaux Sélectionnés",
     "watermark": "Projets",
     "title": "Projets phares",
-    "subtitle": "Des agents IA aux pipelines data - des produits conçus pour l'impact, l'échelle et la clarté.",
+    "subtitle": "Des agents IA aux pipelines data — des produits conçus pour l'impact, l'échelle et la clarté.",
     "viewAll": "Voir tous les projets",
     "viewProject": "Voir l'étude de cas"
   },
@@ -115,11 +72,11 @@
       "title": "À l'intersection du code, de l'IA et de la data",
       "titleLine1": "À l'intersection du",
       "titleLine2": "code, de l'IA et de la data",
-      "subtitle": "Développeur FullStack & Ingénieur IA béninois - je conçois des produits intelligents et j'évolue vers le Data Engineering.",
+      "subtitle": "Développeur FullStack & Ingénieur IA béninois — je conçois des produits intelligents et j'évolue vers le Data Engineering.",
       "ctaPrimary": "Me contacter",
       "ctaSecondary": "Voir les projets",
       "promiseLabel": "Promesse",
-      "promise": "« Des produits intelligents, du fullstack à la data - livrés avec exigence. »",
+      "promise": "« Des produits intelligents, du fullstack à la data — livrés avec exigence. »",
       "forWhom": "Pour qui ?",
       "audience": {
         "startups": "Startups",
@@ -138,13 +95,13 @@
       }
     },
     "p1": "Je suis Développeur FullStack et Ingénieur IA béninois avec plus de 3 ans d'expérience dans la livraison d'applications de qualité production pour startups et entreprises.",
-    "p2": "Mon travail couvre l'automatisation intelligente, les plateformes API, les produits SaaS et les tableaux de bord analytiques - toujours avec un focus sur la performance, l'accessibilité et une UX élégante.",
+    "p2": "Mon travail couvre l'automatisation intelligente, les plateformes API, les produits SaaS et les tableaux de bord analytiques — toujours avec un focus sur la performance, l'accessibilité et une UX élégante.",
     "p3": "Je suis en transition active vers l'ingénierie IA et le Data Engineering, en approfondissant mes compétences en systèmes intelligents, pipelines de données, machine learning, data mining, LLM, RAG, IA et intégration.",
     "cta": "En savoir plus",
     "resume": {
       "label": "CV",
       "title": "Télécharger mon CV",
-      "subtitle": "Parcours, compétences et réalisations - prêt à partager avec votre équipe.",
+      "subtitle": "Parcours, compétences et réalisations — prêt à partager avec votre équipe.",
       "hint": "Document PDF optimisé pour le recrutement et les opportunités professionnelles.",
       "download": "Télécharger le PDF",
       "unavailable": "Veuillez revenir plus tard. Mon CV sera bientôt disponible."
@@ -234,7 +191,7 @@
       "ctaPrimary": "Me contacter",
       "ctaSecondary": "Voir les projets",
       "promiseLabel": "Promesse",
-      "promise": "« Du cadrage au déploiement - des livrables clairs, utiles et durables. »",
+      "promise": "« Du cadrage au déploiement — des livrables clairs, utiles et durables. »",
       "forWhom": "Pour qui ?",
       "audience": {
         "product": "Produit",
@@ -275,7 +232,7 @@
   },
   "cta": {
     "title": "Prêt à construire quelque chose d'exceptionnel ?",
-    "subtitle": "Qu'il s'agisse d'un produit IA, d'une plateforme SaaS ou d'un pipeline data - créons de l'impact ensemble.",
+    "subtitle": "Qu'il s'agisse d'un produit IA, d'une plateforme SaaS ou d'un pipeline data — créons de l'impact ensemble.",
     "button": "Démarrer une conversation",
     "watermark": "Build"
   },
@@ -289,11 +246,11 @@
       "title": "Construisons ensemble",
       "titleLine1": "Construisons",
       "titleLine2": "ensemble",
-      "subtitle": "Un projet, une idée ou une collaboration - je suis disponible pour échanger et voir comment avancer concrètement.",
+      "subtitle": "Un projet, une idée ou une collaboration — je suis disponible pour échanger et voir comment avancer concrètement.",
       "ctaPrimary": "Envoyer un message",
       "ctaSecondary": "Voir les projets",
       "promiseLabel": "Promesse",
-      "promise": "« Une réponse claire sous 24–48 h - pour avancer sans friction. »",
+      "promise": "« Une réponse claire sous 24–48 h — pour avancer sans friction. »",
       "forWhom": "Pour qui ?",
       "audience": {
         "remote": "Remote-friendly",
@@ -311,12 +268,12 @@
       "locationLabel": "Localisation",
       "responseLabel": "Réponse",
       "responseTime": "Sous 24–48 h",
-      "hint": "Partagez votre contexte, vos objectifs et votre calendrier - je reviens vers vous avec une réponse claire."
+      "hint": "Partagez votre contexte, vos objectifs et votre calendrier — je reviens vers vous avec une réponse claire."
     },
     "form": {
       "label": "Formulaire",
       "title": "Envoyez un message",
-      "subtitle": "Décrivez votre projet, votre besoin ou votre idée - je vous réponds rapidement."
+      "subtitle": "Décrivez votre projet, votre besoin ou votre idée — je vous réponds rapidement."
     },
     "name": "Nom complet",
     "email": "Adresse e-mail",
@@ -325,7 +282,7 @@
     "sending": "Envoi...",
     "success": "Message envoyé avec succès !",
     "error": "Une erreur est survenue. Réessaie dans un instant.",
-    "location": "Basé à Cotonou, Bénin - disponible mondialement"
+    "location": "Basé à Cotonou, Bénin — disponible mondialement"
   },
   "footer": {
     "tagline": "Créer des produits intelligents du Bénin vers le monde.",
@@ -350,11 +307,11 @@
       "title": "Idées, craft & profondeur technique",
       "titleLine1": "Idées, craft &",
       "titleLine2": "profondeur technique",
-      "subtitle": "Notes long format sur les systèmes IA, le data engineering et le frontend premium - écrites pour les builders qui visent la clarté.",
+      "subtitle": "Notes long format sur les systèmes IA, le data engineering et le frontend premium — écrites pour les builders qui visent la clarté.",
       "ctaPrimary": "Me contacter",
       "ctaSecondary": "Voir les projets",
       "promiseLabel": "Promesse",
-      "promise": "« Des notes utiles, sans bruit - pour builder avec plus de clarté. »",
+      "promise": "« Des notes utiles, sans bruit — pour builder avec plus de clarté. »",
       "forWhom": "Pour qui ?",
       "audience": {
         "ai": "Systèmes IA",
@@ -398,13 +355,113 @@
       "ctaPrimary": "Me contacter",
       "ctaSecondary": "Tous les articles",
       "ctaTitle": "Un sujet à explorer ensemble ?",
-      "ctaSubtitle": "Parlons de vos pipelines, de votre stack frontend ou de vos systèmes IA - avec clarté et exigence.",
+      "ctaSubtitle": "Parlons de vos pipelines, de votre stack frontend ou de vos systèmes IA — avec clarté et exigence.",
       "ctaButton": "Démarrer une conversation",
       "relatedLabel": "Continuer",
       "relatedTitle": "Autres notes"
     },
-    "empty": "Aucun article pour le moment.",
-    "emptyFilter": "Aucun article dans cette catégorie."
+    "engagement": {
+      "like": "J'aime",
+      "liked": "Aimé",
+      "label": "Discussion",
+      "title": "Laisser un commentaire",
+      "subtitle": "Idées, questions ou retours — je lis chaque note avant publication.",
+      "commentCount": "{count, plural, =0 {Aucun commentaire} one {# commentaire} other {# commentaires}}",
+      "name": "Nom",
+      "namePlaceholder": "Votre nom",
+      "email": "Email (optionnel)",
+      "emailPlaceholder": "hello@example.com",
+      "message": "Commentaire",
+      "messagePlaceholder": "Partagez votre avis…",
+      "submit": "Publier",
+      "sending": "Envoi…",
+      "success": "Merci — votre commentaire apparaîtra après modération.",
+      "error": "Une erreur est survenue. Réessayez.",
+      "empty": "Soyez le premier à lancer la conversation."
+    },
+    "posts": {
+      "rag-pipelines": {
+        "title": "Construire des pipelines RAG en production",
+        "excerpt": "Du chunking à l'observabilité — comment livrer des systèmes de retrieval qui tiennent la charge réelle.",
+        "sections": [
+          {
+            "heading": "Le décalage démo → production",
+            "paragraphs": [
+              "Un RAG qui impressionne en démo peut s'effondrer dès qu'il rencontre des documents bruités, des pics de trafic ou des questions ambiguës. La différence se joue rarement sur le modèle seul : elle se joue sur le pipeline.",
+              "En production, le retrieval doit rester stable, mesurable et révisable. Sans ces garde-fous, on livre une expérience brillante… jusqu'au premier incident métier."
+            ]
+          },
+          {
+            "heading": "Chunking, embeddings et ranking",
+            "paragraphs": [
+              "Le chunking trop agressif casse le contexte ; trop large, il dilue le signal. Je préfère une stratégie hybride : chunks sémantiques, overlaps contrôlés, et métadonnées riches (source, date, type de document).",
+              "Ensuite vient le ranking. Un simple top-k vectoriel ne suffit pas. Combiner similarité dense, filtres métier et re-ranking léger améliore drastiquement la pertinence sans exploser la latence."
+            ]
+          },
+          {
+            "heading": "Observabilité et boucle d'amélioration",
+            "paragraphs": [
+              "Sans traces, on navigue à l'aveugle. Je journalise les requêtes, les chunks retenus, les scores et les feedbacks utilisateurs. Ces signaux alimentent des evals continues : précision perçue, hallucination rate, latence p95.",
+              "Le vrai livrable n'est pas un chatbot. C'est un système de retrieval fiable, avec des leviers d'amélioration clairs et une architecture prête à évoluer."
+            ]
+          }
+        ]
+      },
+      "data-engineering-path": {
+        "title": "Mon parcours vers le Data Engineering",
+        "excerpt": "Retour d'expérience sur la transition du produit full-stack vers pipelines, entrepôts et plateformes data fiables.",
+        "sections": [
+          {
+            "heading": "Pourquoi cette transition",
+            "paragraphs": [
+              "Après des années à livrer des produits full-stack et des systèmes IA, une évidence s'est imposée : sans data fiable, l'intelligence reste fragile. Les modèles, les dashboards et les automatisations dépendent tous d'une fondation saine.",
+              "Passer au Data Engineering, ce n'est pas abandonner le produit. C'est remonter d'un cran pour construire l'infrastructure qui le rend durable."
+            ]
+          },
+          {
+            "heading": "Ce que j'ai dû réapprendre",
+            "paragraphs": [
+              "Le craft change : orchestration (Airflow), transformations (dbt), modélisation, contrats de données, qualité et lineage. On ne code plus seulement pour une UI — on code pour des flux, des SLA et des équipes aval.",
+              "La rigueur produit reste utile. Un pipeline lisible, testé et documenté se comporte comme un bon composant React : clair, prévisible, maintenable."
+            ]
+          },
+          {
+            "heading": "Ce que je construis maintenant",
+            "paragraphs": [
+              "Je relie les deux mondes : APIs et apps d'un côté, pipelines et warehouses de l'autre. L'objectif est simple — des produits intelligents appuyés sur une data digne de confiance.",
+              "Cette trajectoire guide mon travail aujourd'hui : moins de prototypes jetables, plus de systèmes qui tiennent dans le temps."
+            ]
+          }
+        ]
+      },
+      "nextjs-performance": {
+        "title": "Patterns de performance Next.js",
+        "excerpt": "Patterns concrets pour des navigations plus rapides, un cache intelligent et des scores Lighthouse stables en production.",
+        "sections": [
+          {
+            "heading": "Mesurer avant d'optimiser",
+            "paragraphs": [
+              "La performance commence par des chiffres : LCP, INP, CLS, poids JS, waterfall réseau. Sans baseline, on optimise au feeling — et on rate souvent le vrai goulot.",
+              "Je fixe d'abord 2 ou 3 budgets (JS initial, images hero, temps jusqu'à interaction), puis je travaille par impact décroissant."
+            ]
+          },
+          {
+            "heading": "Patterns qui tiennent à l'échelle",
+            "paragraphs": [
+              "Streaming, lazy loading des sections lourdes, images responsives, cache HTTP/CDN, et réduction des re-renders inutiles. Sur Vite/React comme sur Next, le principe reste le même : charger moins, plus tôt, et seulement ce qui compte.",
+              "Le design système entre aussi dans l'équation. Trop d'animations, trop de polices, trop de JS décoratif — et le Lighthouse s'effondre. La sobriété visuelle est une stratégie de perf."
+            ]
+          },
+          {
+            "heading": "Garder la perf dans le temps",
+            "paragraphs": [
+              "Une bonne perf se protège : budgets CI, monitoring RUM, revue des dépendances. Sinon, chaque feature la dégrade silencieusement.",
+              "Livrer vite, oui. Mais livrer vite et rester rapide — c'est le vrai craft frontend."
+            ]
+          }
+        ]
+      }
+    }
   },
   "projects": {
     "title": "Projets",
@@ -416,11 +473,11 @@
       "title": "Des produits qui créent de l'impact",
       "titleLine1": "Des produits",
       "titleLine2": "qui créent de l'impact",
-      "subtitle": "Une collection d'applications web, systèmes IA, APIs et produits data - conçus pour l'échelle et la clarté.",
+      "subtitle": "Une collection d'applications web, systèmes IA, APIs et produits data — conçus pour l'échelle et la clarté.",
       "ctaPrimary": "Me contacter",
       "ctaSecondary": "Voir les services",
       "promiseLabel": "Promesse",
-      "promise": "« Des produits livrés avec clarté - du web à l'IA et à la data. »",
+      "promise": "« Des produits livrés avec clarté — du web à l'IA et à la data. »",
       "forWhom": "Pour qui ?",
       "audience": {
         "web": "Web & SaaS",
@@ -452,7 +509,7 @@
       "ctaPrimary": "Me contacter",
       "ctaSecondary": "Tous les projets",
       "ctaTitle": "Envie de construire quelque chose de similaire ?",
-      "ctaSubtitle": "Parlons de votre produit, API ou système IA - avec clarté, craft et exigence production.",
+      "ctaSubtitle": "Parlons de votre produit, API ou système IA — avec clarté, craft et exigence production.",
       "ctaButton": "Démarrer une conversation",
       "relatedLabel": "Continuer",
       "relatedTitle": "Autres projets",
@@ -460,77 +517,77 @@
       "liveDemo": "Démo live",
       "viewCode": "Voir le code",
       "viewProject": "Voir le projet",
-      "comingSoon": "Étude de cas détaillée - architecture, défis techniques et résultats à venir."
+      "comingSoon": "Étude de cas détaillée — architecture, défis techniques et résultats à venir."
     }
   },
   "projectItems": {
     "cnss-pension-tracking": {
-      "title": "Suivi des dossiers de pension - CNSS Bénin",
+      "title": "Suivi des dossiers de pension — CNSS Bénin",
       "description": "Application web de suivi des dossiers de pension à la CNSS Bénin, avec architecture frontend/backend et API REST."
     },
     "tutoring-platform": {
-      "title": "Plateforme de gestion du tutorat - Freelance Bénin",
+      "title": "Plateforme de gestion du tutorat — Freelance Bénin",
       "description": "Application web et mobile permettant aux parents de rechercher et d’engager des tuteurs pour leurs enfants."
     },
     "packaging-crm": {
-      "title": "CRM de gestion des ventes de packaging - Freelance Bénin",
+      "title": "CRM de gestion des ventes de packaging — Freelance Bénin",
       "description": "CRM web pour centraliser ventes, rendez-vous, livraisons, support client et suivi commercial, aussi packagé en desktop Electron."
     },
     "banking-management": {
-      "title": "Application web de gestion bancaire - Freelance",
+      "title": "Application web de gestion bancaire — Freelance",
       "description": "Simulateur de plateforme bancaire avec architecture frontend/backend structurée et modélisation UML."
     },
     "accounting-ai": {
-      "title": "Gestion de bilan comptable avec IA - LuxAIIT",
+      "title": "Gestion de bilan comptable avec IA — LuxAIIT",
       "description": "Application web d’analyse de bilans comptables avec génération automatique, dashboards et explications LLM."
     },
     "connectors-audit-ai": {
-      "title": "Connecteurs et audit avec IA - LuxAIIT",
+      "title": "Connecteurs et audit avec IA — LuxAIIT",
       "description": "Plateforme de connecteurs pour auditer bases, APIs REST/SOAP, e-mails et serveurs, enrichie par des LLM."
     },
     "dncf-personnel-transfers": {
-      "title": "Gestion des mutations de personnel - DNCF Bénin",
+      "title": "Gestion des mutations de personnel — DNCF Bénin",
       "description": "Application web pour gérer les mutations de personnel de bout en bout à la Direction Nationale du Contrôle Financier."
     },
     "dncf-committees-projects": {
-      "title": "Gestion des comités et suivi des projets - DNCF Bénin",
+      "title": "Gestion des comités et suivi des projets — DNCF Bénin",
       "description": "Plateforme de centralisation des comités de gestion et du suivi des projets à la DNCF."
     },
     "sigfip-dgb": {
-      "title": "Participation au projet SIGFIP - DGB Bénin / GIZ",
+      "title": "Participation au projet SIGFIP — DGB Bénin / GIZ",
       "description": "Contribution à la refonte du périmètre DGB du SIGFIP, avec focus interopérabilité et X-ROAD."
     },
     "grc-saas": {
-      "title": "SaaS Gouvernance, Risques et Conformité (GRC) - Govern Group",
+      "title": "SaaS Gouvernance, Risques et Conformité (GRC) — Govern Group",
       "description": "SaaS GRC couvrant normes, obligations CEDEAO-CEMAC, LCB-FT-FP et gestion des risques, avec assistance IA."
     },
     "aml-detection": {
-      "title": "Système AML de détection des transactions suspectes - Govern Group",
+      "title": "Système AML de détection des transactions suspectes — Govern Group",
       "description": "Moteur AML en Machine Learning pour détecter des schémas suspects dans les flux d’un Core Banking."
     },
     "grc-landing": {
-      "title": "Landing Page SaaS GRC - Govern Group",
+      "title": "Landing Page SaaS GRC — Govern Group",
       "description": "Site vitrine du SaaS GRC présentant fonctionnalités, roadmap et assistance conversationnelle IA."
     }
   },
   "educationItems": [
     {
       "degree": "Master Professionnel en Business Intelligence",
-      "school": "ENEAM - Université d'Abomey-Calavi",
+      "school": "ENEAM — Université d'Abomey-Calavi",
       "period": "Fin 2026",
-      "description": "Formation en cours - obtention prévue fin 2026, avec un focus sur l'analytics, la data et l'aide à la décision.",
+      "description": "Formation en cours — obtention prévue fin 2026, avec un focus sur l'analytics, la data et l'aide à la décision.",
       "status": "ongoing"
     },
     {
       "degree": "Licence Professionnelle en Informatique de Gestion",
-      "school": "IUT - Université de Parakou",
+      "school": "IUT — Université de Parakou",
       "period": "2023",
       "description": "Formation professionnalisante en informatique de gestion, avec un solide ancrage technique et métier.",
       "status": "completed",
       "highlight": "Mention Très Bien"
     },
     {
-      "degree": "Baccalauréat Scientifique - Série D",
+      "degree": "Baccalauréat Scientifique — Série D",
       "school": "Collège Brice SINSIN",
       "period": "2020",
       "description": "Baccalauréat scientifique série D, première étape d'un parcours orienté sciences et technologies.",
@@ -541,103 +598,46 @@
     {
       "role": "Développeur FullStack Senior",
       "company": "TechVenture Africa",
-      "period": "2024 - Aujourd'hui",
+      "period": "2024 — Aujourd'hui",
       "description": "Direction du développement de produits SaaS intégrant l'IA et mentorat des ingénieurs juniors sur les architectures React modernes."
     },
     {
       "role": "Ingénieur IA",
       "company": "InnovateLab",
-      "period": "2023 - 2024",
+      "period": "2023 — 2024",
       "description": "Création de systèmes d'automatisation LLM, pipelines RAG et outils IA internes pour clients entreprise."
     },
     {
       "role": "Développeur FullStack",
       "company": "Digital Bridge BJ",
-      "period": "2022 - 2023",
+      "period": "2022 — 2023",
       "description": "Livraison d'applications web, APIs REST et intégrations paiement pour startups et ONG béninoises."
     }
   ],
   "skillGroups": [
     {
       "name": "Frontend",
-      "skills": [
-        "JavaScript",
-        "React",
-        "React Js",
-        "React Native",
-        "Next.js",
-        "Vite",
-        "TypeScript",
-        "Tailwind CSS",
-        "Framer Motion"
-      ]
+      "skills": ["JavaScript", "React", "React Js", "React Native", "Next.js", "Vite", "TypeScript", "Tailwind CSS", "Framer Motion"]
     },
     {
       "name": "Backend",
-      "skills": [
-        "Node.js",
-        "Nest Js",
-        "JavaScript",
-        "Python",
-        "Java",
-        "Django",
-        "FastAPI",
-        "Symfony",
-        "Spring Boot",
-        "Postman"
-      ]
-    },
-    {
-      "name": "Base de données",
-      "skills": [
-        "PostgreSQL",
-        "MySQL",
-        "MongoDB",
-        "Redis"
-      ]
+      "skills": ["Node.js", "Nest Js", "JavaScript", "Python", "Java", "Django", "FastAPI", "Symfony", "Spring Boot", "PostgreSQL", "MySQL", "MongoDB", "Redis", "Postman"]
     },
     {
       "name": "IA & ML",
-      "skills": [
-        "OpenAI API",
-        "OpenRouter",
-        "Ollama",
-        "LangChain",
-        "RAG",
-        "TensorFlow",
-        "Vector DBs"
-      ]
+      "skills": ["OpenAI API", "OpenRouter", "Ollama", "LangChain", "RAG", "TensorFlow", "Vector DBs"]
     },
     {
       "name": "Data Engineering",
-      "skills": [
-        "Apache Airflow",
-        "dbt",
-        "BigQuery",
-        "Talend EBS DI",
-        "SQL Server",
-        "ETL/ELT",
-        "Modélisation"
-      ]
+      "skills": ["Apache Airflow", "dbt", "BigQuery", "Talend EBS DI", "SQL Server", "ETL/ELT", "Modélisation"]
     },
     {
       "name": "DevOps",
-      "skills": [
-        "Docker",
-        "CI/CD",
-        "Vercel",
-        "Monitoring"
-      ]
+      "skills": ["Docker", "CI/CD", "Vercel", "Monitoring"]
     },
     {
       "name": "Outils et Autres",
-      "skills": [
-        "Git / GitHub",
-        "Trello",
-        "Render",
-        "Hostinger",
-        "Contabo"
-      ]
+      "skills": ["Git / GitHub", "Trello", "Render", "Hostinger", "Contabo"]
     }
   ],
   "serviceDetails": {
@@ -645,13 +645,8 @@
       "title": "Développement FullStack",
       "summary": "Applications web de bout en bout avec UX premium, architecture évolutive et code production-ready.",
       "tagline": "Du prototype au produit scalable, avec une expérience soignée à chaque étape.",
-      "overview": "Je conçois et développe des applications web complètes - interfaces modernes, logique métier robuste et déploiements fiables. Mon approche allie rigueur technique et sens du détail produit pour livrer des expériences digitales premium, pensées pour évoluer avec votre activité.",
-      "tags": [
-        "React",
-        "Next.js",
-        "UX premium",
-        "Production-ready"
-      ],
+      "overview": "Je conçois et développe des applications web complètes — interfaces modernes, logique métier robuste et déploiements fiables. Mon approche allie rigueur technique et sens du détail produit pour livrer des expériences digitales premium, pensées pour évoluer avec votre activité.",
+      "tags": ["React", "Next.js", "UX premium", "Production-ready"],
       "deliverables": [
         "Interfaces responsives, accessibles et animées avec soin",
         "Architecture modulaire, maintenable et prête à scaler",
@@ -665,15 +660,7 @@
         "Développer par itérations courtes avec des livrables testables",
         "Tester, optimiser et déployer en conditions proches de la production"
       ],
-      "stack": [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "Tailwind CSS",
-        "Node.js",
-        "PostgreSQL",
-        "Vercel"
-      ],
+      "stack": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL", "Vercel"],
       "idealFor": [
         "Startups qui veulent lancer un MVP premium rapidement",
         "Entreprises qui modernisent une application existante",
@@ -685,13 +672,8 @@
       "title": "Intégration IA",
       "summary": "Fonctionnalités LLM, systèmes d'agents, pipelines RAG et automatisation intelligente pour votre produit.",
       "tagline": "Des fonctionnalités IA utiles, fiables et intégrées naturellement à votre produit.",
-      "overview": "J'intègre l'intelligence artificielle là où elle crée une vraie valeur - pas pour le buzz, mais pour automatiser, accélérer et enrichir l'expérience utilisateur. De l'assistant conversationnel au pipeline RAG, je conçois des systèmes IA pragmatiques, observables et adaptés à votre contexte métier.",
-      "tags": [
-        "LLM",
-        "RAG",
-        "Agents IA",
-        "Automatisation"
-      ],
+      "overview": "J'intègre l'intelligence artificielle là où elle crée une vraie valeur — pas pour le buzz, mais pour automatiser, accélérer et enrichir l'expérience utilisateur. De l'assistant conversationnel au pipeline RAG, je conçois des systèmes IA pragmatiques, observables et adaptés à votre contexte métier.",
+      "tags": ["LLM", "RAG", "Agents IA", "Automatisation"],
       "deliverables": [
         "Intégrations OpenAI, OpenRouter ou modèles locaux via Ollama",
         "Pipelines RAG avec recherche sémantique et bases vectorielles",
@@ -705,15 +687,7 @@
         "Construire une architecture modulaire, testable et évolutive",
         "Itérer avec des retours réels avant un déploiement en production"
       ],
-      "stack": [
-        "Python",
-        "LangChain",
-        "OpenAI API",
-        "OpenRouter",
-        "Ollama",
-        "FastAPI",
-        "Vector DBs"
-      ],
+      "stack": ["Python", "LangChain", "OpenAI API", "OpenRouter", "Ollama", "FastAPI", "Vector DBs"],
       "idealFor": [
         "Produits qui veulent ajouter un copilote ou un assistant intelligent",
         "Équipes qui automatisent des tâches répétitives avec l'IA",
@@ -725,13 +699,8 @@
       "title": "API & Backend",
       "summary": "APIs REST/GraphQL robustes, microservices, authentification et intégrations tierces.",
       "tagline": "Des fondations backend solides pour des produits fiables et bien structurés.",
-      "overview": "Je construis des backends pensés pour la durabilité - APIs claires, sécurisées et performantes. Que ce soit pour un nouveau produit ou une refonte, je mets en place des architectures backend qui facilitent l'intégration, la maintenance et la montée en charge.",
-      "tags": [
-        "REST",
-        "GraphQL",
-        "Microservices",
-        "Sécurité"
-      ],
+      "overview": "Je construis des backends pensés pour la durabilité — APIs claires, sécurisées et performantes. Que ce soit pour un nouveau produit ou une refonte, je mets en place des architectures backend qui facilitent l'intégration, la maintenance et la montée en charge.",
+      "tags": ["REST", "GraphQL", "Microservices", "Sécurité"],
       "deliverables": [
         "Conception et développement d'APIs REST ou GraphQL documentées",
         "Authentification, autorisation et gestion des sessions",
@@ -745,16 +714,7 @@
         "Implémenter avec des patterns éprouvés et une couverture de tests",
         "Documenter, déployer et accompagner l'intégration côté frontend"
       ],
-      "stack": [
-        "Node.js",
-        "Nest Js",
-        "Python",
-        "Django",
-        "FastAPI",
-        "PostgreSQL",
-        "Redis",
-        "Docker"
-      ],
+      "stack": ["Node.js", "Nest Js", "Python", "Django", "FastAPI", "PostgreSQL", "Redis", "Docker"],
       "idealFor": [
         "Applications qui ont besoin d'une API fiable et bien documentée",
         "Projets fintech ou SaaS avec des exigences de sécurité",
@@ -767,12 +727,7 @@
       "summary": "Pipelines ETL, entrepôts de données, infrastructure analytique et développement de dashboards.",
       "tagline": "Transformer vos données brutes en insights actionnables et fiables.",
       "overview": "Je conçois des pipelines data fiables qui connectent vos sources de données à des décisions éclairées. De l'extraction à la visualisation, je m'appuie sur des outils modernes et des pratiques éprouvées pour structurer, nettoyer et rendre vos données exploitables.",
-      "tags": [
-        "ETL/ELT",
-        "Pipelines",
-        "Analytics",
-        "Dashboards"
-      ],
+      "tags": ["ETL/ELT", "Pipelines", "Analytics", "Dashboards"],
       "deliverables": [
         "Pipelines ETL/ELT automatisés et monitorés",
         "Modélisation et structuration d'entrepôts de données",
@@ -786,15 +741,7 @@
         "Implémenter les pipelines avec validation et reprise sur erreur",
         "Livrer des dashboards clairs et former les équipes à les utiliser"
       ],
-      "stack": [
-        "Talend EBS DI",
-        "Apache Airflow",
-        "dbt",
-        "SQL Server",
-        "PostgreSQL",
-        "BigQuery",
-        "Python"
-      ],
+      "stack": ["Talend EBS DI", "Apache Airflow", "dbt", "SQL Server", "PostgreSQL", "BigQuery", "Python"],
       "idealFor": [
         "Entreprises qui centralisent des données dispersées",
         "Équipes produit qui ont besoin de métriques fiables",
@@ -805,7 +752,7 @@
   },
   "testimonialsItems": [
     {
-      "quote": "Augustin FACHEHOUN a livré un produit IA qui a dépassé nos attentes - rapide, élégant et prêt pour la production dès le premier jour.",
+      "quote": "Augustin FACHEHOUN a livré un produit IA qui a dépassé nos attentes — rapide, élégant et prêt pour la production dès le premier jour.",
       "author": "Sarah M.",
       "role": "CTO, TechVenture Africa"
     },
@@ -829,7 +776,7 @@
     {
       "phase": "02",
       "title": "Ingénierie IA",
-      "description": "Conception de systèmes intelligents - intégrations LLM, orchestration d'agents et fonctionnalités ML."
+      "description": "Conception de systèmes intelligents — intégrations LLM, orchestration d'agents et fonctionnalités ML."
     },
     {
       "phase": "03",
@@ -844,7 +791,7 @@
     "chatSubtitle": "Propulsé par RAG · streaming",
     "assistantRole": "Assistant IA",
     "justNow": "À l'instant",
-    "welcome": "👋 Bonjour ! Je suis Kadoukpè. Posez-moi vos questions sur mon parcours, mes projets et ma stack.",
+    "welcome": "👋 Bonjour ! Je suis Kadoukpè, l'assistant d'Augustin. Posez-moi toutes vos questions.",
     "placeholder": "Écrivez votre message…",
     "send": "Envoyer",
     "typing": "Réflexion en cours…",
@@ -854,18 +801,9 @@
     "errorRateLimit": "Trop de messages envoyés. Patientez quelques minutes avant de réessayer.",
     "errorNotConfigured": "Le service IA n'est pas encore configuré sur le serveur.",
     "suggestions": [
-      {
-        "id": "projects",
-        "label": "Quels projets as-tu réalisés ?"
-      },
-      {
-        "id": "skills",
-        "label": "Quelle est ta stack ?"
-      },
-      {
-        "id": "contact",
-        "label": "Comment te contacter ?"
-      }
+      { "id": "projects", "label": "Quels projets as-tu réalisés ?" },
+      { "id": "skills", "label": "Quelle est ta stack ?" },
+      { "id": "contact", "label": "Comment te contacter ?" }
     ]
   }
 }

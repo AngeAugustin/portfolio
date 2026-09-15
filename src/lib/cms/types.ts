@@ -41,6 +41,13 @@ export type CmsArticle = {
   image: string;
 };
 
+export type CmsArticleComment = {
+  id: string;
+  authorName: string;
+  body: string;
+  createdAt: string;
+};
+
 export type CmsExperience = {
   key: string;
   role: string;

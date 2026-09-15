@@ -3,8 +3,8 @@ export const siteConfig = {
   brand: "Augustin FACHEHOUN",
   title: "FullStack & AI Developer",
   description:
-    "Beninese FullStack & AI Developer crafting scalable web applications and intelligent systems - transitioning into Data Engineering.",
-  url: import.meta.env.VITE_SITE_URL ?? "https://www.augustinfachehoun.pro",
+    "Beninese FullStack & AI Developer crafting scalable web applications and intelligent systems — transitioning into Data Engineering.",
+  url: import.meta.env.VITE_SITE_URL ?? "https://augustinfachehoun.dev",
   email: "me@augustinfachehoun.pro",
   location: "Cotonou, Benin",
   social: {
@@ -145,32 +145,49 @@ export const services = [
 export type ServiceSlug = (typeof services)[number]["slug"];
 
 export const tools = [
-  { name: "Next.js", tag: "app", image: "/images/outils/Next Js.png" },
-  { name: "React", tag: "ui", image: "/images/outils/React Js.png" },
-  { name: "Node.js", tag: "api", image: "/images/outils/Node.png" },
-  { name: "Python", tag: "ai", image: "/images/outils/Python.png" },
-  { name: "Django", tag: "py", image: "/images/outils/Django.png" },
-  { name: "Symfony", tag: "php", image: "/images/outils/Symfony.png" },
-  { name: "Java", tag: "jvm", image: "/images/outils/Java.png" },
-  { name: "Spring Boot", tag: "java", image: "/images/outils/SpringBoot.png" },
-  { name: "PostgreSQL", tag: "sql", image: "/images/outils/PostgreSQL.png" },
-  { name: "MySQL", tag: "sql", image: "/images/outils/MySQL.png" },
-  { name: "MongoDB", tag: "nosql", image: "/images/outils/Mongo.png" },
-  { name: "Redis", tag: "cache", image: "/images/outils/Redis.png" },
-  { name: "Oracle", tag: "db", image: "/images/outils/Oracle.png" },
-  { name: "Talend", tag: "etl", image: "/images/outils/Talend.png" },
-  { name: "LangChain", tag: "llm", image: "/images/outils/LangChain.png" },
-  { name: "OpenRouter", tag: "llm", image: "/images/outils/OpenRouter.png" },
-  { name: "Docker", tag: "ops", image: "/images/outils/Docker.png" },
-  { name: "Vercel", tag: "cloud", image: "/images/outils/Vercel.png" },
-  { name: "Render", tag: "cloud", image: "/images/outils/Render.png" },
-  { name: "Cursor", tag: "ide", image: "/images/outils/Cursor.png" },
-  { name: "Cline", tag: "ide", image: "/images/outils/Cline.png" },
-  { name: "Postman", tag: "api", image: "/images/outils/Postman.png" },
-  { name: "Stitch", tag: "ui", image: "/images/outils/Stitch - Figma.png" },
+  { name: "Next.js", tag: "app", color: "#171717" },
+  { name: "Vite", tag: "spa", color: "#646cff" },
+  { name: "Node.js", tag: "api", color: "#339933" },
+  { name: "Python", tag: "ai", color: "#3776ab" },
+  { name: "Symfony", tag: "php", color: "#000000" },
+  { name: "PostgreSQL", tag: "sql", color: "#2a75ba" },
+  { name: "MySQL", tag: "sql", color: "#cb7229" },
+  { name: "MongoDB", tag: "nosql", color: "#319751" },
+  { name: "Redis", tag: "cache", color: "#dc382d" },
+  { name: "Talend", tag: "etl", color: "#ff6d00" },
+  { name: "TensorFlow", tag: "ml", color: "#ff6f00" },
 ] as const;
 
 export type BlogCategory = "ai" | "data" | "frontend";
+
+export const blogPosts = [
+  {
+    slug: "rag-pipelines",
+    date: "2025-03",
+    category: "ai" as const,
+    readMinutes: 8,
+    featured: true,
+    image: "/images/blog/rag-pipelines.svg",
+  },
+  {
+    slug: "data-engineering-path",
+    date: "2025-01",
+    category: "data" as const,
+    readMinutes: 6,
+    featured: false,
+    image: "/images/blog/data-engineering-path.svg",
+  },
+  {
+    slug: "nextjs-performance",
+    date: "2024-11",
+    category: "frontend" as const,
+    readMinutes: 7,
+    featured: false,
+    image: "/images/blog/nextjs-performance.svg",
+  },
+] as const;
+
+export type BlogPostSlug = (typeof blogPosts)[number]["slug"];
 
 export const navLinks = [
   { href: "/", key: "home" },

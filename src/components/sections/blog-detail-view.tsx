@@ -11,6 +11,7 @@ import { OptimizedImage } from "@/components/shared/optimized-image";
 import { SectionWatermark } from "@/components/shared/section-watermark";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { ArticleEngagement } from "@/components/sections/article-engagement";
 import { blurReveal, staggerContainer, staggerItem } from "@/lib/animations";
 import { useArticles, type CmsArticle } from "@/lib/cms";
 import { cn } from "@/lib/utils";
@@ -92,9 +93,10 @@ function ArticleBody({ article }: { article: CmsArticle }) {
 
 interface BlogDetailViewProps {
   article: CmsArticle;
+  fromCms?: boolean;
 }
 
-export function BlogDetailView({ article }: BlogDetailViewProps) {
+export function BlogDetailView({ article, fromCms = true }: BlogDetailViewProps) {
   const t = useTranslations("blog");
   const tDetail = useTranslations("blog.detail");
   const locale = useLocale();
@@ -217,6 +219,10 @@ export function BlogDetailView({ article }: BlogDetailViewProps) {
       <div className="editorial-container section-padding pt-0">
         <ScrollReveal>
           <ArticleBody article={article} />
+        </ScrollReveal>
+
+        <ScrollReveal className="mt-14 md:mt-16" delay={0.05}>
+          <ArticleEngagement slug={article.slug} enabled={fromCms} />
         </ScrollReveal>
 
         <ScrollReveal className="mt-16 md:mt-20" delay={0.1}>
