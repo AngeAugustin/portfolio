@@ -1,28 +1,20 @@
 "use client";
 
 import { useTranslations } from "@/i18n/context";
-import { OptimizedImage } from "@/components/shared/optimized-image";
 import { tools } from "@/lib/site";
 
 type Tool = (typeof tools)[number];
 
 function ToolChip({ tool }: { tool: Tool }) {
   return (
-    <span
-      title={tool.name}
-      className="relative flex shrink-0 items-center justify-center overflow-hidden rounded-xl border border-border bg-card px-5 py-2.5"
-    >
-      <span className="invisible flex items-center gap-2.5" aria-hidden>
-        <span className="size-2.5 rounded" />
-        <span className="text-sm font-medium">{tool.name}</span>
-        <code className="font-mono text-xs">{tool.tag}</code>
-      </span>
-      <OptimizedImage
-        src={encodeURI(tool.image)}
-        alt={tool.name}
-        fill
-        className="object-contain object-center dark:bg-white"
+    <span className="inline-flex shrink-0 items-center gap-2.5 rounded-xl border border-border bg-card px-5 py-2.5">
+      <span
+        className="size-2.5 rounded"
+        style={{ backgroundColor: tool.color }}
+        aria-hidden
       />
+      <span className="text-sm font-medium text-foreground">{tool.name}</span>
+      <code className="font-mono text-xs text-muted-foreground">{tool.tag}</code>
     </span>
   );
 }
