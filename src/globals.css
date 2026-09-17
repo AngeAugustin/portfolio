@@ -268,3 +268,50 @@
     transform: none;
   }
 }
+
+/* Article FAQ blocks (from CMS TipTap) */
+.article-prose .article-faq {
+  margin: 1.25rem 0;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: color-mix(in oklab, var(--card) 88%, var(--secondary));
+  overflow: hidden;
+}
+
+.article-prose .article-faq-question {
+  cursor: pointer;
+  list-style: none;
+  padding: 1rem 1.15rem;
+  font-family: var(--font-heading), system-ui, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--foreground);
+}
+
+.article-prose .article-faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.article-prose .article-faq-question::after {
+  content: "+";
+  float: right;
+  margin-left: 0.75rem;
+  color: var(--glow);
+  font-weight: 600;
+}
+
+.article-prose .article-faq[open] .article-faq-question::after {
+  content: "–";
+}
+
+.article-prose .article-faq-answer {
+  padding: 0 1.15rem 1.1rem;
+  white-space: pre-wrap;
+  color: var(--muted-foreground);
+  line-height: 1.7;
+}
+
+.article-prose .article-faq-answer p {
+  margin: 0.5rem 0 0;
+}

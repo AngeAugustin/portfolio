@@ -805,5 +805,33 @@
       { "id": "skills", "label": "Quelle est ta stack ?" },
       { "id": "contact", "label": "Comment te contacter ?" }
     ]
+  },
+  "seo": {
+    "pages": {
+      "home": {
+        "title": "Augustin FACHEHOUN — Développeur FullStack & IA",
+        "description": "Développeur FullStack & IA béninois créant des applications web évolutives et des systèmes intelligents. En transition vers le Data Engineering."
+      },
+      "about": {
+        "title": "À propos — Augustin FACHEHOUN",
+        "description": "Parcours, expérience et profil d'Augustin FACHEHOUN — développeur FullStack & IA en transition vers le Data Engineering."
+      },
+      "projects": {
+        "title": "Projets — Augustin FACHEHOUN",
+        "description": "Projets FullStack, IA et data sélectionnés d'Augustin FACHEHOUN — du système en production au craft produit."
+      },
+      "services": {
+        "title": "Services — Augustin FACHEHOUN",
+        "description": "Développement FullStack, intégration IA, APIs et data engineering — services proposés par Augustin FACHEHOUN."
+      },
+      "blog": {
+        "title": "Blog — Augustin FACHEHOUN",
+        "description": "Notes sur les systèmes IA, le data engineering et le craft frontend — par Augustin FACHEHOUN."
+      },
+      "contact": {
+        "title": "Contact — Augustin FACHEHOUN",
+        "description": "Contactez Augustin FACHEHOUN pour discuter de projets FullStack, IA ou data engineering."
+      }
+    }
   }
 }
