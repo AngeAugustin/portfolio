@@ -2,6 +2,7 @@ import type { Locale } from "@/i18n/routing";
 import type { BlogCategory } from "@/lib/site";
 import { strapiFetch, withLocale } from "./client";
 import { mediaUrl } from "./media";
+import { sanitizeOptionalText, sanitizeText } from "./text";
 import type { CmsArticle, StrapiListResponse, StrapiMedia } from "./types";
 
 type StrapiArticle = {
@@ -38,9 +39,9 @@ function mapArticle(entry: StrapiArticle): CmsArticle | null {
 
   return {
     slug: entry.slug,
-    title: entry.title,
-    excerpt: entry.excerpt ?? "",
-    content: entry.content ?? undefined,
+    title: sanitizeText(entry.title),
+    excerpt: sanitizeText(entry.excerpt ?? ""),
+    content: sanitizeOptionalText(entry.content),
     category,
     featured: Boolean(entry.featured),
     readMinutes: entry.readMinutes ?? 5,

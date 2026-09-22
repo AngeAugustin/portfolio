@@ -1,6 +1,7 @@
 import type { Locale } from "@/i18n/routing";
 import { strapiFetch, withLocale } from "./client";
 import { asStringArray } from "./media";
+import { sanitizeText } from "./text";
 import type { CmsService, StrapiListResponse } from "./types";
 
 type StrapiService = {
@@ -22,16 +23,16 @@ function mapService(entry: StrapiService): CmsService | null {
 
   return {
     slug: entry.slug,
-    title: entry.title,
-    summary: entry.summary ?? "",
-    tagline: entry.tagline ?? "",
-    overview: entry.overview ?? "",
+    title: sanitizeText(entry.title),
+    summary: sanitizeText(entry.summary ?? ""),
+    tagline: sanitizeText(entry.tagline ?? ""),
+    overview: sanitizeText(entry.overview ?? ""),
     order: entry.order ?? 0,
-    tags: asStringArray(entry.tags),
-    deliverables: asStringArray(entry.deliverables),
-    approach: asStringArray(entry.approach),
-    stack: asStringArray(entry.stack),
-    idealFor: asStringArray(entry.idealFor),
+    tags: asStringArray(entry.tags).map(sanitizeText),
+    deliverables: asStringArray(entry.deliverables).map(sanitizeText),
+    approach: asStringArray(entry.approach).map(sanitizeText),
+    stack: asStringArray(entry.stack).map(sanitizeText),
+    idealFor: asStringArray(entry.idealFor).map(sanitizeText),
   };
 }
 

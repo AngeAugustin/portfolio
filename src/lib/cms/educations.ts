@@ -1,5 +1,6 @@
 import type { Locale } from "@/i18n/routing";
 import { strapiFetch, withLocale } from "./client";
+import { sanitizeOptionalText, sanitizeText } from "./text";
 import type { CmsEducation, StrapiListResponse } from "./types";
 
 type StrapiEducation = {
@@ -22,12 +23,12 @@ function mapEducation(entry: StrapiEducation): CmsEducation | null {
 
   return {
     key: entry.key,
-    degree: entry.degree,
-    school: entry.school,
-    period: entry.period ?? "",
-    description: entry.description ?? "",
+    degree: sanitizeText(entry.degree),
+    school: sanitizeText(entry.school),
+    period: sanitizeText(entry.period ?? ""),
+    description: sanitizeText(entry.description ?? ""),
     status: mapEducationStatus(entry.status),
-    highlight: entry.highlight ?? undefined,
+    highlight: sanitizeOptionalText(entry.highlight),
     order: entry.order ?? 0,
   };
 }

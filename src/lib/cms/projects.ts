@@ -2,6 +2,7 @@ import type { Locale } from "@/i18n/routing";
 import type { ProjectCategory } from "@/lib/site";
 import { strapiFetch, withLocale } from "./client";
 import { asStringArray, mediaUrl } from "./media";
+import { sanitizeOptionalText, sanitizeText } from "./text";
 import type { CmsProject, StrapiListResponse, StrapiMedia } from "./types";
 
 type StrapiProject = {
@@ -37,13 +38,13 @@ function mapProject(entry: StrapiProject): CmsProject | null {
 
   return {
     slug: entry.slug,
-    title: entry.title,
-    description: entry.description ?? "",
-    caseStudy: entry.caseStudy ?? undefined,
+    title: sanitizeText(entry.title),
+    description: sanitizeText(entry.description ?? ""),
+    caseStudy: sanitizeOptionalText(entry.caseStudy),
     category,
     featured: Boolean(entry.featured),
     year: entry.year ?? "",
-    stack: asStringArray(entry.stack),
+    stack: asStringArray(entry.stack).map(sanitizeText),
     image: mediaUrl(
       entry.cover,
       entry.imageUrl || "/images/projects/insight-saas.svg"

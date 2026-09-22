@@ -1,5 +1,6 @@
 import type { Locale } from "@/i18n/routing";
 import { strapiFetch, withLocale } from "./client";
+import { sanitizeText } from "./text";
 import type { CmsExperience, StrapiListResponse } from "./types";
 
 type StrapiExperience = {
@@ -17,11 +18,11 @@ function mapExperience(entry: StrapiExperience): CmsExperience | null {
 
   return {
     key: entry.key,
-    role: entry.role,
-    company: entry.company,
-    location: entry.location ?? undefined,
-    period: entry.period ?? "",
-    description: entry.description ?? "",
+    role: sanitizeText(entry.role),
+    company: sanitizeText(entry.company),
+    location: entry.location ? sanitizeText(entry.location) : undefined,
+    period: sanitizeText(entry.period ?? ""),
+    description: sanitizeText(entry.description ?? ""),
     order: entry.order ?? 0,
   };
 }
